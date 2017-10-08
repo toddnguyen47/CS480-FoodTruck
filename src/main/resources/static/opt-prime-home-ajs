@@ -1,6 +1,6 @@
-<html ng-app="primeOptHome">
+<html ng-app="optPrimeHome">
 	<head>
-		<title>Prime Optimize AngularJS home</title>
+		<title>Optimize Prime AngularJS home</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		<!-- TODO: Insert javascript later -->
 	</head>
