@@ -1,0 +1,10 @@
+<html ng-app="primeOptHome">
+	<head>
+		<title>Prime Optimize AngularJS home</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		<!-- TODO: Insert javascript later -->
+	</head>
+	<body style="font-family: tahoma, sans-serif">
+		<div>This is the home page of Optimize Prime</div>
+	</body>
+</html>
