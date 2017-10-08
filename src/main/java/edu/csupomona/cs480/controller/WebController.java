@@ -131,5 +131,22 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
+	
+	@RequestMapping(value = "/cs480/thonguyen-a3", method = RequestMethod.GET)
+	int[] getFibonacciSequence() {
+		// Will try to compute Fibonacci in O(n) time using memoization
+		int maxSize = 10;
+		int[] fib = new int[maxSize + 1];
+		// Initialize first two numbers
+		fib[0] = 0;
+		fib[1] = 1;
+		
+		// Calculate next fibonacci numbers based on previously stored numbers
+		for (int i = 2; i <= maxSize; i++) {
+			fib[i] = fib[i-1] + fib[i-2];
+		}
+		
+		return fib;
+	}
 
 }
