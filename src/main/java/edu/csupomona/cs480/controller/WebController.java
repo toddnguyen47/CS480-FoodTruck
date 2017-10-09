@@ -157,4 +157,8 @@ public class WebController {
 	{
 	   return "Hello, world!";
 	}
+	@RequestMapping(value = "/cs480/asartoonian", method = RequestMethod.POST)
+	public String postFoos() {
+	    return "Post some Foos";
+	}
 }
