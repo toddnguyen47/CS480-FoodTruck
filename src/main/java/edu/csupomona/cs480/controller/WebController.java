@@ -152,5 +152,9 @@ public class WebController {
 	String dummyMethod() {
 		return "Yes";
 	}
-
+	@RequestMapping(value = "/cs480/rachelchiang-a3", method = RequestMethod.GET)
+	String getGreeting()
+	{
+	   return "Hello, world!";
+	}
 }
