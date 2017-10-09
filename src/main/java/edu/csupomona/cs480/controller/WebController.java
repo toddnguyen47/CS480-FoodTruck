@@ -148,5 +148,9 @@ public class WebController {
 		
 		return fib;
 	}
+	@RequestMapping(value = "/cs480/adriancuellar-a3", method = RequestMethod.GET)
+	String dummyMethod() {
+		return "Yes";
+	}
 
 }
