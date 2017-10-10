@@ -13,7 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
-
+import edu.csupomona.cs480.data.provider.UserManager;
+import edu.csupomona.cs480.data.TruckInfo;
+import edu.csupomona.cs480.data.provider.TruckInfoManager;
 
 /**
  * This is the controller used by Spring framework.
@@ -36,7 +38,8 @@ public class WebController {
 	 */
 	@Autowired
 	private UserManager userManager;
-
+	@Autowired
+	private TruckInfoManager truckManager;
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
@@ -160,5 +163,46 @@ public class WebController {
 	@RequestMapping(value = "/cs480/asartoonian", method = RequestMethod.POST)
 	public String postFoos() {
 	    return "Post some Foos";
+	}
+	/*********** Web A3 truckAPI testing the framework **********/
+	/*  cs480/chi-wei wang (john) -a3
+	 * 
+	 */
+	//pass
+	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.GET)
+	TruckInfo getTruckInfo(@PathVariable("truckId") String truckId) {
+		TruckInfo truck = truckManager.getTruckInfo(truckId);
+		return truck;
+	}
+	//pass
+	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.POST)
+	TruckInfo updateTruckInfo(
+			@PathVariable("truckId") String id,
+			@RequestParam("name") String name,
+			@RequestParam(value = "type", required = false) String type) {
+		TruckInfo truck = new TruckInfo();
+		truck.setId(id);
+		truck.setName(name);
+		truck.setType(type);
+		truckManager.updateTruckInfo(truck);
+		return truck;
+	}
+	//pass
+	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.DELETE)
+	void deleteTruckInfo(
+			@PathVariable("truckId") String truckId) {
+		truckManager.deleteTruckInfo(truckId);	
+	}
+	//pass
+	@RequestMapping(value = "/cs480/foodtruck/list", method = RequestMethod.GET)
+	List<TruckInfo> listAllTrucks() {
+		return truckManager.listAllTrucks();
+	}
+	
+	@RequestMapping(value = "/cs480/foodtruck/home", method = RequestMethod.GET)
+	ModelAndView getFoodtruckPage() {
+		ModelAndView modelAndView = new ModelAndView("foodtruck");
+		modelAndView.addObject("trucks", listAllTrucks());
+		return modelAndView;
 	}
 }

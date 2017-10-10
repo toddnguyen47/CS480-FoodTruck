@@ -23,4 +23,11 @@ public class ResourceResolver {
 		}
 		return file;
 	}
+	public static File getTruckFile() {
+		File file = new File(BASE_DIR + "/" + "truck-map.json");
+		if (!file.getParentFile().exists()) {
+			file.getParentFile().mkdirs();
+		}
+		return file;
+	}
 }

@@ -1,0 +1,87 @@
+<html ng-app="cs480App">
+	<!-- This page uses AngularJS -->
+	<head>
+	    <title>CS480 Demo Foodtruck using AngularJS</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	    <script src="/js/home-control-ajs.js"></script>
+	</head>
+
+	<body ng-controller="FoodtruckCtrl">
+		<div>
+	        This is a simple page to demonstrate the web UI development.
+	        The key tools and techniques used include:
+	        <ul>
+	            <li>HTML - Obviously</li>
+	            <li><a href="https://angularjs.org/">AngularJS</a></li>
+	            <li><a href="http://jquery.com/">JQuery</a></li>
+	            <li><a href="http://api.jquery.com/jquery.ajax/">JQuery - AJAX</a></li>
+	        </ul>
+	    </div>
+
+	    <hr>
+
+	    <div>
+	        <div>
+	            <label>Foodtruck List</label>
+	            <table border="1">
+	                <tr>
+	                    <td>ID</td>
+	                    <td>Name</td>
+	                    <td>Type</td>
+	                    <td>Creation Time</td>
+	                    <td>Delete</td>
+	                </tr>
+
+	                <tr ng-repeat="truck in trucks">
+	                    <td>{{truck.id}}</td>
+	                    <td>{{truck.name}}</td>
+	                    <td>{{truck.type}}</td>
+	                    <td>{{truck.creationTime}}</td>
+                        <td><button ng-click="deleteTruck(truck.id)">Delete</button></td>
+	                </tr>
+	            </table>
+	        </div>
+
+	        <hr>
+
+	        <div>
+	            <label>Add Truck</label>
+	            <table border="1">
+	                <tr>
+	                    <td>ID</td>
+	                    <td>Name</td>
+	                    <td>Type</td>
+	                    <td>Add</td>
+	                </tr>
+	                <tr>
+	                    <td><input type="text" ng-model="new_id"></td>
+	                    <td><input type="text" ng-model="new_name"></td>
+	                    <td><input type="text" ng-model="new_type"></td>
+	                    <td><button ng-click="addTruck()">Add</button></td>
+	                </tr>
+	            </table>
+	        </div>
+
+	        <hr>
+
+	        <div>
+	            <label>Query User</label>
+	            <input type="text" id="query_id" ng-model="truckIdToSearch"><button ng-click="getTruck()">Get</button>
+	            <table border="1">
+	                <tr>
+	                    <td>ID</td>
+	                    <td>Name</td>
+	                    <td>Type</td>
+	                </tr>
+	                <tr>
+	                    <td><label>{{foundtruck.id}}</label></td>
+	                    <td><label>{{foundtruck.name}}</label></td>
+	                    <td><label>{{foundtruck.type}}</label></td>
+	                </tr>
+	            </table>
+	        </div>
+	    </div>
+
+	</body>
+
+</html>
