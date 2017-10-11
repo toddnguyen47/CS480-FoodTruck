@@ -1,9 +1,11 @@
 package edu.csupomona.cs480.data;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import edu.csupomona.cs480.data.provider.FoodTruckYelpManager;
@@ -17,22 +19,27 @@ public class FoodTruckYelp implements FoodTruckYelpManager {
 	private Document doc;
 	private Elements foodTruckNames;
 	
-	private String getLinks() {
+	private Elements getLinks() {
 		try {
 			doc = Jsoup.connect(urlLink).get();
-			//foodTruckNames = doc.select("class.biz-name");
-			foodTruckNames = doc.select("span");
+			foodTruckNames = doc.select("a[class=biz-name js-analytics-click] span");
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		return foodTruckNames.text();
+		return foodTruckNames;
 	}
 	
 	@Override
-	public String getFoodTruckName() {
-		return getLinks();
+	public ArrayList<String> getFoodTruckName() {
+		ArrayList<String> elementList = new ArrayList<String>();
+		Elements elements = getLinks();
+		for (Element e : elements) {
+			elementList.add(e.text());
+		}
+		
+		return elementList;
 	}
 
 	@Override
@@ -49,8 +56,10 @@ public class FoodTruckYelp implements FoodTruckYelpManager {
 	
 	public static void main(String[] args) {
 		FoodTruckYelp fty = new FoodTruckYelp();
-		System.out.println("Hello!");
-		System.out.println(fty.getFoodTruckName());
+		ArrayList<String> elementList = fty.getFoodTruckName();
+		for (String s : elementList) {
+			System.out.println(s);
+		}
 	}
 	
 }
