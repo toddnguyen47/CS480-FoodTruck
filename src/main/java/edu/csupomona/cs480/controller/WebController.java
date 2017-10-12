@@ -5,6 +5,8 @@ import java.util.List;
 
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -233,5 +235,12 @@ public class WebController {
 		return normalDist.sample();
 	}
 	
+	@RequestMapping(value = "cs480/asartoonian/a4", method = RequestMethod.GET)
+	public void GsonTry() {
+	Gson gson = new GsonBuilder().create();
+    gson.toJson("Hello", System.out);
+    gson.toJson(123, System.out);
+	
+	}
 	
 }
