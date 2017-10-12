@@ -3,6 +3,7 @@ package edu.csupomona.cs480.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.math3.distribution.NormalDistribution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -224,4 +225,11 @@ public class WebController {
 		
 		return foodTruckInfo;
 	}
+	
+	@RequestMapping(value = "cs480/adriancuellar/a4", method = RequestMethod.GET)
+	double exercise4AC() {
+		NormalDistribution normalDist= new NormalDistribution(10,3);
+		return normalDist.sample();
+	}
+	
 }
