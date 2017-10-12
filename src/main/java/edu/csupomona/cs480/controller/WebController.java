@@ -1,12 +1,14 @@
 package edu.csupomona.cs480.controller;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import org.apache.commons.math3.distribution.NormalDistribution;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -236,11 +238,12 @@ public class WebController {
 	}
 	
 	@RequestMapping(value = "cs480/asartoonian/a4", method = RequestMethod.GET)
-	public void GsonTry() {
-	Gson gson = new GsonBuilder().create();
-    gson.toJson("Hello", System.out);
-    gson.toJson(123, System.out);
-	
+	public void GsonTry() throws IOException {
+		try (Writer writer = new FileWriter("Output.json")) {
+	        Gson gson = new GsonBuilder().create();
+	        gson.toJson("Hello", writer);
+	        gson.toJson(123, writer);
+		}
 	}
 	
 }
