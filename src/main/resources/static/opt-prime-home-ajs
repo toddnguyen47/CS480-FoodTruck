@@ -1,10 +1,42 @@
-<html ng-app="optPrimeHome">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<title>Optimize Prime AngularJS home</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-		<!-- TODO: Insert javascript later -->
+		<meta charset="utf-8">
+		<title>Tho Nguyen - Assignment 4</title>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>    
+		<script src="/js/home-control.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
+	
 	<body style="font-family: tahoma, sans-serif">
-		<div>This is the home page of Optimize Prime</div>
+		<div class="introduction">
+			This page will show the results of a "Food Truck" search on Yelp
+			using Pomona as the location.
+			<p></p>
+		</div>
+		
+		<div class ="container">
+			<div class="food-truck-table">
+				<label>Food Truck List</label>
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<td>Food Truck Name</td>
+							<td>Food Truck Addresses</td>
+							<td>Food Truck Numbers</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Test</td>
+							<td>Test</td>
+							<td>Test</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</body>
-</html>
+<html>

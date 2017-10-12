@@ -1,5 +1,6 @@
 package edu.csupomona.cs480.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 import edu.csupomona.cs480.data.provider.UserManager;
+import edu.csupomona.cs480.data.FoodTruckYelp;
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
 
@@ -135,7 +137,7 @@ public class WebController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/cs480/thonguyen-a3", method = RequestMethod.GET)
+	@RequestMapping(value = "/cs480/thonguyen/a3", method = RequestMethod.GET)
 	int[] getFibonacciSequence() {
 		// Will try to compute Fibonacci in O(n) time using memoization
 		int maxSize = 10;
@@ -151,19 +153,23 @@ public class WebController {
 		
 		return fib;
 	}
+	
 	@RequestMapping(value = "/cs480/adriancuellar-a3", method = RequestMethod.GET)
 	String dummyMethod() {
 		return "Yes";
 	}
+	
 	@RequestMapping(value = "/cs480/rachelchiang-a3", method = RequestMethod.GET)
 	String getGreeting()
 	{
 	   return "Hello, world!";
 	}
+	
 	@RequestMapping(value = "/cs480/asartoonian", method = RequestMethod.POST)
 	public String postFoos() {
 	    return "Post some Foos";
 	}
+	
 	/*********** Web A3 truckAPI testing the framework **********/
 	/*  cs480/chi-wei wang (john) -a3
 	 * 
@@ -204,5 +210,18 @@ public class WebController {
 		ModelAndView modelAndView = new ModelAndView("foodtruck");
 		modelAndView.addObject("trucks", listAllTrucks());
 		return modelAndView;
+	}
+	
+	/****************** Assignment 4 *****************/
+	
+	@RequestMapping(value = "cs480/thonguyen/a4", method = RequestMethod.GET)
+	List<ArrayList<String>> getFoodTruckYelpInfo() {
+		FoodTruckYelp foodTruckYelp = new FoodTruckYelp();
+		List<ArrayList<String>> foodTruckInfo = new ArrayList<ArrayList<String>>(); 
+		foodTruckInfo.add(foodTruckYelp.getFoodTruckName());
+		foodTruckInfo.add(foodTruckYelp.getFoodTruckAddress());
+		foodTruckInfo.add(foodTruckYelp.getFoodTruckNumber());
+		
+		return foodTruckInfo;
 	}
 }

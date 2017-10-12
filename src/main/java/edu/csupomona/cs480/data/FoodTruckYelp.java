@@ -12,30 +12,27 @@ import edu.csupomona.cs480.data.provider.FoodTruckYelpManager;
 
 public class FoodTruckYelp implements FoodTruckYelpManager {
 
-	private String foodTruckName;
-	private String foodTruckAddress;
-	private String foodTruckNumber;
 	private String urlLink = "https://www.yelp.com/search?find_desc=food+truck&find_loc=pomona%2C+ca&ns=1";
-	private Document doc;
-	private Elements foodTruckNames;
+	private String regularSearchResults = "li[class=regular-search-result] "; // will be used for Jsoup calls
 	
-	private Elements getLinks() {
+	private Document getLinks() {
+		Document doc = null;
 		try {
-			doc = Jsoup.connect(urlLink).get();
-			foodTruckNames = doc.select("a[class=biz-name js-analytics-click] span");
+			doc = Jsoup.connect(urlLink).get();		
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		return foodTruckNames;
+		return doc;
 	}
 	
 	@Override
 	public ArrayList<String> getFoodTruckName() {
+		Document doc = getLinks();
+		Elements foodTruckNames = doc.select("span[class=indexed-biz-name] a[class=biz-name js-analytics-click] span");
 		ArrayList<String> elementList = new ArrayList<String>();
-		Elements elements = getLinks();
-		for (Element e : elements) {
+		for (Element e : foodTruckNames) {
 			elementList.add(e.text());
 		}
 		
@@ -43,23 +40,28 @@ public class FoodTruckYelp implements FoodTruckYelpManager {
 	}
 
 	@Override
-	public String getFoodTruckAddress() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<String> getFoodTruckAddress() {
+		Document doc = getLinks();
+		Elements foodTruckAddresses = doc.select(regularSearchResults + "div[class=biz-listing-large] address");
+		ArrayList<String> elementList = new ArrayList<String>();
+		for (Element e : foodTruckAddresses) {
+			elementList.add(e.text());
+		}
+		return elementList;
 	}
 
 	@Override
-	public String getFoodTruckNumber() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public static void main(String[] args) {
-		FoodTruckYelp fty = new FoodTruckYelp();
-		ArrayList<String> elementList = fty.getFoodTruckName();
-		for (String s : elementList) {
-			System.out.println(s);
+	public ArrayList<String> getFoodTruckNumber() {
+		Document doc = getLinks();
+		Elements foodTruckNumbers = doc.select(regularSearchResults + "div[class=secondary-attributes] span[class=biz-phone]");
+		ArrayList<String> elementList = new ArrayList<String>();
+		for (Element e : foodTruckNumbers) {
+			String temp = e.text();
+			if (temp.compareToIgnoreCase("") == 0) {
+				temp = "No phone number";
+			}
+			elementList.add(temp);
 		}
+		return elementList;
 	}
-	
 }

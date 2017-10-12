@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public interface FoodTruckYelpManager {
 	public ArrayList<String> getFoodTruckName();
-	
-	public String getFoodTruckAddress();
-	
-	public String getFoodTruckNumber();
+	public ArrayList<String> getFoodTruckAddress();
+	public ArrayList<String> getFoodTruckNumber();
 }
