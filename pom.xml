@@ -50,17 +50,17 @@
 		</dependency>
 
 		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>1.2.0.RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        
-        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>1.2.0.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
 			<!-- jsoup HTML parser library @ https://jsoup.org/ -->
-  			<groupId>org.jsoup</groupId>
-  			<artifactId>jsoup</artifactId>
-  			<version>1.10.3</version>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.10.3</version>
 		</dependency>
 	</dependencies>
 
@@ -71,14 +71,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-compiler-plugin</artifactId>
-		        <configuration>
-		          <!-- JDK version; If you are using higher version, free feel to update it. -->
-		          <source>1.7</source>
-		          <target>1.7</target>
-		        </configuration>
-		    </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<!-- JDK version; If you are using higher version, free feel to update it. -->
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
