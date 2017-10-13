@@ -22,6 +22,7 @@ import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.User;
 import edu.csupomona.cs480.data.provider.UserManager;
 import edu.csupomona.cs480.data.FoodTruckYelp;
+import edu.csupomona.cs480.data.StringGraph;
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
 
@@ -244,6 +245,16 @@ public class WebController {
 	        gson.toJson("Hello", writer);
 	        gson.toJson(123, writer);
 		}
+	}
+	
+	@RequestMapping(value = "/cs480/rachelchiang-a4", method = RequestMethod.GET)
+	String getGraphInformation()
+	{
+	   StringGraph stringGraph = new StringGraph();
+	   String s = stringGraph.getNodeNames();
+	   s += "; " + stringGraph.getEdgeNames();
+	   s += "; " + stringGraph.getSuccessorsList();
+	   return s;
 	}
 	
 }
