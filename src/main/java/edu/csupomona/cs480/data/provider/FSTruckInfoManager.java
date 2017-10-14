@@ -11,9 +11,37 @@ import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.TruckMap;
 import edu.csupomona.cs480.util.ResourceResolver;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+
 public class FSTruckInfoManager implements TruckInfoManager{
 	
 	private static final ObjectMapper JSON = new ObjectMapper();
+	private static final String googleurl = "https://www.google.com";
+	private static final String searchStr = "/search?newwindow=1&tbm=lcl&q=food+truck+near+me&oq=food+truck+near+me";
+
+	public List<TruckInfo> getGoogleList() {
+		Document doc = null;
+		List<TruckInfo> truckInfos = new ArrayList<TruckInfo>();
+		try{
+			doc = Jsoup.connect(new String(googleurl + searchStr)).get();
+			Elements newsHeadLines = doc.select("div[class=_gt] div[class=_rl]");
+			
+			for(int i= 0; i < newsHeadLines.size(); i++){
+				TruckInfo item = new TruckInfo();
+				item.setName(newsHeadLines.get(i).text());
+				truckInfos.add(item);
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return truckInfos;
+	}
+
+
 	
 	public TruckMap getTruckMap(){
 		TruckMap truckMap = null;
@@ -37,6 +65,8 @@ public class FSTruckInfoManager implements TruckInfoManager{
 			e.printStackTrace();
 		}
 	}
+	
+
 	@Override
 	public TruckInfo getTruckInfo(String truckId){
 		TruckMap truckMap = getTruckMap();
@@ -59,4 +89,11 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		TruckMap truckMap = getTruckMap();
 		return new ArrayList<TruckInfo>(truckMap.values());
 	}
+	@Override
+	public List<TruckInfo> searchGoogleResult(){
+		TruckMap truckMap = getTruckMap();
+		List<TruckInfo> result = getGoogleList();
+		return result;
+	}
+
 }

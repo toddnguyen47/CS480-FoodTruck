@@ -257,4 +257,9 @@ public class WebController {
 	   return s;
 	}
 	
+	@RequestMapping(value = "/cs480/foodtruck/google", method = RequestMethod.GET)
+	List<TruckInfo> googleSearch(){
+		return truckManager.searchGoogleResult();
+	}
+	
 }
