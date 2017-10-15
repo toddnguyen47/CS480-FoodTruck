@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
+import java.net.InetAddress;
 
 
 import com.google.gson.Gson;
@@ -25,6 +26,7 @@ import edu.csupomona.cs480.data.FoodTruckYelp;
 import edu.csupomona.cs480.data.StringGraph;
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
+import edu.csupomona.cs480.data.GeoIP;
 
 /**
  * This is the controller used by Spring framework.
@@ -256,10 +258,15 @@ public class WebController {
 	   s += "; " + stringGraph.getSuccessorsList();
 	   return s;
 	}
-	
+	/* Chi-Wei Wang -- a4*/
 	@RequestMapping(value = "/cs480/foodtruck/google", method = RequestMethod.GET)
-	List<TruckInfo> googleSearch(){
+	List<TruckInfo> googleSearch() throws IOException{
 		return truckManager.searchGoogleResult();
 	}
+	@RequestMapping(value = "/cs480/foodtruck/geolocation", method = RequestMethod.GET)
+	GeoIP getGEO() throws IOException{
+		return truckManager.getGeoIP();
+	}
+
 	
 }
