@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>HTML Test Page</title>
@@ -5,21 +6,15 @@
 </head>
 
 <body>
-<h1>HTML Table & Button Sample Page</h1>
+<h1>HTML Table & <del>Button</del> Table Search Sample Page</h1>
 <p>This is a practice page.</p>
 <p>Visit our GitHub page <a href="https://github.com/Optimize-Prime-CS480-Cal-Poly-Fall17/demo-web-project" target="blank">here</a>.</p>
-<!--
-<p><a href="https://github.com/Optimize-Prime-CS480-Cal-Poly-Fall17/demo-web-project">
-    <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png" style="width:50px;height:42px;border:0;">
-</a></p>
--->
 
-<!-- TODO: Add a search button -->
+<h2 id="tQuarterTop"><b>Quarterfinals</b></h2>
+
+<input type="text" id="searchBox" onkeyup="searchTable()" placeholder=" Search the Quarterfinals Table...">
 
 <table id="tQuarter">
-    <tr>
-        <td id="tQuarterTop" colspan="3"><b>Quarterfinals</b></td>
-    </tr>
     <tr>
         <th>Team</th>
         <th>Opponent</th>
@@ -66,6 +61,32 @@
         <td>Day 4: Sunday, October 22, 2017, 01:00</td>
     </tr>
 </table>
+
+<script>
+function searchTable()
+{
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("searchBox");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tQuarter");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++)
+    {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td)
+        {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1)
+            {
+                tr[i].style.display = "";
+            }
+            else
+            {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
 
 </body>
 </html>
