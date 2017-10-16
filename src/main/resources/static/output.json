@@ -1,0 +1,768 @@
+[
+    {
+        "id": "food-trucks-at-the-fairplex-pomona",
+        "name": "Food Trucks At the Fairplex",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/lPCm8P8qvT3R052DVN67dA/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/food-trucks-at-the-fairplex-pomona?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 21,
+        "categories": [
+            {
+                "alias": "foodstands",
+                "title": "Food Stands"
+            }
+        ],
+        "rating": 3.5,
+        "coordinates": {
+            "latitude": 34.0796518940303,
+            "longitude": -117.764736740218
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": "1101 W Mckinley Ave",
+            "address2": "",
+            "address3": "Gate 1",
+            "city": "Pomona",
+            "zip_code": "91768",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1101 W Mckinley Ave",
+                "Gate 1",
+                "Pomona, CA 91768"
+            ]
+        },
+        "phone": "+19096233111",
+        "display_phone": "(909) 623-3111",
+        "distance": 1430.301085934
+    },
+    {
+        "id": "food-truck-thursday-pomona",
+        "name": "Food Truck Thursday",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/dKWZKhElIS7mKFYc2ZEJ8g/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/food-truck-thursday-pomona?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 1,
+        "categories": [
+            {
+                "alias": "farmersmarket",
+                "title": "Farmers Market"
+            },
+            {
+                "alias": "streetvendors",
+                "title": "Street Vendors"
+            }
+        ],
+        "rating": 5,
+        "coordinates": {
+            "latitude": 34.0764694,
+            "longitude": -117.7828064
+        },
+        "transactions": [],
+        "location": {
+            "address1": "2780 Fairplex Dr",
+            "address2": "",
+            "address3": "Faiplex",
+            "city": "Pomona",
+            "zip_code": "91768",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "2780 Fairplex Dr",
+                "Faiplex",
+                "Pomona, CA 91768"
+            ]
+        },
+        "phone": "",
+        "display_phone": "",
+        "distance": 3107.7884273
+    },
+    {
+        "id": "poly-trolley-pomona",
+        "name": "Poly Trolley",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/fXbxjMLTjE_sWuRXqJmOsg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/poly-trolley-pomona?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 19,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4,
+        "coordinates": {
+            "latitude": 34.0503302961588,
+            "longitude": -117.8166539222
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "3801 W Temple Ave",
+            "address2": "",
+            "address3": "",
+            "city": "Pomona",
+            "zip_code": "91768",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "3801 W Temple Ave",
+                "Pomona, CA 91768"
+            ]
+        },
+        "phone": "+19098697659",
+        "display_phone": "(909) 869-7659",
+        "distance": 6665.079356924
+    },
+    {
+        "id": "pirates-bistro-pomona-2",
+        "name": "Pirates Bistro",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/uaSR20ajgbf_AaqygcGyqg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/pirates-bistro-pomona-2?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 11,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 34.0404663085938,
+            "longitude": -117.73127746582
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "1224 E Franklin Ave",
+            "address2": "",
+            "address3": "",
+            "city": "Pomona",
+            "zip_code": "91766",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1224 E Franklin Ave",
+                "Pomona, CA 91766"
+            ]
+        },
+        "phone": "+19092688680",
+        "display_phone": "(909) 268-8680",
+        "distance": 3970.8327296479997
+    },
+    {
+        "id": "the-slummin-gourmet-walnut",
+        "name": "The Slummin' Gourmet",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/GIffTStBuUlFXJyrXyySXQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/the-slummin-gourmet-walnut?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 119,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4,
+        "coordinates": {
+            "latitude": 33.985881,
+            "longitude": -117.868752
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": null,
+            "address2": null,
+            "address3": "",
+            "city": "Walnut",
+            "zip_code": "91789",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "Walnut, CA 91789"
+            ]
+        },
+        "phone": "+16264822950",
+        "display_phone": "(626) 482-2950",
+        "distance": 14300.38924448
+    },
+    {
+        "id": "tacos-paco-taco-truck-pomona",
+        "name": "Tacos Paco - Taco Truck",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/WOXMpIGQUW_0hM_ecIYl_w/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/tacos-paco-taco-truck-pomona?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 1,
+        "categories": [
+            {
+                "alias": "mexican",
+                "title": "Mexican"
+            },
+            {
+                "alias": "foodstands",
+                "title": "Food Stands"
+            }
+        ],
+        "rating": 5,
+        "coordinates": {
+            "latitude": 34.0578880310059,
+            "longitude": -117.7373046875
+        },
+        "transactions": [],
+        "location": {
+            "address1": "225 S San Antonio Ave",
+            "address2": "",
+            "address3": "Accross from Alibi East",
+            "city": "Pomona",
+            "zip_code": "91769",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "225 S San Antonio Ave",
+                "Accross from Alibi East",
+                "Pomona, CA 91769"
+            ]
+        },
+        "phone": "",
+        "display_phone": "",
+        "distance": 1334.461831188
+    },
+    {
+        "id": "jogasaki-truck-los-angeles",
+        "name": "Jogasaki Truck",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/IFbdqJatX6JOoao8I9Bhsw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/jogasaki-truck-los-angeles?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 463,
+        "categories": [
+            {
+                "alias": "asianfusion",
+                "title": "Asian Fusion"
+            },
+            {
+                "alias": "streetvendors",
+                "title": "Street Vendors"
+            },
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4,
+        "coordinates": {
+            "latitude": 33.984842,
+            "longitude": -117.868614
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": "1920 Brea Canyon Cut Off Rd",
+            "address2": "",
+            "address3": "",
+            "city": "Los Angeles",
+            "zip_code": "91748",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1920 Brea Canyon Cut Off Rd",
+                "Los Angeles, CA 91748"
+            ]
+        },
+        "phone": "",
+        "display_phone": "",
+        "distance": 14368.28890842
+    },
+    {
+        "id": "tortas-montealban-covina",
+        "name": "Tortas Montealban",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/m6U8v5pefBdFIOjpPEz1aQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/tortas-montealban-covina?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 53,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            },
+            {
+                "alias": "mexican",
+                "title": "Mexican"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 34.1061573510851,
+            "longitude": -117.879918515682
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "19034 E Arrow Hwy",
+            "address2": "",
+            "address3": "",
+            "city": "Covina",
+            "zip_code": "91722",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "19034 E Arrow Hwy",
+                "Covina, CA 91722"
+            ]
+        },
+        "phone": "+16266725689",
+        "display_phone": "(626) 672-5689",
+        "distance": 12324.97026067
+    },
+    {
+        "id": "pellegrinos-food-truck-upland",
+        "name": "Pellegrino's Food Truck",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/c52RidmJU1A_ipD8OaKYvA/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/pellegrinos-food-truck-upland?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 12,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            },
+            {
+                "alias": "italian",
+                "title": "Italian"
+            }
+        ],
+        "rating": 5,
+        "coordinates": {
+            "latitude": 34.10834,
+            "longitude": -117.66924
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": "1042 N Mountain Ave",
+            "address2": null,
+            "address3": "",
+            "city": "Upland",
+            "zip_code": "91786",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1042 N Mountain Ave",
+                "Upland, CA 91786"
+            ]
+        },
+        "phone": "+16262337733",
+        "display_phone": "(626) 233-7733",
+        "distance": 8725.30396044
+    },
+    {
+        "id": "the-big-easy-sandwich-upland",
+        "name": "The Big Easy Sandwich",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/DxWW0yMNzNiarKIxHryOBw/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/the-big-easy-sandwich-upland?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 26,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            },
+            {
+                "alias": "cajun",
+                "title": "Cajun/Creole"
+            },
+            {
+                "alias": "sandwiches",
+                "title": "Sandwiches"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 34.1095741267233,
+            "longitude": -117.69139660131
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": "2120 Porter Field Way",
+            "address2": null,
+            "address3": "",
+            "city": "Upland,",
+            "zip_code": "91786",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "2120 Porter Field Way",
+                "Upland,, CA 91786"
+            ]
+        },
+        "phone": "+17147460763",
+        "display_phone": "(714) 746-0763",
+        "distance": 7073.785251182
+    },
+    {
+        "id": "tulias-tacos-covina-2",
+        "name": "Tulia's Tacos",
+        "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/y8nybgNqcpEzQftrGD8taQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/tulias-tacos-covina-2?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 137,
+        "categories": [
+            {
+                "alias": "mexican",
+                "title": "Mexican"
+            },
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4,
+        "coordinates": {
+            "latitude": 34.1064380129747,
+            "longitude": -117.868227772415
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "19650 E Arrow Hwy",
+            "address2": "",
+            "address3": "",
+            "city": "Covina",
+            "zip_code": "91724",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "19650 E Arrow Hwy",
+                "Covina, CA 91724"
+            ]
+        },
+        "phone": "+16265519985",
+        "display_phone": "(626) 551-9985",
+        "distance": 11317.944906816
+    },
+    {
+        "id": "yellow-taco-truck-rowland-heights-10",
+        "name": "Yellow Taco Truck",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/WjieMUzgtZzZDjqF4TvvYQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/yellow-taco-truck-rowland-heights-10?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 50,
+        "categories": [
+            {
+                "alias": "mexican",
+                "title": "Mexican"
+            },
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            },
+            {
+                "alias": "catering",
+                "title": "Caterers"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 33.9902702,
+            "longitude": -117.9008198
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "1520 Jellick Ave",
+            "address2": "",
+            "address3": "",
+            "city": "Rowland Heights",
+            "zip_code": "91748",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1520 Jellick Ave",
+                "Rowland Heights, CA 91748"
+            ]
+        },
+        "phone": "+16269751255",
+        "display_phone": "(626) 975-1255",
+        "distance": 16391.19549228
+    },
+    {
+        "id": "freddys-food-court-covina",
+        "name": "Freddys Food Court",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/-nnaCksMlP1eUeszhpfA0w/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/freddys-food-court-covina?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 11,
+        "categories": [
+            {
+                "alias": "streetvendors",
+                "title": "Street Vendors"
+            }
+        ],
+        "rating": 5,
+        "coordinates": {
+            "latitude": 34.08508,
+            "longitude": -117.88687
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "Covina",
+            "zip_code": "91723",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "Covina, CA 91723"
+            ]
+        },
+        "phone": "+16263392727",
+        "display_phone": "(626) 339-2727",
+        "distance": 12461.306947175999
+    },
+    {
+        "id": "el-sazon-de-las-gorditas-la-puente",
+        "name": "El Sazon De Las Gorditas",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Jwrt6508qsmj02qZDzFDCQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/el-sazon-de-las-gorditas-la-puente?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 15,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            },
+            {
+                "alias": "tacos",
+                "title": "Tacos"
+            }
+        ],
+        "rating": 5,
+        "coordinates": {
+            "latitude": 34.036501429879,
+            "longitude": -117.938646666272
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "15869 Amar Rd",
+            "address2": "",
+            "address3": "",
+            "city": "La Puente",
+            "zip_code": "91744",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "15869 Amar Rd",
+                "La Puente, CA 91744"
+            ]
+        },
+        "phone": "",
+        "display_phone": "",
+        "distance": 17551.62458334
+    },
+    {
+        "id": "chubbee-monkee-food-truck-santa-ana",
+        "name": "Chubbee Monkee Food Truck",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/zdSiWgt1yvEufGNU_eIByA/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/chubbee-monkee-food-truck-santa-ana?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 129,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            },
+            {
+                "alias": "asianfusion",
+                "title": "Asian Fusion"
+            },
+            {
+                "alias": "chicken_wings",
+                "title": "Chicken Wings"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 33.70153,
+            "longitude": -117.87033
+        },
+        "transactions": [],
+        "price": "$$",
+        "location": {
+            "address1": null,
+            "address2": null,
+            "address3": "",
+            "city": "Santa Ana",
+            "zip_code": "92707",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "Santa Ana, CA 92707"
+            ]
+        },
+        "phone": "+15623088372",
+        "display_phone": "(562) 308-8372",
+        "distance": 41386.21069642
+    },
+    {
+        "id": "tijuanas-tacos-pomona",
+        "name": "Tijuana's Tacos",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/CuRhVErLgF9o4GiR0REQ3Q/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/tijuanas-tacos-pomona?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 574,
+        "categories": [
+            {
+                "alias": "mexican",
+                "title": "Mexican"
+            }
+        ],
+        "rating": 4,
+        "coordinates": {
+            "latitude": 34.0625610351562,
+            "longitude": -117.756530761719
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "485 W Holt Ave",
+            "address2": "Ste A",
+            "address3": "",
+            "city": "Pomona",
+            "zip_code": "91768",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "485 W Holt Ave",
+                "Ste A",
+                "Pomona, CA 91768"
+            ]
+        },
+        "phone": "+19094694730",
+        "display_phone": "(909) 469-4730",
+        "distance": 1043.058476454
+    },
+    {
+        "id": "the-classic-taco-ontario-2",
+        "name": "The Classic Taco",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/8aHdEkhCtP_XCIanfdiP7Q/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/the-classic-taco-ontario-2?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 25,
+        "categories": [
+            {
+                "alias": "mexican",
+                "title": "Mexican"
+            },
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 34.04713,
+            "longitude": -117.65149
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "1442 S Euclid Ave",
+            "address2": "",
+            "address3": null,
+            "city": "Ontario",
+            "zip_code": "91762",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1442 S Euclid Ave",
+                "Ontario, CA 91762"
+            ]
+        },
+        "phone": "+18444828226",
+        "display_phone": "(844) 482-8226",
+        "distance": 9708.70162815
+    },
+    {
+        "id": "my-delight-cupcakery-truck-ontario-2",
+        "name": "My Delight CupCakery Truck",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/vE0hUX1GEjODKLdaddAjSQ/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/my-delight-cupcakery-truck-ontario-2?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 97,
+        "categories": [
+            {
+                "alias": "bakeries",
+                "title": "Bakeries"
+            },
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4.5,
+        "coordinates": {
+            "latitude": 34.0856381321414,
+            "longitude": -117.669621969166
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "1520 N Mountain Ave",
+            "address2": "Ste B-108",
+            "address3": "",
+            "city": "Ontario",
+            "zip_code": "91762",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "1520 N Mountain Ave",
+                "Ste B-108",
+                "Ontario, CA 91762"
+            ]
+        },
+        "phone": "+19099884151",
+        "display_phone": "(909) 988-4151",
+        "distance": 7826.065279624
+    },
+    {
+        "id": "the-lime-truck-irvine-3",
+        "name": "The Lime Truck",
+        "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/X16JeONvJ6TJ2bpL3LEsEg/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/the-lime-truck-irvine-3?adjust_creative=fTWOWAvp3YzK9u8mCsMeWw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fTWOWAvp3YzK9u8mCsMeWw",
+        "review_count": 726,
+        "categories": [
+            {
+                "alias": "foodtrucks",
+                "title": "Food Trucks"
+            }
+        ],
+        "rating": 4,
+        "coordinates": {
+            "latitude": 33.6942710876465,
+            "longitude": -117.832481384277
+        },
+        "transactions": [],
+        "price": "$",
+        "location": {
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "city": "Irvine",
+            "zip_code": "92606",
+            "country": "US",
+            "state": "CA",
+            "display_address": [
+                "Irvine, CA 92606"
+            ]
+        },
+        "phone": "+19492320690",
+        "display_phone": "(949) 232-0690",
+        "distance": 42752.438968
+    }
+]
