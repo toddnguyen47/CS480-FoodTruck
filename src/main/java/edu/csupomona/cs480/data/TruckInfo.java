@@ -10,18 +10,62 @@ public class TruckInfo {
     /** The unique business name */
     private String name;
     /** The business hours 0 to 6, Sun to Sat*/
-    private int startHour[] = new int[7];    
-    private int endHour[] = new int[7];
+    private String startHour[] = new String [7];    
+    private String endHour[] = new String [7];
     /** The business hours for am (true) or pm (false)*/
     private boolean ampmS[] = new boolean[7]; 
     private boolean ampmE[] = new boolean[7];
     /** type of food */
     private String type;
     private int zipCode;
-    private String Location;
+
     private double rating;
     private int areaCode;
     private int phoneNumber;
+	private String city;
+    private String address;
+    
+    public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+    
+    
+    
+    
+    
+    
+    public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	private double latitude;
+    private double longitude;
     private String creationTime = new Date(System.currentTimeMillis()).toString();
     
     public String getId() {
@@ -53,19 +97,19 @@ public class TruckInfo {
 		this.creationTime = creationTime;
 	}
 
-	public int[] getStartHour() {
+	public String[] getStartHour() {
 		return startHour;
 	}
 
-	public void setStartHour(int[] startHour) {
+	public void setStartHour(String[] startHour) {
 		this.startHour = startHour;
 	}
 
-	public int[] getEndHour() {
+	public String[] getEndHour() {
 		return endHour;
 	}
 
-	public void setEndHour(int[] endHour) {
+	public void setEndHour(String[] endHour) {
 		this.endHour = endHour;
 	}
 
@@ -93,13 +137,6 @@ public class TruckInfo {
 		this.zipCode = zipCode;
 	}
 
-	public String getLocation() {
-		return Location;
-	}
-
-	public void setLocation(String location) {
-		Location = location;
-	}
 
 	public double getRating() {
 		return rating;

@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.GeoIP;
+import edu.csupomona.cs480.data.GoogleGeoCode;
 
 public interface TruckInfoManager {
 
@@ -15,5 +16,6 @@ public interface TruckInfoManager {
 	public List<TruckInfo> searchGoogleResult() throws IOException;
 	List<TruckInfo> getGoogleList() throws IOException;
 	GeoIP getGeoIP() throws IOException;
+	GoogleGeoCode getGeoCode(String address, boolean ssl, String API_KEY) throws Exception;
 
 }
