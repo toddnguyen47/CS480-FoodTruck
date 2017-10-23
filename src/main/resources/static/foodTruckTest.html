@@ -2,31 +2,30 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <link rel="stylesheet" href="css/food-truck-test-styles.css">
 </head>
 <body>
 
-<div ng-app="truckApp" ng-controller="trucksCtrl">
-
+<div ng-app="truckApp" ng-controller="truckCtrl">
 <table>
     <tr ng-repeat="x in trucks">
-        <td>{{ x.name }}</td>
-        <td><p ng-repeat=
-            "addrstrings in x.location.display_address">{{ addrstrings }}</td>
+        <td><img src="{{ x.image_url }}"></td>
+        <td>
+            <p><b>{{ x.name }}</b></p>
+            <p>{{ x.display_phone }}</p>
+            <p>(Schedule?)</p>
+            <p><a href="{{ x.url }}" target="blank">Find us on Yelp!</a></p>
+        </td>
+        <td>
+            <p ng-repeat="addrstrings in x.location.display_address">{{ addrstrings }}</p>
+            <p><a href="https://www.google.com/maps/search/?api=1&query={{x.coordinates.latitude}},{{x.coordinates.longitude}}">Click</a></p>
+        </td>
     </tr>
 </table>
-
 </div>
+
 </body>
 
-<script>
-var app = angular.module('truckApp', []);
-app.controller('trucksCtrl', function($scope, $http, $log) {
-    $http.get("output.json")
-    .then(function (response) {
-        $scope.trucks = response.data;
-        $log.info(response)
-    });
-});
-</script>
+<script src="js/truckController.js"></script>
 
 </html>

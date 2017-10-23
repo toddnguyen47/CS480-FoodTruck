@@ -1,0 +1,14 @@
+img {
+    width:200px;
+    height:200px;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-family: helvetica;
+    width: 80%;
+}
+table tr {
+    border: 1px solid black;
+}
