@@ -1,15 +1,16 @@
 package edu.csupomona.cs480.data;
 
 import java.util.Date;
-
+import javax.persistence.*;
 
 /**
  * The basic food truck information object.
  */
-
+@Entity
 public class TruckInfo {
 	/** The unique truck Id */
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     /** The unique business name */
     private String name;
