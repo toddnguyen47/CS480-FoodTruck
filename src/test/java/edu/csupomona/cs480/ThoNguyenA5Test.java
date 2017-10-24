@@ -8,11 +8,14 @@ public class ThoNguyenA5Test {
 	
 	@Test
 	public void testReturnFib() {
-		int maxFib = 10;
 		ThoNguyenA5 a5 = new ThoNguyenA5();
-		int[] fib = {0,1,1,2,3,5,8,13,21,34};
-		int[] returnFib = a5.returnFib(maxFib);
 		
-		Assert.assertArrayEquals(fib, returnFib);
+		int maxFib = 10;
+		int maxFib2 = 15;
+		int[] fib = {0,1,1,2,3,5,8,13,21,34};
+		int[] fib2 = {0,1,1,2,3,5,8,13,21,34,55,89,144,233,377};
+		
+		Assert.assertArrayEquals(fib, a5.returnFib(maxFib));
+		Assert.assertArrayEquals(fib2, a5.returnFib(maxFib2));
 	}
 }
