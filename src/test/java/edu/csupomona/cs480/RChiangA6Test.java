@@ -15,7 +15,7 @@ public class RChiangA6Test {
    @Test
    public void testRCA6() {
       RChiangA6 a6 = new RChiangA6();
-      Object[] fileLines = a6.getJsonLines();
+      Object[] fileLines = a6.getJsonInformation();
       
       assertTrue(Arrays.asList(fileLines).contains("\"name\":"));
       assertTrue(Arrays.asList(fileLines).contains("\"image_url\":"));

@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * This simply pulls all of the lines from the output.json file into an array list.
+ * This simply pulls all of the information from the output.json file into an array list.
  * @author Rachel Chiang
  */
 public class RChiangA6 {
-   public Object[] getJsonLines()
+   public Object[] getJsonInformation()
    {
       File file = new File(getClass().getResource("/static/output.json").getFile());
       List<String> fileLines = new ArrayList<>();
