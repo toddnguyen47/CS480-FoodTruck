@@ -5,6 +5,8 @@ function loadJSON() {
 			var tempDict = {};
 			tempDict["id"] = elem["id"];
 			tempDict["address"] = elem["location"];
+			tempDict["latitude"] = elem["coordinates"]["latitude"];
+			tempDict["longitude"] = elem["coordinates"]["longitude"];
 			tempDict["phone_number"] = elem["phone"];
 			tempDict["image_url"] = elem["image_url"];
 			tempDict["url"] = elem["url"];
