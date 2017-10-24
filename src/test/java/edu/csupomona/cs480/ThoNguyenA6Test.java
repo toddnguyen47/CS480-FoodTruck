@@ -1,14 +1,14 @@
 package edu.csupomona.cs480;
 
 import org.junit.Test;
-import edu.csupomona.cs480.ThoNguyenA5;
+import edu.csupomona.cs480.ThoNguyenA6;
 import org.junit.Assert;
 
-public class ThoNguyenA5Test {
+public class ThoNguyenA6Test {
 	
 	@Test
 	public void testReturnFib() {
-		ThoNguyenA5 a5 = new ThoNguyenA5();
+		ThoNguyenA6 a5 = new ThoNguyenA6();
 		
 		int maxFib = 10;
 		int maxFib2 = 15;

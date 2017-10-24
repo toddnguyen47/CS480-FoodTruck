@@ -1,6 +1,6 @@
 package edu.csupomona.cs480;
 
-public class ThoNguyenA5 {
+public class ThoNguyenA6 {
 	private int fib[];
 	
 	/**
