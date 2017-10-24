@@ -288,7 +288,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 	
 
 	@Override
-	public TruckInfo getTruckInfo(String truckId){
+	public TruckInfo getTruckInfo(Integer truckId){
 		TruckMap truckMap = getTruckMap();
 		return truckMap.get(truckId);
 	}
@@ -299,7 +299,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		persistTruckMap(truckMap);
 	}
 	@Override
-	public void deleteTruckInfo(String truckId){
+	public void deleteTruckInfo(Integer truckId){
 		TruckMap truckMap = getTruckMap();
 		truckMap.remove(truckId);
 		persistTruckMap(truckMap);

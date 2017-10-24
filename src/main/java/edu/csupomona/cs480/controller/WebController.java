@@ -185,14 +185,14 @@ public class WebController {
 	 */
 	//pass
 	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.GET)
-	TruckInfo getTruckInfo(@PathVariable("truckId") String truckId) {
+	TruckInfo getTruckInfo(@PathVariable("truckId") Integer truckId) {
 		TruckInfo truck = truckManager.getTruckInfo(truckId);
 		return truck;
 	}
 	//pass
 	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.POST)
 	TruckInfo updateTruckInfo(
-			@PathVariable("truckId") String id,
+			@PathVariable("truckId") Integer id,
 			@RequestParam("name") String name,
 			@RequestParam(value = "type", required = false) String type) {
 		TruckInfo truck = new TruckInfo();
@@ -205,7 +205,7 @@ public class WebController {
 	//pass
 	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.DELETE)
 	void deleteTruckInfo(
-			@PathVariable("truckId") String truckId) {
+			@PathVariable("truckId") Integer truckId) {
 		truckManager.deleteTruckInfo(truckId);	
 	}
 	//pass

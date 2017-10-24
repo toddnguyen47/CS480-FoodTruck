@@ -1,12 +1,16 @@
 package edu.csupomona.cs480.data;
+
 import java.util.Date;
+
 
 /**
  * The basic food truck information object.
  */
+
 public class TruckInfo {
 	/** The unique truck Id */
-    private String id;
+
+    private Integer id;
     /** The unique business name */
     private String name;
     /** The business hours 0 to 6, Sun to Sat*/
@@ -68,11 +72,11 @@ public class TruckInfo {
     private double longitude;
     private String creationTime = new Date(System.currentTimeMillis()).toString();
     
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public String getName() {
