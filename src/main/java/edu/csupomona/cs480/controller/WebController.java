@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -27,6 +28,7 @@ import edu.csupomona.cs480.data.StringGraph;
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
 import edu.csupomona.cs480.data.GeoIP;
+import edu.csupomona.cs480.data.repository.TruckRepository;
 
 /**
  * This is the controller used by Spring framework.
@@ -51,6 +53,8 @@ public class WebController {
 	private UserManager userManager;
 	@Autowired
 	private TruckInfoManager truckManager;
+	@Autowired
+	private TruckRepository truckRepository;
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
@@ -266,6 +270,23 @@ public class WebController {
 	@RequestMapping(value = "/cs480/foodtruck/geolocation", method = RequestMethod.GET)
 	GeoIP getGEO() throws IOException{
 		return truckManager.getGeoIP();
+	}
+	@RequestMapping(value = "/cs480/foodtruck/db/{name}", method = RequestMethod.POST)
+	public List<TruckInfo> dbInsertTruckInfo(
+			@PathVariable("name") String name,
+			@RequestParam(value = "type", required = false) String type) {
+		TruckInfo truck = new TruckInfo();
+		truck.setName(name);
+		truck.setType(type);
+		truckRepository.save(truck);
+		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
+		return list;
+	}
+	@RequestMapping(value = "/cs480/foodtruck/db/list", method = RequestMethod.GET)
+	List<TruckInfo> dbGetTruckInfoList(){
+		TruckInfo truck = new TruckInfo();
+		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
+		return list;
 	}
 
 	

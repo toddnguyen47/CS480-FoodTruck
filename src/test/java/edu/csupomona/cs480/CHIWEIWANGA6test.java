@@ -18,6 +18,10 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = App.class)
 
+/**
+ * Unit test for DB insert and check data
+ * Please import db schema in db-schema
+ */
 public class CHIWEIWANGA6test {
 	@Autowired
 	TruckRepository truckRepositry;
@@ -37,7 +41,6 @@ public class CHIWEIWANGA6test {
 			List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepositry.findAll();
 			assertEquals("Only one item in the list", 1, list.size());
 			assertEquals("Truck name is", "New Asian", list.get(0).getName());
-			truckRepositry.deleteAll();
-			
+			truckRepositry.deleteAll();		
 	 }
 }

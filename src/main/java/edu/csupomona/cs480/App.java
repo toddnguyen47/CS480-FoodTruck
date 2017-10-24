@@ -10,6 +10,7 @@ import edu.csupomona.cs480.data.provider.FSUserManager;
 import edu.csupomona.cs480.data.provider.UserManager;
 import edu.csupomona.cs480.data.provider.FSTruckInfoManager;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
+import edu.csupomona.cs480.data.repository.TruckRepository;
 
 @Configuration
 @EnableAutoConfiguration
@@ -32,7 +33,7 @@ public class App {
         TruckInfoManager truckManager = new FSTruckInfoManager();
         return truckManager;
     }
-    
+
 
     /**
      * This is the running main method for the web application.
