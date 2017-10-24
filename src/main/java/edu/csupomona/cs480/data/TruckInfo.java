@@ -15,20 +15,24 @@ public class TruckInfo {
     /** The unique business name */
     private String name;
     /** The business hours 0 to 6, Sun to Sat*/
-    private String startHour[] = new String [7];    
-    private String endHour[] = new String [7];
+//    private String startHour[] = new String [7];    
+//    private String endHour[] = new String [7];
     /** The business hours for am (true) or pm (false)*/
-    private boolean ampmS[] = new boolean[7]; 
-    private boolean ampmE[] = new boolean[7];
+    //private boolean ampmS[] = new boolean[7]; 
+    //private boolean ampmE[] = new boolean[7];
     /** type of food */
     private String type;
     private int zipCode;
 
-    private double rating;
+    //private double rating;
     private int areaCode;
     private int phoneNumber;
 	private String city;
     private String address;
+	private double lat;
+    private double lon;
+    
+    
     
     public String getCity() {
 		return city;
@@ -53,25 +57,24 @@ public class TruckInfo {
     
     
     
-    public double getLatitude() {
-		return latitude;
+    public double getLat() {
+		return lat;
 	}
 
-	public void setLatitude(double latitude) {
-		this.latitude = latitude;
+	public void setLat(double latitude) {
+		this.lat = latitude;
 	}
 
-	public double getLongitude() {
-		return longitude;
+	public double getLon() {
+		return lon;
 	}
 
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
+	public void setLon(double longitude) {
+		this.lon = longitude;
 	}
 
-	private double latitude;
-    private double longitude;
-    private String creationTime = new Date(System.currentTimeMillis()).toString();
+
+    //private String creationTime = new Date(System.currentTimeMillis()).toString();
     
     public Integer getId() {
         return id;
@@ -94,45 +97,45 @@ public class TruckInfo {
     public void setType(String type) {
         this.type = type;
     }
-	public String getCreationTime() {
-		return creationTime;
-	}
+//	public String getCreationTime() {
+//		return creationTime;
+//	}
+//
+//	public void setCreationTime(String creationTime) {
+//		this.creationTime = creationTime;
+//	}
 
-	public void setCreationTime(String creationTime) {
-		this.creationTime = creationTime;
-	}
+//	public String[] getStartHour() {
+//		return startHour;
+//	}
+//
+//	public void setStartHour(String[] startHour) {
+//		this.startHour = startHour;
+//	}
+//
+//	public String[] getEndHour() {
+//		return endHour;
+//	}
+//
+//	public void setEndHour(String[] endHour) {
+//		this.endHour = endHour;
+//	}
 
-	public String[] getStartHour() {
-		return startHour;
-	}
-
-	public void setStartHour(String[] startHour) {
-		this.startHour = startHour;
-	}
-
-	public String[] getEndHour() {
-		return endHour;
-	}
-
-	public void setEndHour(String[] endHour) {
-		this.endHour = endHour;
-	}
-
-	public boolean[] getAmpmS() {
-		return ampmS;
-	}
-
-	public void setAmpmS(boolean[] ampmS) {
-		this.ampmS = ampmS;
-	}
-
-	public boolean[] getAmpmE() {
-		return ampmE;
-	}
-
-	public void setAmpmE(boolean[] ampmE) {
-		this.ampmE = ampmE;
-	}
+//	public boolean[] getAmpmS() {
+//		return ampmS;
+//	}
+//
+//	public void setAmpmS(boolean[] ampmS) {
+//		this.ampmS = ampmS;
+//	}
+//
+//	public boolean[] getAmpmE() {
+//		return ampmE;
+//	}
+//
+//	public void setAmpmE(boolean[] ampmE) {
+//		this.ampmE = ampmE;
+//	}
 
 	public int getZipCode() {
 		return zipCode;
@@ -143,13 +146,13 @@ public class TruckInfo {
 	}
 
 
-	public double getRating() {
-		return rating;
-	}
-
-	public void setRating(double rating) {
-		this.rating = rating;
-	}
+//	public double getRating() {
+//		return rating;
+//	}
+//
+//	public void setRating(double rating) {
+//		this.rating = rating;
+//	}
 
 	public int getAreaCode() {
 		return areaCode;
