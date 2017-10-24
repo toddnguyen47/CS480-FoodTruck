@@ -7,7 +7,8 @@ import org.junit.Assert;
 
 public class AdrianCA6Test {
 
-	public void testStringRev() {
+	@Test
+	public void testReverseString() {
 		AdrianCA6 test = new AdrianCA6();
 		
 		Assert.assertEquals("abcdefgh",test.reverseString("hgfedcba"));
