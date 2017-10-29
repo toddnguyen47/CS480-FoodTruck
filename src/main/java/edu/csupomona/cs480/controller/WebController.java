@@ -28,6 +28,7 @@ import edu.csupomona.cs480.data.StringGraph;
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
 import edu.csupomona.cs480.data.GeoIP;
+import edu.csupomona.cs480.data.GetYelpData;
 import edu.csupomona.cs480.data.repository.TruckRepository;
 
 /**
@@ -196,7 +197,7 @@ public class WebController {
 	//pass
 	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.POST)
 	TruckInfo updateTruckInfo(
-			@PathVariable("truckId") Integer id,
+			@PathVariable("truckId") String id,
 			@RequestParam("name") String name,
 			@RequestParam(value = "type", required = false) String type) {
 		TruckInfo truck = new TruckInfo();
@@ -287,6 +288,13 @@ public class WebController {
 		TruckInfo truck = new TruckInfo();
 		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
 		return list;
+	}
+	
+	@RequestMapping(value = "/cs480/AC/Test", method = RequestMethod.GET)
+	public String JSTry() throws IOException {
+		GetYelpData test = new GetYelpData();
+		test.createJson("Mexican", "91768");
+		return "File Created";
 	}
 
 	

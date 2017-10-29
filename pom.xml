@@ -98,6 +98,8 @@
   			<artifactId>httpclient</artifactId>
   			<version>4.5.3</version>
 		</dependency>
+		
+
 		<dependency>
  <groupId>org.springframework.boot</groupId>
  <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -108,6 +110,17 @@
  <artifactId>mysql-connector-java</artifactId>
  <scope>runtime</scope>
 </dependency>
+		<dependency>
+			<groupId>tech.redroma.yelp</groupId>
+			<artifactId>yelp-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+		
 	</dependencies>
 
 

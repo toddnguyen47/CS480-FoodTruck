@@ -11,7 +11,7 @@ import org.junit.Assert;
  */
 public class asartoonianA6Test {
    @Test
-   void testGetDisplayName() {
+   public void testGetDisplayName() {
        asartoonianA6 person = new asartoonianA6("Josh", "Hayden");
        String displayName = person.getDisplayName();
        Assert.assertEquals("Hayden, Josh",person.getDisplayName());
