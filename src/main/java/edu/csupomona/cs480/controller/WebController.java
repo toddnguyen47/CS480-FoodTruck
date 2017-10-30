@@ -293,7 +293,7 @@ public class WebController {
 	@RequestMapping(value = "/cs480/AC/Test", method = RequestMethod.GET)
 	public String JSTry() throws IOException {
 		GetYelpData test = new GetYelpData();
-		test.createJson("Mexican", "91768");
+		test.createJson("Mexican", "3520 W Temple Ave","Pomona");
 		return "File Created";
 	}
 

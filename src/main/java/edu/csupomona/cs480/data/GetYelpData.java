@@ -1,3 +1,20 @@
+
+/*
+ * Copyright 2017 Optimize Prime
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package edu.csupomona.cs480.data;
 import tech.redroma.yelp.*;
 import tech.redroma.yelp.YelpAPI.Builder;
@@ -18,18 +35,21 @@ import java.util.List;
 public class GetYelpData{
 
 	@SuppressWarnings("unchecked")
-	public void createJson(String type, String zip) throws IOException {
+	public void createJson(String type, String address,String city) throws IOException {
 		
 		String id="fTWOWAvp3YzK9u8mCsMeWw";
 		String secret="8cE7x0rZ0sm3nvgYpC5mXbmDz4qpBWxNGjFe04ZmYrQOYvk3Dx2UXaJsyFFl1cM8";
 		YelpAPI yelp = newInstance(id,secret);
 		Address loc = new Address();
-		loc.zipCode=zip;
+		loc.address1=address;
+		loc.city=city;
 		Category cat = new Category();
 		YelpSearchRequest request =  YelpSearchRequest.newBuilder()
 				.withSearchTerm(type)
-				.withCoordinate(Coordinate.of(34.018363, -118.492343))
+				.withLocation(loc)
 			    .withCategories(cat.with("foodtrucks","Food Trucks"))
+			    .withRadiusInMeters(40000)
+			    .withSortBy(YelpSearchRequest.SortType.DISTANCE)
 			    .build();
 		
 		List<YelpBusiness> results = yelp.searchForBusinesses(request);

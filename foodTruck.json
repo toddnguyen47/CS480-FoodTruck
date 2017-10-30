@@ -1,222 +1,222 @@
 {
-  "Cheddr Wheel": [
-    "ID: cheddr-wheel-long-beach",
-    "Name: Cheddr Wheel",
+  "Taqueria Metro Basilica": [
+    "ID: taqueria-metro-basilica-west-covina",
+    "Name: Taqueria Metro Basilica",
     "Type: Mexican",
-    "Address: null",
-    "Phone Number: +15622806099",
-    "City: Long Beach",
-    "Zipcode: 90802",
-    "Latitude: 33.76598",
-    "Longitude: -118.18603"
+    "Address: 310 S Vincent Ave",
+    "Phone Number: +16268905852",
+    "City: West Covina",
+    "Zipcode: 91790",
+    "Latitude: 34.0685960622115",
+    "Longitude: -117.926800511777"
   ],
-  "La Oaxaqueña Taco Truck": [
-    "ID: la-oaxaqueña-taco-truck-venice-2",
-    "Name: La Oaxaqueña Taco Truck",
+  "Don Meños Tacos": [
+    "ID: don-meños-tacos-azusa",
+    "Name: Don Meños Tacos",
+    "Type: Mexican",
+    "Address: 16711 E Arrow Hwy",
+    "Phone Number: ",
+    "City: Azusa",
+    "Zipcode: 91702",
+    "Latitude: 34.1071548",
+    "Longitude: -117.9201279"
+  ],
+  "Taqueria La Guadalupana Hacienda Heights": [
+    "ID: taqueria-la-guadalupana-hacienda-heights-hacienda-heights",
+    "Name: Taqueria La Guadalupana Hacienda Heights",
+    "Type: Mexican",
+    "Address: 15848 Gale Ave",
+    "Phone Number: +13235940509",
+    "City: Hacienda Heights",
+    "Zipcode: 91745",
+    "Latitude: 34.0104892112749",
+    "Longitude: -117.961951454385"
+  ],
+  "Tacos El Callejon Del Beso": [
+    "ID: tacos-el-callejon-del-beso-la-puente",
+    "Name: Tacos El Callejon Del Beso",
+    "Type: Mexican",
+    "Address: 15084 Amar Rd",
+    "Phone Number: ",
+    "City: La Puente",
+    "Zipcode: 91744",
+    "Latitude: 34.038711645732",
+    "Longitude: -117.954322537172"
+  ],
+  "El Sazon De Las Gorditas": [
+    "ID: el-sazon-de-las-gorditas-la-puente",
+    "Name: El Sazon De Las Gorditas",
+    "Type: Mexican",
+    "Address: 15869 Amar Rd",
+    "Phone Number: ",
+    "City: La Puente",
+    "Zipcode: 91744",
+    "Latitude: 34.036501429879",
+    "Longitude: -117.938646666272"
+  ],
+  "Taqueria 3 Reyes": [
+    "ID: taqueria-3-reyes-la-puente",
+    "Name: Taqueria 3 Reyes",
+    "Type: Mexican",
+    "Address: 858 N Sunset Ave",
+    "Phone Number: +16267096615",
+    "City: La Puente",
+    "Zipcode: 91744",
+    "Latitude: 34.0443357685362",
+    "Longitude: -117.964087240398"
+  ],
+  "Jaliscos Mobile Taco Grill": [
+    "ID: jaliscos-mobile-taco-grill-los-angeles-3",
+    "Name: Jaliscos Mobile Taco Grill",
     "Type: Mexican",
     "Address: ",
-    "Phone Number: +13109222675",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.99308",
-    "Longitude: -118.47148"
-  ],
-  "El Paladar Oaxaqueno Taco Truck": [
-    "ID: el-paladar-oaxaqueno-taco-truck-los-angeles",
-    "Name: El Paladar Oaxaqueno Taco Truck",
-    "Type: Mexican",
-    "Address: 11654 Santa Monica Blvd",
-    "Phone Number: +13106910138",
+    "Phone Number: +16263475923",
     "City: Los Angeles",
-    "Zipcode: 90025",
-    "Latitude: 34.04443",
-    "Longitude: -118.454984"
+    "Zipcode: 91722",
+    "Latitude: 34.09753",
+    "Longitude: -117.90153"
   ],
-  "La Isla Bonita": [
-    "ID: la-isla-bonita-venice",
-    "Name: La Isla Bonita",
-    "Type: Mexican",
-    "Address: 400 Rose Ave",
-    "Phone Number: +13106998575",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.9975371017988",
-    "Longitude: -118.474995809711"
-  ],
-  "Gracias Señor!": [
-    "ID: gracias-señor-pacific-palisades",
-    "Name: Gracias Señor!",
-    "Type: Mexican",
-    "Address: 15120 W Sunset Blvd",
-    "Phone Number: +13233863424",
-    "City: Pacific Palisades",
-    "Zipcode: 90272",
-    "Latitude: 34.0454459503403",
-    "Longitude: -118.523584681406"
-  ],
-  "Cemitas Poblanas": [
-    "ID: cemitas-poblanas-los-angeles-2",
-    "Name: Cemitas Poblanas",
-    "Type: Mexican",
-    "Address: 11060 W Pico Blvd",
-    "Phone Number: +19092361797",
-    "City: Los Angeles",
-    "Zipcode: 90064",
-    "Latitude: 34.036758",
-    "Longitude: -118.434098"
-  ],
-  "Emily\u0027s Taco Truck": [
-    "ID: emilys-taco-truck-santa-monica",
-    "Name: Emily\u0027s Taco Truck",
-    "Type: Mexican",
-    "Address: 2700 Lincoln Blvd",
-    "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90405",
-    "Latitude: 34.0055695",
-    "Longitude: -118.4746857"
-  ],
-  "Doty\u0027s Tacos": [
-    "ID: dotys-tacos-gardena",
-    "Name: Doty\u0027s Tacos",
-    "Type: Mexican",
-    "Address: 14415 Crenshaw Blvd",
-    "Phone Number: +13102207685",
-    "City: Gardena",
-    "Zipcode: 90249",
-    "Latitude: 33.9005754171619",
-    "Longitude: -118.326611867643"
-  ],
-  "Tacos Tuzo": [
-    "ID: tacos-tuzo-santa-monica",
-    "Name: Tacos Tuzo",
-    "Type: Mexican",
-    "Address: 411 Wilshire Blvd",
-    "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.0193617",
-    "Longitude: -118.4980235"
-  ],
-  "Tacos El Tuca": [
-    "ID: tacos-el-tuca-los-angeles-2",
-    "Name: Tacos El Tuca",
-    "Type: Mexican",
-    "Address: 428 11th St",
-    "Phone Number: +16506694015",
-    "City: Los Angeles",
-    "Zipcode: 90044",
-    "Latitude: 33.9612846374512",
-    "Longitude: -118.289627075195"
-  ],
-  "Kogi Truck": [
-    "ID: kogi-truck-santa-monica",
-    "Name: Kogi Truck",
-    "Type: Mexican",
-    "Address: 1900 Pico Blvd",
-    "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90405",
-    "Latitude: 34.0160486505577",
-    "Longitude: -118.469359596722"
-  ],
-  "Tacos Del Valle": [
-    "ID: tacos-del-valle-venice",
-    "Name: Tacos Del Valle",
-    "Type: Mexican",
-    "Address: Venice Blvd And Inglewood",
-    "Phone Number: +13104334345",
-    "City: Venice",
-    "Zipcode: 90066",
-    "Latitude: 34.0061611809921",
-    "Longitude: -118.428872823715"
-  ],
-  "Juquila Taco Truck": [
-    "ID: juquila-taco-truck-west-los-angeles",
-    "Name: Juquila Taco Truck",
-    "Type: Mexican",
-    "Address: Santa Monica Blvd",
-    "Phone Number: +14242505181",
-    "City: West Los Angeles",
-    "Zipcode: 90025",
-    "Latitude: 34.0433053599901",
-    "Longitude: -118.456791937351"
-  ],
-  "El Torito Oaxaqueño": [
-    "ID: el-torito-oaxaqueño-los-angeles",
-    "Name: El Torito Oaxaqueño",
+  "Mr G\u0027s Kitchen": [
+    "ID: mr-gs-kitchen-hacienda-heights-4",
+    "Name: Mr G\u0027s Kitchen",
     "Type: Mexican",
     "Address: ",
-    "Phone Number: +13232828577",
-    "City: Los Angeles",
-    "Zipcode: 90025",
-    "Latitude: 34.0434203752073",
-    "Longitude: -118.456622958183"
+    "Phone Number: +16264173501",
+    "City: Hacienda Heights",
+    "Zipcode: 91745",
+    "Latitude: 33.9941291809082",
+    "Longitude: -117.972518920898"
   ],
-  "Tacos y Birria La Unica": [
-    "ID: tacos-y-birria-la-unica-los-angeles",
-    "Name: Tacos y Birria La Unica",
+  "208 Taco Truck": [
+    "ID: 208-taco-truck-valinda",
+    "Name: 208 Taco Truck",
     "Type: Mexican",
-    "Address: 2850 E Olympic Blvd",
-    "Phone Number: +13237154025",
-    "City: Los Angeles",
-    "Zipcode: 90023",
-    "Latitude: 34.02241",
-    "Longitude: -118.21632"
+    "Address: Walnut Cor Francisquito Ave",
+    "Phone Number: ",
+    "City: Valinda",
+    "Zipcode: 91744",
+    "Latitude: 34.0507335922703",
+    "Longitude: -117.934070002197"
   ],
-  "Don Felix - Cemitas Poblanas": [
-    "ID: don-felix-cemitas-poblanas-venice",
-    "Name: Don Felix - Cemitas Poblanas",
+  "The Classic Taco": [
+    "ID: the-classic-taco-ontario-2",
+    "Name: The Classic Taco",
     "Type: Mexican",
-    "Address: 2222 Lincoln Blvd",
-    "Phone Number: +12132969172",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.9950409",
-    "Longitude: -118.454134"
+    "Address: 1442 S Euclid Ave",
+    "Phone Number: +18444828226",
+    "City: Ontario",
+    "Zipcode: 91762",
+    "Latitude: 34.04713",
+    "Longitude: -117.65149"
   ],
-  "Taqueria La Plebe and More": [
-    "ID: taqueria-la-plebe-and-more-los-angeles",
-    "Name: Taqueria La Plebe and More",
+  "Mariscos El Patron De": [
+    "ID: mariscos-el-patron-de-la-puente",
+    "Name: Mariscos El Patron De",
     "Type: Mexican",
-    "Address: 8802 Reseda Blvd",
-    "Phone Number: +17479989481",
-    "City: Los Angeles",
-    "Zipcode: 91324",
-    "Latitude: 34.23098",
-    "Longitude: -118.53569"
+    "Address: 132 S 5th Ave",
+    "Phone Number: +16266263822",
+    "City: La Puente",
+    "Zipcode: 91746",
+    "Latitude: 34.0396230668148",
+    "Longitude: -117.981899361852"
   ],
-  "Tacos Los Gueros": [
-    "ID: tacos-los-gueros-los-angeles",
-    "Name: Tacos Los Gueros",
+  "Tortas Montealban": [
+    "ID: tortas-montealban-covina",
+    "Name: Tortas Montealban",
     "Type: Mexican",
-    "Address: 1300 Mirasol St",
-    "Phone Number: +13235686225",
-    "City: Los Angeles",
-    "Zipcode: 90023",
-    "Latitude: 34.0187096355305",
-    "Longitude: -118.199443034828"
+    "Address: 19034 E Arrow Hwy",
+    "Phone Number: +16266725689",
+    "City: Covina",
+    "Zipcode: 91722",
+    "Latitude: 34.1061573510851",
+    "Longitude: -117.879918515682"
   ],
-  "Kogi Taqueria": [
-    "ID: kogi-taqueria-los-angeles",
-    "Name: Kogi Taqueria",
+  "Yellow Taco Truck": [
+    "ID: yellow-taco-truck-rowland-heights-10",
+    "Name: Yellow Taco Truck",
     "Type: Mexican",
-    "Address: 3500 Overland Ave",
-    "Phone Number: +14243263031",
-    "City: Los Angeles",
-    "Zipcode: 90034",
-    "Latitude: 34.0245048089441",
-    "Longitude: -118.411181166243"
+    "Address: 1520 Jellick Ave",
+    "Phone Number: +16269751255",
+    "City: Rowland Heights",
+    "Zipcode: 91748",
+    "Latitude: 33.9902702",
+    "Longitude: -117.9008198"
   ],
-  "Wicked Fish Tacos": [
-    "ID: wicked-fish-tacos-los-angeles-2",
-    "Name: Wicked Fish Tacos",
+  "Tulia\u0027s Tacos": [
+    "ID: tulias-tacos-covina-2",
+    "Name: Tulia\u0027s Tacos",
     "Type: Mexican",
-    "Address: null",
-    "Phone Number: +13103435579",
+    "Address: 19650 E Arrow Hwy",
+    "Phone Number: +16265519985",
+    "City: Covina",
+    "Zipcode: 91724",
+    "Latitude: 34.1064380129747",
+    "Longitude: -117.868227772415"
+  ],
+  "Zoom\u0027s Smoked Tuna Tacos": [
+    "ID: zooms-smoked-tuna-tacos-glendora",
+    "Name: Zoom\u0027s Smoked Tuna Tacos",
+    "Type: Mexican",
+    "Address: 420 E Sycamore Ave",
+    "Phone Number: +16265240421",
+    "City: Glendora",
+    "Zipcode: 91741",
+    "Latitude: 34.134853",
+    "Longitude: -117.860649"
+  ],
+  "Metro Basilica Truck": [
+    "ID: metro-basilica-truck-industry",
+    "Name: Metro Basilica Truck",
+    "Type: Mexican",
+    "Address: 235 Turnbull Canyon Rd",
+    "Phone Number: ",
+    "City: industry",
+    "Zipcode: 91745",
+    "Latitude: 34.02586",
+    "Longitude: -117.96683"
+  ],
+  "Adriana\u0027s Kitchen": [
+    "ID: adrianas-kitchen-hacienda-heights-2",
+    "Name: Adriana\u0027s Kitchen",
+    "Type: Mexican",
+    "Address: 15734 Gale Ave",
+    "Phone Number: +16263671082",
+    "City: Hacienda Heights",
+    "Zipcode: 91745",
+    "Latitude: 33.9930677",
+    "Longitude: -117.9686755"
+  ],
+  "Larrys Hot Lunch Taco Truck": [
+    "ID: larrys-hot-lunch-taco-truck-la-puente",
+    "Name: Larrys Hot Lunch Taco Truck",
+    "Type: Mexican",
+    "Address: 235 Turnbull Canyon Rd",
+    "Phone Number: +16268554711",
+    "City: La Puente",
+    "Zipcode: 91745",
+    "Latitude: 34.0377548086001",
+    "Longitude: -117.94975884028"
+  ],
+  "Tacos El Chaka": [
+    "ID: tacos-el-chaka-la-puente",
+    "Name: Tacos El Chaka",
+    "Type: Mexican",
+    "Address: 435 N Azusa Ave",
+    "Phone Number: ",
+    "City: La Puente",
+    "Zipcode: 91744",
+    "Latitude: 34.0257912",
+    "Longitude: -117.9175797"
+  ],
+  "Jogasaki Truck": [
+    "ID: jogasaki-truck-los-angeles",
+    "Name: Jogasaki Truck",
+    "Type: Mexican",
+    "Address: 1920 Brea Canyon Cut Off Rd",
+    "Phone Number: ",
     "City: Los Angeles",
-    "Zipcode: 90001",
-    "Latitude: 33.9147911763289",
-    "Longitude: -118.33233127403"
+    "Zipcode: 91748",
+    "Latitude: 33.984842",
+    "Longitude: -117.868614"
   ]
 }
