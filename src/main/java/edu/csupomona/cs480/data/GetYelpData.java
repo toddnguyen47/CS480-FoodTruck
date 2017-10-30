@@ -65,7 +65,7 @@ public class GetYelpData {
 		if(f.exists())
 			f.delete();
 		try (FileWriter file = new FileWriter("foodTruck.json")) {
-			Gson gson = new GsonBuilder().create();
+			Gson gson = new GsonBuilder().setPrettyPrinting().create();
 			gson.toJson(obj,file);
 		}
 	}
