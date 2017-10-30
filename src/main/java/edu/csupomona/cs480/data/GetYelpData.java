@@ -12,26 +12,33 @@ import tech.sirwellington.alchemy.annotations.arguments.NonEmpty;
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 import static tech.sirwellington.alchemy.arguments.assertions.StringAssertions.nonEmptyString;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class GetYelpData {
+public class GetYelpData{
 
 	@SuppressWarnings("unchecked")
 	public void createJson(String type, String zip) throws IOException {
+		
 		String id="fTWOWAvp3YzK9u8mCsMeWw";
 		String secret="8cE7x0rZ0sm3nvgYpC5mXbmDz4qpBWxNGjFe04ZmYrQOYvk3Dx2UXaJsyFFl1cM8";
 		YelpAPI yelp = newInstance(id,secret);
 		Address loc = new Address();
 		loc.zipCode=zip;
+		Category cat = new Category();
 		YelpSearchRequest request =  YelpSearchRequest.newBuilder()
-			    .withSearchTerm("Food Truck "+ type)
-			    .withLocation(loc)
+				.withSearchTerm(type)
+				.withCoordinate(Coordinate.of(34.018363, -118.492343))
+			    .withCategories(cat.with("foodtrucks","Food Trucks"))
 			    .build();
+		
 		List<YelpBusiness> results = yelp.searchForBusinesses(request);
 		JSONObject obj = new JSONObject();
 		for(int i=0;i<results.size();i++) {
+			
 			JSONArray fT = new JSONArray();
 			TruckInfo truck = new TruckInfo();
+			
 			truck.setId(results.get(i).id);
 			fT.add("ID: "+truck.getId());
 			
