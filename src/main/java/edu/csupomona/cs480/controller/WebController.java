@@ -290,10 +290,15 @@ public class WebController {
 		return list;
 	}
 	
-	@RequestMapping(value = "/cs480/AC/Test", method = RequestMethod.GET)
-	public String JSTry() throws IOException {
-		GetYelpData test = new GetYelpData();
-		test.createJson("Mexican", "3520 W Temple Ave","Pomona");
+	@RequestMapping(value = "/cs480/AC/TestAddress", method = RequestMethod.GET)
+	public String JSTryAdd() throws IOException {
+		GetYelpData.createJson("Mexican", "3520 W Temple Ave","Pomona",0,0);
+		return "File Created";
+	}
+	
+	@RequestMapping(value = "/cs480/AC/TestCoord", method = RequestMethod.GET)
+	public String JSTryCoord() throws IOException {
+		GetYelpData.createJson("Mexican", null,null,34.018363,-118.492343);
 		return "File Created";
 	}
 

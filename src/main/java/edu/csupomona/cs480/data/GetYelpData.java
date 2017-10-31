@@ -19,22 +19,34 @@ import java.util.List;
 public class GetYelpData{
 
 	@SuppressWarnings("unchecked")
-	public void createJson(String type, String address,String city) throws IOException {
+	public static void createJson(String type, String address,String city,double lat, double lon) throws IOException {
 		
 		String id="fTWOWAvp3YzK9u8mCsMeWw";
 		String secret="8cE7x0rZ0sm3nvgYpC5mXbmDz4qpBWxNGjFe04ZmYrQOYvk3Dx2UXaJsyFFl1cM8";
 		YelpAPI yelp = newInstance(id,secret);
-		Address loc = new Address();
-		loc.address1=address;
-		loc.city=city;
 		Category cat = new Category();
-		YelpSearchRequest request =  YelpSearchRequest.newBuilder()
+		YelpSearchRequest request;
+		if(address==null) {
+			request =  YelpSearchRequest.newBuilder()
+					.withSearchTerm(type)
+					.withCoordinate(Coordinate.of(lat, lon))
+				    .withCategories(cat.with("foodtrucks","Food Trucks"))
+				    .withRadiusInMeters(40000)
+				    .withSortBy(YelpSearchRequest.SortType.DISTANCE)
+				    .build();
+		}
+		else {
+			Address loc = new Address();
+			loc.address1=address;
+			loc.city=city;
+			request =  YelpSearchRequest.newBuilder()
 				.withSearchTerm(type)
 				.withLocation(loc)
 			    .withCategories(cat.with("foodtrucks","Food Trucks"))
 			    .withRadiusInMeters(40000)
 			    .withSortBy(YelpSearchRequest.SortType.DISTANCE)
 			    .build();
+		}
 		
 		List<YelpBusiness> results = yelp.searchForBusinesses(request);
 		JSONObject obj = new JSONObject();
@@ -84,7 +96,7 @@ public class GetYelpData{
 	/*
 	 * Taken from Redroma's YelpAPI interface as their method of using a static interface method cannot be used in JDK 7.
 	 */
-	private YelpAPI newInstance(@NonEmpty String cliendId, @NonEmpty String clientSecret)
+	private static YelpAPI newInstance(@NonEmpty String cliendId, @NonEmpty String clientSecret)
     {
         checkThat(cliendId, clientSecret)
             .are(nonEmptyString());
