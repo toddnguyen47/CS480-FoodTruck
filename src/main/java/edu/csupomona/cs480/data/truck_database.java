@@ -24,27 +24,28 @@ public class truck_database {
 
 
     public void createDatabase(){
-        jdbcTemplate.execute("DROP TABLE employee IF EXISTS");
-        jdbcTemplate.execute("CREATE TABLE employee(" + "id SERIAL, name VARCHAR(255))");
+
+
+
     }
 
 
         public void queryUser() {
-            System.out.println("Query employees");
-            String sql = "SELECT ID, NAME, AGE FROM EMPLOYEE";
+            System.out.println("Query Trucks");
+            String sql = "SELECT * FROM truck_info";
             List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
             for (Map<String, Object> row : list) {
                 System.out.println(row.get("name"));
             }
         }
 
-        public void insertEmployee(final User user){
-            System.out.println("Insert employee " + user);
-            String sql = "INSERT into EMPLOYEE(ID, NAME, AGE) VALUES (?, ?, ?)";
+        public void insertTruck(final User user){
+            System.out.println("Insert truck " + user);
+            String sql = "INSERT into EMPLOYEE(ID, NAME) VALUES (?, ?)";
             jdbcTemplate.update(
                     sql,
-                    new Object[] { user.getId(), user.getName(),
-                    });
+                    user.getId(), user.getName()
+                    );
     }
 
 
