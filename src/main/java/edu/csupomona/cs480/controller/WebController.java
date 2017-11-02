@@ -280,8 +280,8 @@ public class WebController {
 		truck.setName(name);
 		truck.setType(type);
 		TruckInfo truck1 = new TruckInfo();
-		truck1.setName("wtf");
-		truck1.setType("fuck you");
+		truck1.setName("hello");
+		truck1.setType("yo ");
 		truckRepository.save(truck1);
 		truckRepository.save(truck1);
 		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
