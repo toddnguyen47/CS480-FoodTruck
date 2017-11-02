@@ -55,7 +55,11 @@ public class GetYelpData{
 			JSONArray fT = new JSONArray();
 			TruckInfo truck = new TruckInfo();
 			
-			truck.setId(results.get(i).id);
+			try{
+			truck.setId(Integer.valueOf((results.get(i).id)));
+			}catch(NumberFormatException e){
+				
+			}
 			fT.add("ID: "+truck.getId());
 			
 			truck.setName(results.get(i).name);

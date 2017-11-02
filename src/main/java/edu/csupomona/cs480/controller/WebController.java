@@ -197,7 +197,7 @@ public class WebController {
 	//pass
 	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.POST)
 	TruckInfo updateTruckInfo(
-			@PathVariable("truckId") String id,
+			@PathVariable("truckId") Integer id,
 			@RequestParam("name") String name,
 			@RequestParam(value = "type", required = false) String type) {
 		TruckInfo truck = new TruckInfo();
@@ -279,7 +279,11 @@ public class WebController {
 		TruckInfo truck = new TruckInfo();
 		truck.setName(name);
 		truck.setType(type);
-		truckRepository.save(truck);
+		TruckInfo truck1 = new TruckInfo();
+		truck1.setName("wtf");
+		truck1.setType("fuck you");
+		truckRepository.save(truck1);
+		truckRepository.save(truck1);
 		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
 		return list;
 	}

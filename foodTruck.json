@@ -1,6 +1,6 @@
 {
   "La Oaxaqueña Taco Truck": [
-    "ID: la-oaxaqueña-taco-truck-venice-2",
+    "ID: null",
     "Name: La Oaxaqueña Taco Truck",
     "Type: Mexican",
     "Address: ",
@@ -11,7 +11,7 @@
     "Longitude: -118.47148"
   ],
   "El Paladar Oaxaqueno Taco Truck": [
-    "ID: el-paladar-oaxaqueno-taco-truck-los-angeles",
+    "ID: null",
     "Name: El Paladar Oaxaqueno Taco Truck",
     "Type: Mexican",
     "Address: 11654 Santa Monica Blvd",
@@ -22,7 +22,7 @@
     "Longitude: -118.454984"
   ],
   "La Isla Bonita": [
-    "ID: la-isla-bonita-venice",
+    "ID: null",
     "Name: La Isla Bonita",
     "Type: Mexican",
     "Address: 400 Rose Ave",
@@ -33,7 +33,7 @@
     "Longitude: -118.474995809711"
   ],
   "Silly Pappas": [
-    "ID: silly-pappas-venice",
+    "ID: null",
     "Name: Silly Pappas",
     "Type: Mexican",
     "Address: 121 Windward Ave",
@@ -44,7 +44,7 @@
     "Longitude: -118.47184818238"
   ],
   "Tacos El Pastor": [
-    "ID: tacos-el-pastor-los-angeles-2",
+    "ID: null",
     "Name: Tacos El Pastor",
     "Type: Mexican",
     "Address: 52 Windward Ave",
@@ -55,7 +55,7 @@
     "Longitude: -118.47258"
   ],
   "Gracias Señor!": [
-    "ID: gracias-señor-pacific-palisades",
+    "ID: null",
     "Name: Gracias Señor!",
     "Type: Mexican",
     "Address: 15120 W Sunset Blvd",
@@ -66,7 +66,7 @@
     "Longitude: -118.523584681406"
   ],
   "Emily\u0027s Taco Truck": [
-    "ID: emilys-taco-truck-santa-monica",
+    "ID: null",
     "Name: Emily\u0027s Taco Truck",
     "Type: Mexican",
     "Address: 2700 Lincoln Blvd",
@@ -77,7 +77,7 @@
     "Longitude: -118.4746857"
   ],
   "Cemitas Poblanas": [
-    "ID: cemitas-poblanas-los-angeles-2",
+    "ID: null",
     "Name: Cemitas Poblanas",
     "Type: Mexican",
     "Address: 11060 W Pico Blvd",
@@ -88,7 +88,7 @@
     "Longitude: -118.434098"
   ],
   "Tatiana\u0027s Catering Truck": [
-    "ID: tatianas-catering-truck-los-angeles",
+    "ID: null",
     "Name: Tatiana\u0027s Catering Truck",
     "Type: Mexican",
     "Address: Venice Blvd And Centinela Ave",
@@ -99,7 +99,7 @@
     "Longitude: -118.43352"
   ],
   "Tacos Tuzo": [
-    "ID: tacos-tuzo-santa-monica",
+    "ID: null",
     "Name: Tacos Tuzo",
     "Type: Mexican",
     "Address: 411 Wilshire Blvd",
@@ -110,7 +110,7 @@
     "Longitude: -118.4980235"
   ],
   "Tacos El Tuca": [
-    "ID: tacos-el-tuca-los-angeles-2",
+    "ID: null",
     "Name: Tacos El Tuca",
     "Type: Mexican",
     "Address: 428 11th St",
@@ -121,7 +121,7 @@
     "Longitude: -118.289627075195"
   ],
   "Kogi Truck": [
-    "ID: kogi-truck-santa-monica",
+    "ID: null",
     "Name: Kogi Truck",
     "Type: Mexican",
     "Address: 1900 Pico Blvd",
@@ -132,7 +132,7 @@
     "Longitude: -118.469359596722"
   ],
   "Alibi Room": [
-    "ID: alibi-room-los-angeles-2",
+    "ID: null",
     "Name: Alibi Room",
     "Type: Mexican",
     "Address: 12236 W Washington Blvd",
@@ -143,7 +143,7 @@
     "Longitude: -118.426567077637"
   ],
   "Tacos Del Valle": [
-    "ID: tacos-del-valle-venice",
+    "ID: null",
     "Name: Tacos Del Valle",
     "Type: Mexican",
     "Address: Venice Blvd And Inglewood",
@@ -154,7 +154,7 @@
     "Longitude: -118.428872823715"
   ],
   "Juquila Taco Truck": [
-    "ID: juquila-taco-truck-west-los-angeles",
+    "ID: null",
     "Name: Juquila Taco Truck",
     "Type: Mexican",
     "Address: Santa Monica Blvd",
@@ -165,7 +165,7 @@
     "Longitude: -118.456791937351"
   ],
   "El Torito Oaxaqueño": [
-    "ID: el-torito-oaxaqueño-los-angeles",
+    "ID: null",
     "Name: El Torito Oaxaqueño",
     "Type: Mexican",
     "Address: ",
@@ -176,7 +176,7 @@
     "Longitude: -118.456622958183"
   ],
   "Don Felix - Cemitas Poblanas": [
-    "ID: don-felix-cemitas-poblanas-venice",
+    "ID: null",
     "Name: Don Felix - Cemitas Poblanas",
     "Type: Mexican",
     "Address: 2222 Lincoln Blvd",
@@ -187,7 +187,7 @@
     "Longitude: -118.454134"
   ],
   "Angelicas Cemitas Originales": [
-    "ID: angelicas-cemitas-originales-los-angeles",
+    "ID: null",
     "Name: Angelicas Cemitas Originales",
     "Type: Mexican",
     "Address: 10113 Venice Blvd",
@@ -198,7 +198,7 @@
     "Longitude: -118.4016"
   ],
   "Kogi Taqueria": [
-    "ID: kogi-taqueria-los-angeles",
+    "ID: null",
     "Name: Kogi Taqueria",
     "Type: Mexican",
     "Address: 3500 Overland Ave",
@@ -209,7 +209,7 @@
     "Longitude: -118.411181166243"
   ],
   "Valentino\u0027s Market/Tacos": [
-    "ID: valentinos-market-tacos-los-angeles",
+    "ID: null",
     "Name: Valentino\u0027s Market/Tacos",
     "Type: Mexican",
     "Address: 608 Lincoln Blvd",
