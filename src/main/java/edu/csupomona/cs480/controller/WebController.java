@@ -273,7 +273,7 @@ public class WebController {
 		return truckManager.getGeoIP();
 	}
 	@RequestMapping(value = "/cs480/foodtruck/db/{name}", method = RequestMethod.POST)
-	public List<TruckInfo> dbInsertTruckInfo(
+	List<TruckInfo> dbInsertTruckInfo(
 			@PathVariable("name") String name,
 			@RequestParam(value = "type", required = false) String type) {
 		TruckInfo truck = new TruckInfo();
@@ -289,7 +289,7 @@ public class WebController {
 	}
 	@RequestMapping(value = "/cs480/foodtruck/db/list", method = RequestMethod.GET)
 	List<TruckInfo> dbGetTruckInfoList(){
-		TruckInfo truck = new TruckInfo();
+		//TruckInfo truck = new TruckInfo();
 		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
 		return list;
 	}
@@ -304,6 +304,12 @@ public class WebController {
 	public String JSTryCoord() throws IOException {
 		GetYelpData.createJson("Mexican", null,null,34.018363,-118.492343);
 		return "File Created";
+	}
+	
+	//getting data from yelp and return a list
+	@RequestMapping(value = "/cs480/foodtruck/yelp", method = RequestMethod.GET)
+	List<TruckInfo> YelpListing() throws IOException {
+		return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
 	}
 
 	

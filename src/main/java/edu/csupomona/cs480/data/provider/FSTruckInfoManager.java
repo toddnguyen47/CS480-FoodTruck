@@ -7,6 +7,12 @@ import java.io.PrintStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.net.InetAddress;
@@ -15,6 +21,8 @@ import java.net.URL;
 import javax.script.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import edu.csupomona.cs480.data.GeoIP;
 import edu.csupomona.cs480.data.TruckInfo;
@@ -37,8 +45,10 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils; 
-
+import org.apache.http.util.EntityUtils;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -54,6 +64,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.FileSystemResourceLoader; 
+
+import okhttp3.*;
+import okhttp3.Request.Builder;
 
 public class FSTruckInfoManager implements TruckInfoManager{
 	
@@ -262,7 +275,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		System.out.println("testing GeoIP: " + g.getIpAddress() + ", longitude: " + g.getLongitude() + ", latitude: " + g.getLatitude());
 		return g;
     }
-	
+   
 	public TruckMap getTruckMap(){
 		TruckMap truckMap = null;
 		File truckFile = ResourceResolver.getTruckFile();
@@ -314,6 +327,117 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		TruckMap truckMap = getTruckMap();
 		List<TruckInfo> result = getGoogleList();
 		return result;
+	}
+	//code based on GetYelpData
+	@Override
+	public List<TruckInfo> searchYelp(String type, String address,String city,double lat, double lon) throws IOException{
+		System.out.println("debuging...");
+		System.out.println(type);
+		System.out.println(address);
+		System.out.println(city);
+		System.out.println(lat);
+		System.out.println(lon);
+		
+		List result = new ArrayList<TruckInfo>();
+		
+		String accessToken="";
+		OkHttpClient client = new OkHttpClient();
+        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        RequestBody body = RequestBody.create(mediaType, "client_id=fTWOWAvp3YzK9u8mCsMeWw&"
+        		+ "client_secret=8cE7x0rZ0sm3nvgYpC5mXbmDz4qpBWxNGjFe04ZmYrQOYvk3Dx2UXaJsyFFl1cM8"
+        		+ "&grant_type=client_credentials");
+        Request request= new Request.Builder()
+                    .url("https://api.yelp.com/oauth2/token")
+                    .post(body)
+                    .addHeader("cache-control", "no-cache")
+                    .addHeader("postman-token", "8d9de8ad-800c-50e1-fb4a-46fcb5f2f209")
+                    .addHeader("content-type", "application/x-www-form-urlencoded")
+                    .build();
+        try {
+            Response response = client.newCall(request).execute();
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(response.body().string().trim());
+            JSONObject jsonObjectToken = (JSONObject) obj;
+            accessToken = (String) jsonObjectToken.get("access_token");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        OkHttpClient client2 = new OkHttpClient();
+        String term = type; 
+        String location="";
+        Request request2;
+        if(address!=null) {
+        	if(address.equals(""))
+            	location = city;            
+        	else
+        		location=address + " " + city;
+            request2 = new Builder()
+                    .url("https://api.yelp.com/v3/businesses/search?term=" + term 
+                    		+ "&location=" + location 
+                    		+ "&radius=8046"
+                    		+ "&categories=foodtrucks"
+                    		+ "&sort_by=best_match")
+                    .get()
+                    .addHeader("authorization", "Bearer"+" "+accessToken)
+                    .addHeader("cache-control", "no-cache")
+                    .addHeader("postman-token", "b5fc33ce-3dad-86d7-6e2e-d67e14e8071b")
+                    .build();
+        }
+        else {
+            request2 = new Builder()
+                    .url("https://api.yelp.com/v3/businesses/search?term=" + term 
+                    		+ "&latitude=" + lat 
+                    		+ "&longitude=" + lon 
+                    		+ "&radius=8046"
+                    		+ "&categories=foodtrucks"
+                    		+ "&sort_by=best_match")
+                    .get()
+                    .addHeader("authorization", "Bearer"+" "+accessToken)
+                    .addHeader("cache-control", "no-cache")
+                    .addHeader("postman-token", "b5fc33ce-3dad-86d7-6e2e-d67e14e8071b")
+                    .build();
+        }
+
+        try {
+        	Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        	
+            Response response2 = client2.newCall(request2).execute();
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(response2.body().string());
+            JSONObject jsonObject = (JSONObject) obj;       // parser
+            JSONArray list = (JSONArray) jsonObject.get("businesses");
+            int size = list.size();
+            if(size>=40)
+            	size=40;
+            JSONObject res = new JSONObject();
+            for(int i=0;i<size;i++) {
+            	JSONObject temp = (JSONObject) list.get(i);
+            	TruckInfo truck = new TruckInfo();
+    			truck.setId((String) temp.get("id"));
+    			System.out.println("id: " + i + " " + truck.getId());
+            	truck.setName((String) temp.get("name"));
+            	System.out.println("name: " + i + " " + truck.getName());
+        		
+    			truck.setType(type);
+    			JSONObject tempLoc = (JSONObject) temp.get("location");
+    			truck.setAddress((String) tempLoc.get("address1"));
+    			truck.setPhoneNumber((String) temp.get("phone"));
+    			truck.setCity((String) tempLoc.get("city"));
+    			truck.setZipCode((String) tempLoc.get("zip_code"));
+    			JSONObject tempCoord = (JSONObject) temp.get("coordinates");
+    			truck.setLat( Double.parseDouble( tempCoord.get("latitude").toString() ));
+    			truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));
+    		    result.add(truck);
+    			//truckMap.put(truck.getId(), truck);
+            }
+        } 
+        catch (Exception e) {
+        	
+            e.printStackTrace();
+        }
+        return result;
+        
 	}
 
 }

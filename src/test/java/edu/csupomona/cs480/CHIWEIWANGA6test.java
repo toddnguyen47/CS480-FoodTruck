@@ -28,8 +28,9 @@ public class CHIWEIWANGA6test {
 	
 	@Test
 	 public void testTruck() {
+		truckRepositry.deleteAll();	
 			TruckInfo t1 = new TruckInfo();
-			t1.setName("New Asian");
+			t1.setName("New Asian3");
 			t1.setAreaCode(626);
 			t1.setAddress("new address");
 			t1.setPhoneNumber("2678988");
@@ -40,7 +41,7 @@ public class CHIWEIWANGA6test {
 			truckRepositry.save(t1);
 			List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepositry.findAll();
 			assertEquals("Only one item in the list", 1, list.size());
-			assertEquals("Truck name is", "New Asian", list.get(0).getName());
+			assertEquals("Truck name is", "New Asian3", list.get(0).getName());
 			//truckRepositry.deleteAll();		
 	 }
 }

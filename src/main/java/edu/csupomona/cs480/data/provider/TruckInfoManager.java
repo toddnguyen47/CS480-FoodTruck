@@ -14,6 +14,7 @@ public interface TruckInfoManager {
 	public void deleteTruckInfo(Integer truckId);
 	public List<TruckInfo> listAllTrucks();	
 	public List<TruckInfo> searchGoogleResult() throws IOException;
+	public List<TruckInfo> searchYelp(String type, String address,String city,double lat, double lon) throws IOException;
 	List<TruckInfo> getGoogleList() throws IOException;
 	GeoIP getGeoIP() throws IOException;
 	GoogleGeoCode getGeoCode(String address, boolean ssl, String API_KEY) throws Exception;
