@@ -1,6 +1,17 @@
 {
+  "Nora\u0027s Hot Dogs": [
+    "ID: noras-hot-dogs-santa-monica",
+    "Name: Nora\u0027s Hot Dogs",
+    "Type: Mexican",
+    "Address: 1355 Ocean Ave",
+    "Phone Number: +13236493339",
+    "City: Santa Monica",
+    "Zipcode: 90401",
+    "Latitude: 34.0123280866004",
+    "Longitude: -118.496339097619"
+  ],
   "La Oaxaqueña Taco Truck": [
-    "ID: null",
+    "ID: la-oaxaqueña-taco-truck-venice-2",
     "Name: La Oaxaqueña Taco Truck",
     "Type: Mexican",
     "Address: ",
@@ -11,7 +22,7 @@
     "Longitude: -118.47148"
   ],
   "El Paladar Oaxaqueno Taco Truck": [
-    "ID: null",
+    "ID: el-paladar-oaxaqueno-taco-truck-los-angeles",
     "Name: El Paladar Oaxaqueno Taco Truck",
     "Type: Mexican",
     "Address: 11654 Santa Monica Blvd",
@@ -21,8 +32,19 @@
     "Latitude: 34.04443",
     "Longitude: -118.454984"
   ],
+  "Pyngle\u0027s": [
+    "ID: pyngles-santa-monica",
+    "Name: Pyngle\u0027s",
+    "Type: Mexican",
+    "Address: ",
+    "Phone Number: +16127475815",
+    "City: Santa Monica",
+    "Zipcode: 90401",
+    "Latitude: 34.0121772204694",
+    "Longitude: -118.495902398178"
+  ],
   "La Isla Bonita": [
-    "ID: null",
+    "ID: la-isla-bonita-venice",
     "Name: La Isla Bonita",
     "Type: Mexican",
     "Address: 400 Rose Ave",
@@ -33,7 +55,7 @@
     "Longitude: -118.474995809711"
   ],
   "Silly Pappas": [
-    "ID: null",
+    "ID: silly-pappas-venice",
     "Name: Silly Pappas",
     "Type: Mexican",
     "Address: 121 Windward Ave",
@@ -43,19 +65,8 @@
     "Latitude: 33.9880555898473",
     "Longitude: -118.47184818238"
   ],
-  "Tacos El Pastor": [
-    "ID: null",
-    "Name: Tacos El Pastor",
-    "Type: Mexican",
-    "Address: 52 Windward Ave",
-    "Phone Number: +12138582481",
-    "City: Los Angeles",
-    "Zipcode: 90291",
-    "Latitude: 33.9872",
-    "Longitude: -118.47258"
-  ],
   "Gracias Señor!": [
-    "ID: null",
+    "ID: gracias-señor-pacific-palisades",
     "Name: Gracias Señor!",
     "Type: Mexican",
     "Address: 15120 W Sunset Blvd",
@@ -65,19 +76,8 @@
     "Latitude: 34.0454459503403",
     "Longitude: -118.523584681406"
   ],
-  "Emily\u0027s Taco Truck": [
-    "ID: null",
-    "Name: Emily\u0027s Taco Truck",
-    "Type: Mexican",
-    "Address: 2700 Lincoln Blvd",
-    "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90405",
-    "Latitude: 34.0055695",
-    "Longitude: -118.4746857"
-  ],
   "Cemitas Poblanas": [
-    "ID: null",
+    "ID: cemitas-poblanas-los-angeles-2",
     "Name: Cemitas Poblanas",
     "Type: Mexican",
     "Address: 11060 W Pico Blvd",
@@ -87,19 +87,19 @@
     "Latitude: 34.036758",
     "Longitude: -118.434098"
   ],
-  "Tatiana\u0027s Catering Truck": [
-    "ID: null",
-    "Name: Tatiana\u0027s Catering Truck",
+  "Emily\u0027s Taco Truck": [
+    "ID: emilys-taco-truck-santa-monica",
+    "Name: Emily\u0027s Taco Truck",
     "Type: Mexican",
-    "Address: Venice Blvd And Centinela Ave",
-    "Phone Number: +14242042642",
-    "City: Los Angeles",
-    "Zipcode: 90066",
-    "Latitude: 34.00365",
-    "Longitude: -118.43352"
+    "Address: 2700 Lincoln Blvd",
+    "Phone Number: ",
+    "City: Santa Monica",
+    "Zipcode: 90405",
+    "Latitude: 34.0055695",
+    "Longitude: -118.4746857"
   ],
   "Tacos Tuzo": [
-    "ID: null",
+    "ID: tacos-tuzo-santa-monica",
     "Name: Tacos Tuzo",
     "Type: Mexican",
     "Address: 411 Wilshire Blvd",
@@ -109,8 +109,19 @@
     "Latitude: 34.0193617",
     "Longitude: -118.4980235"
   ],
+  "Calbi Truck": [
+    "ID: calbi-truck-santa-monica-2",
+    "Name: Calbi Truck",
+    "Type: Mexican",
+    "Address: ",
+    "Phone Number: +17144149222",
+    "City: Santa Monica",
+    "Zipcode: 90401",
+    "Latitude: 34.0123511536385",
+    "Longitude: -118.49614597857"
+  ],
   "Tacos El Tuca": [
-    "ID: null",
+    "ID: tacos-el-tuca-los-angeles-2",
     "Name: Tacos El Tuca",
     "Type: Mexican",
     "Address: 428 11th St",
@@ -121,7 +132,7 @@
     "Longitude: -118.289627075195"
   ],
   "Kogi Truck": [
-    "ID: null",
+    "ID: kogi-truck-santa-monica",
     "Name: Kogi Truck",
     "Type: Mexican",
     "Address: 1900 Pico Blvd",
@@ -132,7 +143,7 @@
     "Longitude: -118.469359596722"
   ],
   "Alibi Room": [
-    "ID: null",
+    "ID: alibi-room-los-angeles-2",
     "Name: Alibi Room",
     "Type: Mexican",
     "Address: 12236 W Washington Blvd",
@@ -143,7 +154,7 @@
     "Longitude: -118.426567077637"
   ],
   "Tacos Del Valle": [
-    "ID: null",
+    "ID: tacos-del-valle-venice",
     "Name: Tacos Del Valle",
     "Type: Mexican",
     "Address: Venice Blvd And Inglewood",
@@ -153,19 +164,19 @@
     "Latitude: 34.0061611809921",
     "Longitude: -118.428872823715"
   ],
-  "Juquila Taco Truck": [
-    "ID: null",
-    "Name: Juquila Taco Truck",
+  "Thai Mex Cocina": [
+    "ID: thai-mex-cocina-santa-monica",
+    "Name: Thai Mex Cocina",
     "Type: Mexican",
-    "Address: Santa Monica Blvd",
-    "Phone Number: +14242505181",
-    "City: West Los Angeles",
-    "Zipcode: 90025",
-    "Latitude: 34.0433053599901",
-    "Longitude: -118.456791937351"
+    "Address: ",
+    "Phone Number: +13103827617",
+    "City: Santa Monica",
+    "Zipcode: 90401",
+    "Latitude: 34.01158",
+    "Longitude: -118.49227"
   ],
   "El Torito Oaxaqueño": [
-    "ID: null",
+    "ID: el-torito-oaxaqueño-los-angeles",
     "Name: El Torito Oaxaqueño",
     "Type: Mexican",
     "Address: ",
@@ -175,8 +186,19 @@
     "Latitude: 34.0434203752073",
     "Longitude: -118.456622958183"
   ],
+  "Pier Tamales": [
+    "ID: pier-tamales-santa-monica-3",
+    "Name: Pier Tamales",
+    "Type: Mexican",
+    "Address: 200 Santa Monica Pier",
+    "Phone Number: +13104306243",
+    "City: Santa Monica",
+    "Zipcode: 90401",
+    "Latitude: 34.0102885",
+    "Longitude: -118.4960309"
+  ],
   "Don Felix - Cemitas Poblanas": [
-    "ID: null",
+    "ID: don-felix-cemitas-poblanas-venice",
     "Name: Don Felix - Cemitas Poblanas",
     "Type: Mexican",
     "Address: 2222 Lincoln Blvd",
@@ -186,37 +208,15 @@
     "Latitude: 33.9950409",
     "Longitude: -118.454134"
   ],
-  "Angelicas Cemitas Originales": [
-    "ID: null",
-    "Name: Angelicas Cemitas Originales",
+  "Pinch of Flavor": [
+    "ID: pinch-of-flavor-santa-monica",
+    "Name: Pinch of Flavor",
     "Type: Mexican",
-    "Address: 10113 Venice Blvd",
-    "Phone Number: +12139094027",
-    "City: Los Angeles",
-    "Zipcode: 90034",
-    "Latitude: 34.02223",
-    "Longitude: -118.4016"
-  ],
-  "Kogi Taqueria": [
-    "ID: null",
-    "Name: Kogi Taqueria",
-    "Type: Mexican",
-    "Address: 3500 Overland Ave",
-    "Phone Number: +14243263031",
-    "City: Los Angeles",
-    "Zipcode: 90034",
-    "Latitude: 34.0245048089441",
-    "Longitude: -118.411181166243"
-  ],
-  "Valentino\u0027s Market/Tacos": [
-    "ID: null",
-    "Name: Valentino\u0027s Market/Tacos",
-    "Type: Mexican",
-    "Address: 608 Lincoln Blvd",
-    "Phone Number: +13108895089",
-    "City: Los Angeles",
-    "Zipcode: 90291",
-    "Latitude: 34.0002571567222",
-    "Longitude: -118.464570534894"
+    "Address: null",
+    "Phone Number: +12138805513",
+    "City: Santa Monica",
+    "Zipcode: 90405",
+    "Latitude: 34.00535",
+    "Longitude: -118.47979"
   ]
 }

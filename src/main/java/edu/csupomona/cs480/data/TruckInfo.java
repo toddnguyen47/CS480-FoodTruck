@@ -3,9 +3,6 @@ package edu.csupomona.cs480.data;
 import java.util.Date;
 import javax.persistence.*;
 
-import tech.redroma.yelp.Address;
-import tech.redroma.yelp.Coordinate;
-
 /**
  * The basic food truck information object.
  */
@@ -14,7 +11,7 @@ public class TruckInfo {
 	/** The unique truck Id */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private String id;
     /** The unique business name */
     private String name;
     /** The business hours 0 to 6, Sun to Sat*/
@@ -79,11 +76,11 @@ public class TruckInfo {
 
     //private String creationTime = new Date(System.currentTimeMillis()).toString();
     
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getName() {

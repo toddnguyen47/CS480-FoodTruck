@@ -197,7 +197,7 @@ public class WebController {
 	//pass
 	@RequestMapping(value = "/cs480/foodtruck/{truckId}", method = RequestMethod.POST)
 	TruckInfo updateTruckInfo(
-			@PathVariable("truckId") Integer id,
+			@PathVariable("truckId") String id,
 			@RequestParam("name") String name,
 			@RequestParam(value = "type", required = false) String type) {
 		TruckInfo truck = new TruckInfo();
@@ -296,7 +296,7 @@ public class WebController {
 	
 	@RequestMapping(value = "/cs480/AC/TestAddress", method = RequestMethod.GET)
 	public String JSTryAdd() throws IOException {
-		GetYelpData.createJson("Mexican", "3520 W Temple Ave","Pomona",0,0);
+		GetYelpData.createJson("Mexican","","Pomona",0,0);
 		return "File Created";
 	}
 	
