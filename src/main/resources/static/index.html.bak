@@ -1,0 +1,17 @@
+<html>
+	<!-- This page will be shown when you git the root URL -->
+	<head>
+	    <title>CS480 Demo HomePage</title>
+	    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	    <script src="/js/home-control.js"></script>
+	</head>
+
+	<body onload="healthCheck();">
+		Demo Project is running: <label id="status"></label>
+		<br>
+		Jenkins Test 1. <br>
+		Jenkins Test 2, 2017/11/02 01:54 AM <br>
+		Jenkins Test 3, 2017/11/02 02:21 AM <br>
+	</body>
+
+</html>
