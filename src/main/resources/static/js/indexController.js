@@ -1,6 +1,7 @@
 var optPrimeApp = angular.module('optPrimeApp', []);
 
 optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
+	var x = document.getElementById("geoloc");
 	$scope.inputForm = {};
 	// Do I need to fix locationArr?
 	$scope.locationArr = [{locationType: "Zip code"}, {locationType:"Address"}, {locationType: "Current Location"}];
@@ -23,4 +24,33 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		Mexican: false,
 		Random: false
 	};
+
+	$scope.getLocation = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition, showError);
+		} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		}
+	}
+	
+	$scope.showPosition = function (position) {
+		x.innerHTML = position.coords.latitude + "," + position.coords.longitude;
+	}
+	
+	$scope.showError = function(error) {
+		switch(error.code) {
+			case error.PERMISSION_DENIED:
+				x.innerHTML = "User denied the request for Geolocation."
+				break;
+			case error.POSITION_UNAVAILABLE:
+				x.innerHTML = "Location information is unavailable."
+				break;
+			case error.TIMEOUT:
+				x.innerHTML = "The request to get user location timed out."
+				break;
+			case error.UNKNOWN_ERROR:
+				x.innerHTML = "An unknown error occurred."
+				break;
+		}
+	}
 }]);

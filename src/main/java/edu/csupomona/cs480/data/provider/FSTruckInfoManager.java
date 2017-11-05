@@ -19,6 +19,8 @@ import java.net.InetAddress;
 import java.net.URLEncoder;
 import java.net.URL;
 import javax.script.*;
+import javax.validation.constraints.Null;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -229,6 +231,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		}
 		return truckInfos;
 	}
+    
 	public GeoIP getLocation(String ip) {
         GeoIP item = null;
      	try{
@@ -263,6 +266,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
         }
        return item;
     }
+	
     @Override
     public GeoIP getGeoIP() throws IOException{
     	String address = InetAddress.getLocalHost().getHostAddress();
@@ -328,7 +332,10 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		List<TruckInfo> result = getGoogleList();
 		return result;
 	}
-	//code based on GetYelpData
+	
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<TruckInfo> searchYelp(String type, String address,String city,double lat, double lon) throws IOException{
 		System.out.println("debuging...");
@@ -407,9 +414,18 @@ public class FSTruckInfoManager implements TruckInfoManager{
             Object obj = parser.parse(response2.body().string());
             JSONObject jsonObject = (JSONObject) obj;       // parser
             JSONArray list = (JSONArray) jsonObject.get("businesses");
-            int size = list.size();
-            if(size>=40)
-            	size=40;
+            
+            int size;
+            // Making sure list isn't empty
+            if (list == null) {
+            	size = 0;
+            	System.out.println("List is empty!");
+            } else {
+            	size = list.size();
+            	if(size>=40)
+            		size=40;
+            }
+            
             JSONObject res = new JSONObject();
             for(int i=0;i<size;i++) {
             	JSONObject temp = (JSONObject) list.get(i);

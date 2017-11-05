@@ -311,6 +311,7 @@ public class WebController {
 	List<TruckInfo> YelpListing() throws IOException {
 		return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
 	}
+	
 	//this is for demo-front-end-controller.js 
 	@RequestMapping(value = "/cs480/foodtrucks/yelp/{search_input}", method = RequestMethod.POST)
 	List<TruckInfo> getYelpList(
@@ -320,17 +321,21 @@ public class WebController {
 		System.out.println("search_input: <" + search + ">");
 		System.out.println("opt: <" + opt + ">");
 		System.out.println("opt2: " + temp);
+		
 		double lat=0, lon=0;
-		if(temp.length()>1){
+		double defaultLat = 34.055103;
+		double defaultLon = -117.749992;
+		
+		if(temp != null && !temp.isEmpty()){
 			String[] parts = temp.split(",");			
 			lat = Double.parseDouble(parts[0]);
 			lon = Double.parseDouble(parts[1]);
 			System.out.println("lat: " + lat);
 			System.out.println("lon: " + lon);
-		}		
-
+		}
+		
 		if(!opt.equals("current location")){
-			return truckManager.searchYelp("Mexican", null,null,0,0);
+			return truckManager.searchYelp("Mexican", null,null,defaultLat,defaultLon);
 		}else{
 			System.out.println("debugging 2");
 			return truckManager.searchYelp("Mexican", null,null, lat, lon);

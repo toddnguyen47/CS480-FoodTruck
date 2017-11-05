@@ -15,12 +15,15 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-		<!-- Use this for production
+		<!-- Use MIN AngularJS for production
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		-->
+		
+		<!-- Use FULL AngularJS for development -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 
-		<script src="./js/indexController.js"></script>
+		<!-- This script needs to go after all other sources!-->
+		<script src="./js/indexController.js"></script>		
 	</head>
 	<body>
 
@@ -77,12 +80,12 @@
 						<header>
 							<h2>Food Truck Search</h2>
 						</header>
-						<form name="formLocation" ng-submit="postSearch()" method="POST">
+						<form name="formLocation" method="POST">
 							Search by: <br />
 							<select ng-model="form.selectedMode" required ng-options="elem.locationType for elem in locationArr"></select>
 							Enter your location<br>
 							<input type="location" ng-model="form.location1" value="91763" /><br>
-                            <button onclick="getLocation()">Where Am I?</button>
+                            <button ng-model="getLocationBtn" ng-click="getLocation()">Where Am I?</button>
                             <div id="geoloc"></div>
 
 							<p></p>
@@ -95,7 +98,7 @@
 							<input type="checkbox" ng-model="checkboxModel.Random">Surprise me! &ensp;</input>
 
 							<br /><br />
-							<button style="text-align:center;" type="submit" ng-model="searchBtn">Search</button>
+							<button style="text-align:center;" ng-click="postSearch()" type="submit" ng-model="searchBtn">Search</button>
 						</form>
 
 						American: {{checkboxModel.American}} &ensp;
