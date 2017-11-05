@@ -77,16 +77,50 @@
 						<header>
 							<h2>Food Truck Search</h2>
 						</header>
-						<form>
+						<form name="formLocation" ng-submit="postSearch()" method="POST">
+							Search by: <br />
+							<select ng-model="form.selectedMode" required ng-options="elem.locationType for elem in locationArr"></select>
 							Enter your location<br>
-							<input type="location" ng-model="location" value="91763" /><br>
+							<input type="location" ng-model="form.location1" value="91763" />
+
+							<p></p>
+							<h4>Types of Food</h4>
+							<input type="checkbox" ng-model="checkboxModel.American">American &ensp;</input>
+							<input type="checkbox" ng-model="checkboxModel.Italian">Italian &ensp;</input>
+							<input type="checkbox" ng-model="checkboxModel.Japanese">Japanese &ensp;</input>
+							<input type="checkbox" ng-model="checkboxModel.Korean">Korean &ensp;</input>
+							<input type="checkbox" ng-model="checkboxModel.Mexican">Mexican &ensp;</input>
+							<input type="checkbox" ng-model="checkboxModel.Random">Surprise me! &ensp;</input>
+
+							<br /><br />
+							<button style="text-align:center;" type="submit" ng-model="searchBtn">Search</button>
 						</form>
+
+						American: {{checkboxModel.American}} &ensp;
+						Italian: {{checkboxModel.Italian}} &ensp;
+						Japanese: {{checkboxModel.Japanese}} &ensp;
+						Korean: {{checkboxModel.Korean}} &ensp;
+						Mexican: {{checkboxModel.Mexican}} &ensp;
+						Surprise Me: {{checkboxModel.Random}}<br /><br />
+
+						<div>
+							<p ng-model="form.output">Location Type: <strong>{{form.selectedMode.locationType}}</strong><br /> 
+								Location: <strong>{{form.location1}}</strong></p>
+						</div>
 						
-						<button style="text-align:center;" type="submit" ng-model="searchBtn" ng-click="myFunction()">Search
-						</button>
-						
-						<p>User Input Here:</p>
-						<p>{{location}}</p>
+						<table border="1">
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Type of Food</th>
+							</tr>
+							<tr ng-repeat="truck in trucks">
+								<th>{{truck.id}}</th>
+								<th>{{truck.name}}</th>
+								<th>{{truck.type}}</th>
+							</tr>
+						</table>
+
 					</section>
 				</div>
 				
