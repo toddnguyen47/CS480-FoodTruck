@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		
+
 		<!-- Use this for production
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		-->
@@ -36,9 +36,9 @@
 			<div id="main">
 
 				<header class="major container 75%">
-					<h2>Got some hot dog cravigns?<br />
-					Korean Fusion? <br />
-					Ice Cream in Plant Pots? <br />
+					<h2>Got some hot dog cravings?<br />
+					Korean fusion? <br />
+					Ice cream in plant pots? <br />
 					Look no further!
 					</h2>
 					<!--
@@ -70,7 +70,7 @@
 						<!-- </div> -->
 					<!-- </section> -->
 				<!-- </div> -->
-				
+
 
 				<div class="box container" style="text-align:center" ng-controller="inputForm">
 					<section>
@@ -81,7 +81,9 @@
 							Search by: <br />
 							<select ng-model="form.selectedMode" required ng-options="elem.locationType for elem in locationArr"></select>
 							Enter your location<br>
-							<input type="location" ng-model="form.location1" value="91763" />
+							<input type="location" ng-model="form.location1" value="91763" /><br>
+                            <button onclick="getLocation()">Where Am I?</button>
+                            <div id="geoloc"></div>
 
 							<p></p>
 							<h4>Types of Food</h4>
@@ -104,10 +106,10 @@
 						Surprise Me: {{checkboxModel.Random}}<br /><br />
 
 						<div>
-							<p ng-model="form.output">Location Type: <strong>{{form.selectedMode.locationType}}</strong><br /> 
+							<p ng-model="form.output">Location Type: <strong>{{form.selectedMode.locationType}}</strong><br />
 								Location: <strong>{{form.location1}}</strong></p>
 						</div>
-						
+
 						<table border="1">
 							<tr>
 								<th>ID</th>
@@ -123,7 +125,7 @@
 
 					</section>
 				</div>
-				
+
 				<!-- <div class="box container"> -->
 					<!-- <section> -->
 						<!-- <header> -->
@@ -266,7 +268,7 @@
 							<!-- </div> -->
 						<!-- </form> -->
 					<!-- </section> -->
-				<!-- </div> -->			
+				<!-- </div> -->
 
 				<footer class="major container 75%">
 					<h3>Our Team Members</h3>
@@ -337,6 +339,7 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+            <script src="js/geolocation.js"></script>
 
 	</body>
 </html>
