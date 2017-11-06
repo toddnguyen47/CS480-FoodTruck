@@ -88,26 +88,28 @@
                             <button ng-model="getLocationBtn" ng-click="getLocation()">Where Am I?</button>
                             <div id="geoloc"></div>
 
-							<p></p>
+							<p>
 							<h4>Types of Food</h4>
-							<input type="checkbox" ng-model="checkboxModel.American">American &ensp;</input>
-							<input type="checkbox" ng-model="checkboxModel.Italian">Italian &ensp;</input>
-							<input type="checkbox" ng-model="checkboxModel.Japanese">Japanese &ensp;</input>
-							<input type="checkbox" ng-model="checkboxModel.Korean">Korean &ensp;</input>
-							<input type="checkbox" ng-model="checkboxModel.Mexican">Mexican &ensp;</input>
-							<input type="checkbox" ng-model="checkboxModel.Random">Surprise me! &ensp;</input>
-
-							<br /><br />
-							<button style="text-align:center;" ng-click="postSearch()" type="submit" ng-model="searchBtn">Search</button>
+								<span ng-model="checkboxListing" ng-repeat="food in typesOfFood">
+									<input
+									type = "checkbox"
+									name="selectedFood[]"
+									value="{{food.name}}"
+									ng-model="food.selected"
+									>{{food.name}} &ensp;
+								</span>
+							</p>
+							<button style="text-align:center;"ng-click="postSearch()" type="submit" ng-model="searchBtn">Search</button>
 						</form>
 
-						American: {{checkboxModel.American}} &ensp;
-						Italian: {{checkboxModel.Italian}} &ensp;
-						Japanese: {{checkboxModel.Japanese}} &ensp;
-						Korean: {{checkboxModel.Korean}} &ensp;
-						Mexican: {{checkboxModel.Mexican}} &ensp;
-						Surprise Me: {{checkboxModel.Random}}<br /><br />
+						<p>
+							Selected Food: <br />
+								<span div ng-model="checkboxOutput" ng-repeat="food in foodSelection">
+									{{food}} &ensp;
+								</span>
+						</p>
 
+						<br />
 						<div>
 							<p ng-model="form.output">Location Type: <strong>{{form.selectedMode.locationType}}</strong><br />
 								Location: <strong>{{form.location1}}</strong></p>

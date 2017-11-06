@@ -3,8 +3,26 @@ var optPrimeApp = angular.module('optPrimeApp', []);
 optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	var x = document.getElementById("geoloc");
 	$scope.inputForm = {};
+	
+	// Make sure "Random" is the LAST entry
+	$scope.typesOfFood = [
+		{name: "American",		selected: false},
+		{name: "Italian",		selected: false},
+		{name: "Japanese",		selected: false}, 
+		{name: "Korean",		selected: false},
+		{name: "Mexican",		selected: false},
+		{name: "Surprise Me!",  selected: false}
+	];
+
+	// Selected food
+	$scope.foodSelection = [];
+	
 	// Do I need to fix locationArr?
-	$scope.locationArr = [{locationType: "Zip code"}, {locationType:"Address"}, {locationType: "Current Location"}];
+	$scope.locationArr = [
+		{locationType: "Zip code"},
+		{locationType: "Address"},
+		{locationType: "Current Location"}
+	];
 
 	$scope.postSearch = function() {
 		//var tempLocation = angular.lowercase($scope.form.location1.toString());
@@ -16,14 +34,21 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		});
 	}
 
-	$scope.checkboxModel = {
-		American: false,
-		Italian: false,
-		Japanese: false,
-		Korean: false,
-		Mexican: false,
-		Random: false
+	// Get selected food
+	$scope.selectedFood = function selectedFood() {
+		return filterFilter($scope.typesOfFood, {selected: true})
 	};
+
+	// Watch fruits for change
+	$scope.$watch('typesOfFood | filter:{selected:true}', function(input) {
+		$scope.foodSelection = input.map(function (food){
+			return food.name;
+		});
+	}, true);
+
+	/*******************************************/
+	/* Geolocation code
+	/*******************************************/
 
 	$scope.getLocation = function() {
 		if (navigator.geolocation) {
