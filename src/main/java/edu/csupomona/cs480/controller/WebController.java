@@ -326,7 +326,8 @@ public class WebController {
 		double defaultLat = 34.055103;
 		double defaultLon = -117.749992;
 		
-		if(temp != null && !temp.isEmpty()){
+		// temp != null to prevent NullPointerExceptions
+		if(temp != null && temp.length() > 1) {
 			String[] parts = temp.split(",");			
 			lat = Double.parseDouble(parts[0]);
 			lon = Double.parseDouble(parts[1]);
