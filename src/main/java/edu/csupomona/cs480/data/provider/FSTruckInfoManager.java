@@ -446,6 +446,8 @@ public class FSTruckInfoManager implements TruckInfoManager{
     			JSONObject tempCoord = (JSONObject) temp.get("coordinates");
     			truck.setLat( Double.parseDouble( tempCoord.get("latitude").toString() ));
     			truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));
+    			
+    		    result.add(truck);
     			//truckMap.put(truck.getId(), truck);
             }
         } 
