@@ -345,7 +345,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		System.out.println(lat);
 		System.out.println(lon);
 		
-		List result = new ArrayList<TruckInfo>();
+		List<TruckInfo> result = new ArrayList<TruckInfo>();
 		
 		String accessToken="";
 		OkHttpClient client = new OkHttpClient();
@@ -382,7 +382,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
             request2 = new Builder()
                     .url("https://api.yelp.com/v3/businesses/search?term=" + term 
                     		+ "&location=" + location 
-                    		+ "&radius=8046"
+                    		+ "&radius=16094"
                     		+ "&categories=foodtrucks"
                     		+ "&sort_by=best_match")
                     .get()
@@ -396,7 +396,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
                     .url("https://api.yelp.com/v3/businesses/search?term=" + term 
                     		+ "&latitude=" + lat 
                     		+ "&longitude=" + lon 
-                    		+ "&radius=8046"
+                    		+ "&radius=16094"
                     		+ "&categories=foodtrucks"
                     		+ "&sort_by=best_match")
                     .get()
@@ -407,8 +407,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
         }
 
         try {
-        	Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        	
             Response response2 = client2.newCall(request2).execute();
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(response2.body().string());
@@ -426,7 +424,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
             		size=40;
             }
             
-            JSONObject res = new JSONObject();
             for(int i=0;i<size;i++) {
             	JSONObject temp = (JSONObject) list.get(i);
             	TruckInfo truck = new TruckInfo();
@@ -439,12 +436,19 @@ public class FSTruckInfoManager implements TruckInfoManager{
     			truck.setType(type);
     			JSONObject tempLoc = (JSONObject) temp.get("location");
     			truck.setAddress((String) tempLoc.get("address1"));
-    			truck.setPhoneNumber((String) temp.get("phone"));
+    			
+    			String pN = (String) temp.get("phone");
+    			truck.setPhoneNumber(pN.substring(pN.length()-7));
+    			truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
+    		
     			truck.setCity((String) tempLoc.get("city"));
     			truck.setZipCode((String) tempLoc.get("zip_code"));
     			JSONObject tempCoord = (JSONObject) temp.get("coordinates");
     			truck.setLat( Double.parseDouble( tempCoord.get("latitude").toString() ));
     			truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));
+    			
+    			String imageUrl = (String) temp.get("image_url");
+    			
     		    result.add(truck);
     			//truckMap.put(truck.getId(), truck);
             }
