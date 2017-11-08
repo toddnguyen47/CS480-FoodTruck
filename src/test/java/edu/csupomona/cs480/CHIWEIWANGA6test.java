@@ -36,6 +36,7 @@ public class CHIWEIWANGA6test {
 			t1.setPhoneNumber("2678988");
 			t1.setType("Thai");
 			t1.setCity("Alhambra");
+			t1.setImageUrl("Url");
 			t1.setLat(30);
 			t1.setLon(30);
 			truckRepositry.save(t1);

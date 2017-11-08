@@ -31,8 +31,14 @@ public class TruckInfo {
     private String address;
 	private double lat;
     private double lon;
+    private String imageUrl;
     
-    
+    public String getImageUrl(){
+    	return imageUrl;
+    }
+    public void setImageUrl(String imageUrl){
+    	this.imageUrl = imageUrl;
+    }
     
     public String getCity() {
 		return city;

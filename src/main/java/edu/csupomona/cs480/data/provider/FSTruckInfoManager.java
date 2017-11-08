@@ -434,7 +434,8 @@ public class FSTruckInfoManager implements TruckInfoManager{
     			System.out.println("id: " + i + " " + truck.getId());
             	truck.setName((String) temp.get("name"));
             	System.out.println("name: " + i + " " + truck.getName());
-        		
+        	    truck.setImageUrl((String)temp.get("image_url"));
+        	    System.out.println("URL: " + (String)temp.get("image_url"));
     			truck.setType(type);
     			JSONObject tempLoc = (JSONObject) temp.get("location");
     			truck.setAddress((String) tempLoc.get("address1"));
