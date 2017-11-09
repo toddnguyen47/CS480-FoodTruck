@@ -431,20 +431,20 @@ public class FSTruckInfoManager implements TruckInfoManager{
     			System.out.println("id: " + i + " " + truck.getId());
             	truck.setName((String) temp.get("name"));
             	System.out.println("name: " + i + " " + truck.getName());
-        	    truck.setImageUrl((String)temp.get("image_url"));
-        	    System.out.println("URL: " + (String)temp.get("image_url"));
+            	truck.setImageUrl((String)temp.get("image_url")); 
     			truck.setType(type);
+    			
     			JSONObject tempLoc = (JSONObject) temp.get("location");
     			truck.setAddress((String) tempLoc.get("address1"));
     			
     			String pN = (String) temp.get("phone");
-    			truck.setPhoneNumber(pN.substring(pN.length()-7));
-    			truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
+    			truck.setPhoneNumber((pN==null)?pN:pN.substring(pN.length()-7));
+    			truck.setAreaCode(Integer.parseInt((pN==null)?pN:pN.substring(pN.length()-10, pN.length()-7)));
     		
     			truck.setCity((String) tempLoc.get("city"));
     			truck.setZipCode((String) tempLoc.get("zip_code"));
     			JSONObject tempCoord = (JSONObject) temp.get("coordinates");
-    			truck.setLat( Double.parseDouble( tempCoord.get("latitude").toString() ));
+    			truck.setLat(Double.parseDouble( tempCoord.get("latitude").toString() ));
     			truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));
     			
     		    result.add(truck);
