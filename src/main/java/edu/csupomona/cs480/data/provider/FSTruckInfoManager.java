@@ -438,8 +438,13 @@ public class FSTruckInfoManager implements TruckInfoManager{
     			truck.setAddress((String) tempLoc.get("address1"));
     			
     			String pN = (String) temp.get("phone");
-    			truck.setPhoneNumber((pN==null)?pN:pN.substring(pN.length()-7));
-    			truck.setAreaCode(Integer.parseInt((pN==null)?pN:pN.substring(pN.length()-10, pN.length()-7)));
+    			if (pN != null && !pN.isEmpty()) {
+    				// Eliminate the "+" in front
+    				pN = pN.substring(1);
+    				truck.setPhoneNumber(pN.substring(pN.length()-7));
+    				truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
+    			}
+    			
     		
     			truck.setCity((String) tempLoc.get("city"));
     			truck.setZipCode((String) tempLoc.get("zip_code"));
@@ -452,7 +457,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
             }
         } 
         catch (Exception e) {
-        	
             e.printStackTrace();
         }
         return result;
