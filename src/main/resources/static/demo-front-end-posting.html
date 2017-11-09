@@ -32,8 +32,16 @@
 			      <br/>
 			      <input type="submit" id="submit" value="Submit" />
 		    </form>
+		    <p>
+							<h4>Types of Food</h4>
+								<span ng-model="checkboxListing" ng-repeat="food in typesOfFood">
+									<input type = "checkbox" ng-model="food.checked" ng-checked="field.checked">
+									{{food.name}} &ensp;</input>
+								</span>
+							</p>
 		    <div>
-		      		{{myForm.search_input}} {{myForm.selectedRole.optName}}
+		      		{{myForm.search_input}} <br>{{myForm.selectedRole.optName}}<br>
+		      		{{ selectedItems  | json }} 
 		      		
 		    </div>
 		    <br><br>

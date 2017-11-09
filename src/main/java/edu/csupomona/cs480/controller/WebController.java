@@ -4,18 +4,27 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.net.InetAddress;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.apache.commons.math3.distribution.NormalDistribution;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -313,34 +322,58 @@ public class WebController {
 	}
 	
 	//this is for demo-front-end-controller.js 
-	@RequestMapping(value = "/cs480/foodtrucks/yelp/{search_input}", method = RequestMethod.POST)
+	//@RequestMapping(value = "/cs480/foodtrucks/yelp/{search_input}", method = RequestMethod.POST)
+	@RequestMapping(value = "/cs480/foodtrucks/yelp", method = RequestMethod.POST)
 	List<TruckInfo> getYelpList(
-			@PathVariable("search_input") String search,
-			@RequestParam("opt") String opt,
-			@RequestParam(value = "opt2", required = false) String temp) throws IOException {
-		System.out.println("search_input: <" + search + ">");
-		System.out.println("opt: <" + opt + ">");
-		System.out.println("opt2: " + temp);
-		
+//			@PathVariable("search_input") String search,
+//			@RequestParam("opt") String opt,
+//			@RequestParam(value = "opt2", required = false) String temp,
+			@RequestBody Map<String, Object> selection) throws Exception {
+		selection.get("lon");
+		System.out.println(selection);
 		double lat=0, lon=0;
 		double defaultLat = 34.055103;
 		double defaultLon = -117.749992;
-		
-		// temp != null to prevent NullPointerExceptions
-		if(temp != null && temp.length() > 1) {
-			String[] parts = temp.split(",");			
-			lat = Double.parseDouble(parts[0]);
-			lon = Double.parseDouble(parts[1]);
+		for(Map.Entry<String, Object> alternateEntry : selection.entrySet()) {
+		    System.out.println(alternateEntry.getKey() + ": " + 
+		           alternateEntry.getValue().toString());
+		}
+		//need to work on this part
+//		Map<String, Map<String, String>> list = 
+//			   new HashMap<String, Map<String, String>>(selection.get("typeOfFood").toString());
+//         
+//        int size;
+//        // Making sure list isn't empty
+//        if (list == null) {
+//        	size = 0;
+//        	System.out.println("List is empty!");
+//        } else {
+//        	size = list.size();
+//        }
+//        
+//        for(int i=0;i<size;i++) {
+//        	System.out.println(list.get("name"));
+//        }
+		if(selection.get("lat")!=null)
+		{
+			lat = Double.parseDouble(selection.get("lat").toString());
+			lon = Double.parseDouble(selection.get("lon").toString());
 			System.out.println("lat: " + lat);
 			System.out.println("lon: " + lon);
 		}
-		
-		if(!opt.equals("current location")){
-			return truckManager.searchYelp("Mexican", null,null,defaultLat,defaultLon);
-		}else{
-			System.out.println("debugging 2");
-			return truckManager.searchYelp("Mexican", null,null, lat, lon);
+		if(selection.get("opt")!=null)
+		{
+			System.out.println(selection.get("opt").toString());
 		}
+
+//		
+//		if(!opt.equals("current location")){
+			return truckManager.searchYelp("Mexican", null,null,lat,lon);
+//		}else{
+//			System.out.println("debugging 2");
+//			return truckManager.searchYelp("Mexican", null,null, lat, lon);
+//		}
+
 	}
 	
 // for truckController2.js
