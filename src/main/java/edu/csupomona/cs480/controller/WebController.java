@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.net.InetAddress;
 
 import org.json.simple.JSONArray;
@@ -334,10 +335,32 @@ public class WebController {
 		double lat=0, lon=0;
 		double defaultLat = 34.055103;
 		double defaultLon = -117.749992;
+		Map<String,String> map = new HashMap<String,String>();
 		for(Map.Entry<String, Object> alternateEntry : selection.entrySet()) {
 		    System.out.println(alternateEntry.getKey() + ": " + 
 		           alternateEntry.getValue().toString());
 		}
+		
+		System.out.println("\nBEGIN RAE TESTS");
+		String typeOfFood = selection.get("typeOfFood").toString();
+		System.out.println(typeOfFood);
+		// maybe make a new class/new classes to hold these inputs
+		// A parse; TODO: consider separating into its own method or into class/classes
+		List<String> typeOfFoodNames = new ArrayList<String>();
+		while (typeOfFood.contains("name"))
+		{
+		   int nameIndex = typeOfFood.indexOf("name=");
+		   typeOfFood = typeOfFood.substring(nameIndex + 5);
+		   int commaIndex = typeOfFood.indexOf(",");
+		   typeOfFoodNames.add(typeOfFood.substring(0, commaIndex));
+		}
+		
+		for (String names : typeOfFoodNames)
+		{
+		   System.out.println(" User wants: " + names);
+		}
+		System.out.println("END RAE TESTS\n");
+		
 		//need to work on this part
 //		Map<String, Map<String, String>> list = 
 //			   new HashMap<String, Map<String, String>>(selection.get("typeOfFood").toString());
@@ -354,6 +377,7 @@ public class WebController {
 //        for(int i=0;i<size;i++) {
 //        	System.out.println(list.get("name"));
 //        }
+		
 		if(selection.get("lat")!=null)
 		{
 			lat = Double.parseDouble(selection.get("lat").toString());
