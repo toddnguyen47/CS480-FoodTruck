@@ -436,19 +436,16 @@ public class FSTruckInfoManager implements TruckInfoManager{
  		
     			JSONObject tempLoc = (JSONObject) temp.get("location");
     			truck.setAddress((String) tempLoc.get("address1"));
-    		    
+    		  
     			
     			String pN = (String) temp.get("phone");
     			if (pN != null && !pN.isEmpty()) {
-    				// Eliminate the "+" in front
-    				pN = pN.substring(1);
-    				truck.setPhoneNumber(pN.substring(pN.length()-7));
-    				truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
-    				System.out.println(truck.getPhoneNumber());
-    				System.out.println(truck.getAreaCode());			
-    			}
-    			
-    			
+    				     			truck.setAreaCode(Integer.parseInt((pN==null)?pN:pN.substring(pN.length()-10, pN.length()-7)));		 
+    				     			// Eliminate the "+" in front
+    				     				pN = pN.substring(1);
+    				     				truck.setPhoneNumber(pN.substring(pN.length()-7));
+    				     				truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
+    		    }
     			truck.setCity((String) tempLoc.get("city"));
     			truck.setZipCode((String) tempLoc.get("zip_code"));
     			JSONObject tempCoord = (JSONObject) temp.get("coordinates");
@@ -460,7 +457,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
             }
         } 
         catch (Exception e) {
-        	
             e.printStackTrace();
         }
         return result;
