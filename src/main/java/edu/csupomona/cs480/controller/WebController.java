@@ -162,7 +162,7 @@ public class WebController {
 		modelAndView.addObject("users", listAllUsers());
 		return modelAndView;
 	}
-	
+
 	@RequestMapping(value = "/cs480/thonguyen/a3", method = RequestMethod.GET)
 	int[] getFibonacciSequence() {
 		// Will try to compute Fibonacci in O(n) time using memoization
@@ -171,31 +171,31 @@ public class WebController {
 		// Initialize first two numbers
 		fib[0] = 0;
 		fib[1] = 1;
-		
+	
 		// Calculate next fibonacci numbers based on previously stored numbers
 		for (int i = 2; i <= maxSize; i++) {
 			fib[i] = fib[i-1] + fib[i-2];
 		}
-		
+	
 		return fib;
 	}
-	
+
 	@RequestMapping(value = "/cs480/adriancuellar-a3", method = RequestMethod.GET)
 	String dummyMethod() {
 		return "Yes";
 	}
-	
+
 	@RequestMapping(value = "/cs480/rachelchiang-a3", method = RequestMethod.GET)
 	String getGreeting()
 	{
 	   return "Hello, world!";
 	}
-	
+
 	@RequestMapping(value = "/cs480/asartoonian", method = RequestMethod.POST)
 	public String postFoos() {
-	    return "Post some Foos";
+		return "Post some Foos";
 	}
-	
+
 	/*********** Web A3 truckAPI testing the framework **********/
 	/*  cs480/chi-wei wang (john) -a3
 	 * 
@@ -230,16 +230,16 @@ public class WebController {
 	List<TruckInfo> listAllTrucks() {
 		return truckManager.listAllTrucks();
 	}
-	
+
 	@RequestMapping(value = "/cs480/foodtruck/home", method = RequestMethod.GET)
 	ModelAndView getFoodtruckPage() {
 		ModelAndView modelAndView = new ModelAndView("foodtruck");
 		modelAndView.addObject("trucks", listAllTrucks());
 		return modelAndView;
 	}
-	
+
 	/****************** Assignment 4 *****************/
-	
+
 	@RequestMapping(value = "cs480/thonguyen/a4", method = RequestMethod.GET)
 	List<ArrayList<String>> getFoodTruckYelpInfo() {
 		FoodTruckYelp foodTruckYelp = new FoodTruckYelp();
@@ -247,25 +247,25 @@ public class WebController {
 		foodTruckInfo.add(foodTruckYelp.getFoodTruckName());
 		foodTruckInfo.add(foodTruckYelp.getFoodTruckAddress());
 		foodTruckInfo.add(foodTruckYelp.getFoodTruckNumber());
-		
+	
 		return foodTruckInfo;
 	}
-	
+
 	@RequestMapping(value = "cs480/adriancuellar/a4", method = RequestMethod.GET)
 	double exercise4AC() {
 		NormalDistribution normalDist= new NormalDistribution(10,3);
 		return normalDist.sample();
 	}
-	
+
 	@RequestMapping(value = "cs480/asartoonian/a4", method = RequestMethod.GET)
 	public void GsonTry() throws IOException {
 		try (Writer writer = new FileWriter("Output.json")) {
-	        Gson gson = new GsonBuilder().create();
-	        gson.toJson("Hello", writer);
-	        gson.toJson(123, writer);
+		    Gson gson = new GsonBuilder().create();
+		    gson.toJson("Hello", writer);
+		    gson.toJson(123, writer);
 		}
 	}
-	
+
 	@RequestMapping(value = "/cs480/rachelchiang-a4", method = RequestMethod.GET)
 	String getGraphInformation()
 	{
@@ -305,25 +305,25 @@ public class WebController {
 		List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepository.findAll();
 		return list;
 	}
-	
+
 	@RequestMapping(value = "/cs480/AC/TestAddress", method = RequestMethod.GET)
 	public String JSTryAdd() throws IOException {
 		GetYelpData.createJson("Mexican","","Pomona",0,0);
 		return "File Created";
 	}
-	
+
 	@RequestMapping(value = "/cs480/AC/TestCoord", method = RequestMethod.GET)
 	public String JSTryCoord() throws IOException {
 		GetYelpData.createJson("Mexican", null,null,34.018363,-118.492343);
 		return "File Created";
 	}
-	
+
 	//getting data from yelp and return a list
 	@RequestMapping(value = "/cs480/foodtruck/yelp", method = RequestMethod.GET)
 	List<TruckInfo> YelpListing() throws IOException {
 		return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
 	}
-	
+
 	//this is for demo-front-end-controller.js 
 	//@RequestMapping(value = "/cs480/foodtrucks/yelp/{search_input}", method = RequestMethod.POST)
 	@RequestMapping(value = "/cs480/foodtrucks/yelp", method = RequestMethod.POST)
@@ -339,10 +339,10 @@ public class WebController {
 		double defaultLon = -117.749992;
 		Map<String,String> map = new HashMap<String,String>();
 		for(Map.Entry<String, Object> alternateEntry : selection.entrySet()) {
-		    System.out.println(alternateEntry.getKey() + ": " + 
-		           alternateEntry.getValue().toString());
+			System.out.println(alternateEntry.getKey() + ": " + 
+			       alternateEntry.getValue().toString());
 		}
-		
+	
 		System.out.println("\nBEGIN RAE TESTS");
 		String typeOfFood = selection.get("typeOfFood").toString();
 		System.out.println(typeOfFood);
@@ -356,13 +356,13 @@ public class WebController {
 		   int commaIndex = typeOfFood.indexOf(",");
 		   typeOfFoodNames.add(typeOfFood.substring(0, commaIndex));
 		}
-		
+	
 		for (String names : typeOfFoodNames)
 		{
 		   System.out.println(" User wants: " + names);
 		}
 		System.out.println("END RAE TESTS\n");
-		
+	
 		//need to work on this part
 //		Map<String, Map<String, String>> list = 
 //			   new HashMap<String, Map<String, String>>(selection.get("typeOfFood").toString());
@@ -379,7 +379,7 @@ public class WebController {
 //        for(int i=0;i<size;i++) {
 //        	System.out.println(list.get("name"));
 //        }
-		
+	
 		if(selection.get("lat")!=null)
 		{
 			lat = Double.parseDouble(selection.get("lat").toString());
@@ -401,22 +401,22 @@ public class WebController {
 //		}
 
 	}
-	
+
 // for truckController2.js
    /* Not quite working as intended, please wait
    @RequestMapping(value = "/cs480/foodtrucks/yelp/test/{search_input}", method = RequestMethod.POST)
    List<TruckInfo> getYelpList(
-         @PathVariable("search_input") String search,
-         @RequestParam("loc_opt") String locOpt,
-         @RequestParam("food_type") String foodType) throws IOException {
-      
-      System.out.println("search_input: " + search);
-      System.out.println("locOpt: " + locOpt);
-      System.out.println("foodType: " + foodType);
-      
-      return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
+	     @PathVariable("search_input") String search,
+	     @RequestParam("loc_opt") String locOpt,
+	     @RequestParam("food_type") String foodType) throws IOException {
+	  
+	  System.out.println("search_input: " + search);
+	  System.out.println("locOpt: " + locOpt);
+	  System.out.println("foodType: " + foodType);
+	  
+	  return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
    }*/
-	
+
 	/********* Primary Homepage Controller
 	 * @throws IOException Hmm, why does this throw an IOException?
 	 * 
@@ -424,26 +424,27 @@ public class WebController {
 	@RequestMapping(value = "/cs480/foodtrucks/search2", method = RequestMethod.POST)
 	public List<TruckInfo> getUserInput (
 			@RequestBody UserInput userInput) throws IOException {	
-		
+	
 		double defaultLat = 34.055103;
 		double defaultLon = -117.749992;
 		String locationType = userInput.getLocationType();
 		String locationValue = userInput.getLocationValue();
-		
+	
 		System.out.println(locationType);
 		System.out.println(locationValue);
-		
+	
 		List<String> typesOfFood = userInput.getFoodTypes();
 		if (typesOfFood != null && !typesOfFood.isEmpty()) {
 			for (String food : typesOfFood) {
 				System.out.println("Type of food: " + food);
-				return truckManager.searchYelp(typesOfFood.get(0), null,null,defaultLat,defaultLon);
 			}
+
+			return truckManager.searchYelp(typesOfFood.get(0), null,null,defaultLat,defaultLon);
 		}
 		else {
 			System.out.println("User did not check any food types!");
 		}
-		
+	
 		return truckManager.searchYelp("Mexican", null,null,defaultLat,defaultLon);
 	}
 }
