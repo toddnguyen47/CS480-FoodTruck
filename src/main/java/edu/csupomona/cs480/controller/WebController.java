@@ -40,6 +40,7 @@ import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.provider.TruckInfoManager;
 import edu.csupomona.cs480.data.GeoIP;
 import edu.csupomona.cs480.data.GetYelpData;
+import edu.csupomona.cs480.data.GoogleGeoCode;
 import edu.csupomona.cs480.data.repository.TruckRepository;
 import edu.csupomona.cs480.userInput.UserInput;
 
@@ -439,12 +440,33 @@ public class WebController {
 				System.out.println("Type of food: " + food);
 			}
 
-			return truckManager.searchYelp(typesOfFood.get(0), null,null,defaultLat,defaultLon);
+			return getAllTruckInfo(typesOfFood);
 		}
 		else {
-			System.out.println("User did not check any food types!");
+			System.out.println("User did not check any food types!");			
 		}
-	
+		
 		return truckManager.searchYelp("Mexican", null,null,defaultLat,defaultLon);
+	}
+	
+	private List<TruckInfo> getAllTruckInfo(List<String> userInput) throws IOException {
+		List<TruckInfo> truckInfoTemp = new ArrayList<TruckInfo>();
+		double defaultLat = 34.055103;
+		double defaultLon = -117.749992;
+		
+		if (userInput != null) {
+			for (String s : userInput) {
+				List<TruckInfo> listTemp = truckManager.searchYelp(s,
+						null, null, defaultLat, defaultLon);
+				// Add all truck info to our temporary truckInfo list
+				for (TruckInfo tI : listTemp) {
+					truckInfoTemp.add(tI);
+				}
+			}
+			return truckInfoTemp;
+		}
+		
+		else
+			return null;
 	}
 }

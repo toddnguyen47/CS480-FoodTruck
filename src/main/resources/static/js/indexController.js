@@ -40,6 +40,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 			data = $scope.searchConcat()
 		).success(function(dataResponse) {
 			$scope.trucks = dataResponse;
+			console.log($scope.trucks);
 		});
 	}
 

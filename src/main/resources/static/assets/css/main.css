@@ -2302,13 +2302,16 @@
 
 			table.default th {
 				color: #5b5b5b;
-				font-size: 0.8em;
-				font-weight: 700;
+				font-size: 1.0;
 				letter-spacing: 0.125em;
 				line-height: 1.75em;
 				padding: 0.5em 1em 0.5em 1em;
 				text-align: left;
+				/*
+				font-size: 0.8em;
+				font-weight: 700;
 				text-transform: uppercase;
+				*/
 			}
 
 			table.default thead {

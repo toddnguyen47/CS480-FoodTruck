@@ -117,16 +117,20 @@
 								Location: <strong>{{form.location1}}</strong></p>
 						</div>
 
-						<table border="1">
+						<table class="default">
 							<tr>
-								<th>ID</th>
 								<th>Name</th>
 								<th>Type of Food</th>
+								<th>Address</th>
+								<th>City, Zip Code</th> 
+								<th>Image</th>
 							</tr>
 							<tr ng-repeat="truck in trucks">
-								<th>{{truck.id}}</th>
 								<th>{{truck.name}}</th>
 								<th>{{truck.type}}</th>
+								<th>{{truck.address}}</th>
+								<th>{{truck.city}}, {{truck.zipCode}}</th>
+								<th><img src="{{truck.imageUrl}}" width="200"></th>
 							</tr>
 						</table>
 
