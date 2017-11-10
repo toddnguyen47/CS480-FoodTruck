@@ -3,7 +3,7 @@ var optPrimeApp = angular.module('optPrimeApp', []);
 optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	var x = document.getElementById("geoloc");
 	$scope.inputForm = {};
-	
+
 	// Make sure "Random" is the LAST entry
 	$scope.typesOfFood = [
 		{name: "American",		selected: false},
@@ -24,12 +24,21 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		{locationType: "Current Location"}
 	];
 
+	/* $scope.deleteMe = {
+		"locationType":"zip code",
+		"typesOfFood":[
+			"korean",
+			"american"
+		]
+	}  */	
+
 	$scope.postSearch = function() {
-		//var tempLocation = angular.lowercase($scope.form.location1.toString());
-		//var tempSelectedMode = angular.lowercase($scope.form.selectedMode.locationType.toString());
-		//var concatString = "cs480/foodtrucks/yelp/" + tempLocation + "?opt=" + tempSelectedMode;
-		var concatString = "cs480/foodtrucks/yelp/" + $scope.form.location1 + "?opt=" + $scope.form.selectedMode.locationType;
-		$http.post(concatString).success(function(dataResponse) {
+		//var concatString = "cs480/foodtrucks/yelp/" + $scope.form.location1 + "?opt=" + $scope.form.selectedMode.locationType;
+		var concatString = "cs480/foodtrucks/search2";
+		$http.post(
+			url = concatString,
+			data = $scope.searchConcat()
+		).success(function(dataResponse) {
 			$scope.trucks = dataResponse;
 		});
 	}
@@ -45,6 +54,36 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 			return food.name;
 		});
 	}, true);
+
+	// Concat user searches
+	$scope.searchConcat = function searchConcat() {
+		inputTemp = {};
+		inputTemp["locationType"] = $scope.form.selectedMode.locationType;
+		inputTemp["locationValue"] = $scope.form.location1;
+		inputTemp["foodTypes"] = $scope.foodSelection;
+
+		return inputTemp;
+	}
+
+	// Get latitude/longitude from address
+	// Get latitude/longitude from address
+	//var geocoder = new google.maps.Geocoder();
+	$scope.getLatLon = function getLatLon(address) {
+		temp = {};
+		geocoder.geocode({'address':address}, function(results, status){
+			if (status == google.maps.GeocoderStatus.OK) {
+				var latitude = results[0].geometry.location.lat();
+				var longitude = results[0].geometry.location.lng();
+
+				console("latitude: " + latitude + ", longitude: " + longitude);
+
+				temp["latitude"] = latitude;
+				temp["longitude"] = longitude;
+			}
+		});
+
+		return temp;
+	}
 
 	/*******************************************/
 	/* Geolocation code

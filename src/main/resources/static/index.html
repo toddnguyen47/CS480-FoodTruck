@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 
 		<!-- Use MIN AngularJS for production
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
@@ -84,7 +86,7 @@
 							Search by: <br />
 							<select ng-model="form.selectedMode" required ng-options="elem.locationType for elem in locationArr"></select>
 							Enter your location<br>
-							<input type="location" ng-model="form.location1" value="91763" /><br>
+							<input type="text" ng-model="form.location1" value="91763" /><br>
                             <button ng-model="getLocationBtn" ng-click="getLocation()">Where Am I?</button>
                             <div id="geoloc"></div>
 

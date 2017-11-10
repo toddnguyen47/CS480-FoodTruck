@@ -20,6 +20,7 @@ import org.apache.commons.math3.distribution.NormalDistribution;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +41,7 @@ import edu.csupomona.cs480.data.provider.TruckInfoManager;
 import edu.csupomona.cs480.data.GeoIP;
 import edu.csupomona.cs480.data.GetYelpData;
 import edu.csupomona.cs480.data.repository.TruckRepository;
+import edu.csupomona.cs480.userInput.UserInput;
 
 /**
  * This is the controller used by Spring framework.
@@ -414,4 +416,33 @@ public class WebController {
       
       return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
    }*/
+	
+	/********* Primary Homepage Controller
+	 * @throws IOException Hmm, why does this throw an IOException?
+	 * 
+	 */
+	@RequestMapping(value = "/cs480/foodtrucks/search2", method = RequestMethod.POST)
+	public List<TruckInfo> getUserInput (
+			@RequestBody UserInput userInput) throws IOException {	
+		
+		double defaultLat = 34.055103;
+		double defaultLon = -117.749992;
+		String locationType = userInput.getLocationType();
+		String locationValue = userInput.getLocationValue();
+		
+		System.out.println(locationType);
+		System.out.println(locationValue);
+		
+		List<String> typesOfFood = userInput.getFoodTypes();
+		if (typesOfFood != null && !typesOfFood.isEmpty()) {
+			for (String food : typesOfFood) {
+				System.out.println("Type of food: " + food);
+			}
+		}
+		else {
+			System.out.println("User did not check any food types!");
+		}
+		
+		return truckManager.searchYelp(typesOfFood.get(0), null,null,defaultLat,defaultLon);
+	}
 }
