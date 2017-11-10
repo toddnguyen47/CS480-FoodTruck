@@ -122,7 +122,8 @@
 								<th>Name</th>
 								<th>Type of Food</th>
 								<th>Address</th>
-								<th>City, Zip Code</th> 
+								<th>City, Zip Code</th>
+								<th>Phone Number</th>
 								<th>Image</th>
 							</tr>
 							<tr ng-repeat="truck in trucks">
@@ -130,6 +131,7 @@
 								<th>{{truck.type}}</th>
 								<th>{{truck.address}}</th>
 								<th>{{truck.city}}, {{truck.zipCode}}</th>
+								<th>({{truck.areaCode}}) {{truck.phoneNumber}}</th>
 								<th><img src="{{truck.imageUrl}}" width="200"></th>
 							</tr>
 						</table>
