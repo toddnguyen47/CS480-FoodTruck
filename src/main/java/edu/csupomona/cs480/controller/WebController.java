@@ -437,12 +437,13 @@ public class WebController {
 		if (typesOfFood != null && !typesOfFood.isEmpty()) {
 			for (String food : typesOfFood) {
 				System.out.println("Type of food: " + food);
+				return truckManager.searchYelp(typesOfFood.get(0), null,null,defaultLat,defaultLon);
 			}
 		}
 		else {
 			System.out.println("User did not check any food types!");
 		}
 		
-		return truckManager.searchYelp(typesOfFood.get(0), null,null,defaultLat,defaultLon);
+		return truckManager.searchYelp("Mexican", null,null,defaultLat,defaultLon);
 	}
 }
