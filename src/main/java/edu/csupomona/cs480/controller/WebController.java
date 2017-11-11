@@ -399,6 +399,7 @@ public class WebController {
 	
 		System.out.println(locationType);
 		System.out.println(locationValue);
+		System.out.println("lat:" + userInput.getLat() + "lon:" + userInput.getLon());
 	
 		List<String> typesOfFood = userInput.getFoodTypes();
 		if (typesOfFood != null && !typesOfFood.isEmpty()) {

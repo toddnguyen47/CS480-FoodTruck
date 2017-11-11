@@ -77,7 +77,7 @@
 				<!-- </div> -->
 
 
-				<div class="box container" style="text-align:center" ng-controller="inputForm">
+				<div class="box container" style="text-align:center" ng-controller="inputForm" data-ng-init="init()">
 					<section>
 						<header>
 							<h2>Food Truck Search</h2>
@@ -89,8 +89,7 @@
                             <div id="textInput" ng-hide="form.selectedMode.locationType=='Current Location'">
                                 Enter your location<br>
                                 <!--QUESTION: What is "value" field for?-->
-							    <!--<input type="text" ng-model="form.location1" value="91763" ng-required="form.selectedMode.locationType!='Current Location'"/><br>-->
-                                <input type="text" ng-model="form.location1" ng-required="form.selectedMode.locationType!='Current Location'"/><br>
+                                <input type="text" ng-model="form.location1" value="91763" ng-required="form.selectedMode.locationType!='Current Location'"/><br>
                             </div>
                             <button ng-model="getLocationBtn" ng-click="getLocation()">Where Am I?</button>
                             <div id="geoloc"></div>
@@ -118,6 +117,7 @@
 
 						<br />
 						<div>
+                            <!--TODO: Remove later? User doesn't need to see this.-->
 							<p ng-model="form.output">Location Type: <strong>{{form.selectedMode.locationType}}</strong><br />
 								Location: <strong>{{form.location1}}</strong></p>
 						</div>

@@ -63,6 +63,9 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		inputTemp["locationType"] = $scope.form.selectedMode.locationType;
 		inputTemp["locationValue"] = $scope.form.location1;
 		inputTemp["foodTypes"] = $scope.foodSelection;
+        // TODO: Consider changing this to prevent needing secure server
+        inputTemp["lat"] = $scope.position.coords.latitude;
+        inputTemp["lon"] = $scope.position.coords.longitude;
 
 		return inputTemp;
 	}
@@ -90,6 +93,17 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	/*******************************************/
 	/* Geolocation code
 	/*******************************************/
+
+    // TODO: Remove if we get a non-HTML5 geolocation to work
+    $scope.init = function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                $scope.$apply(function() {
+                    $scope.position = position;
+                });
+            });
+        }
+    }
 
 	$scope.getLocation = function() {
 		if (navigator.geolocation) {
