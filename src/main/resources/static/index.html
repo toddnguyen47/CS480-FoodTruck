@@ -122,7 +122,7 @@
 								Location: <strong>{{form.location1}}</strong></p>
 						</div>
 
-						<table class="default" id="truckTable">
+						<table class="default" id="truckTable" ng-hide="!trucks">
 							<thead>
 								<tr>
 									<th>Name</th>
@@ -136,8 +136,10 @@
 								<tr ng-repeat="truck in trucks">
 									<td>{{truck.name}}</td>
 									<td>{{truck.type}}</td>
-									<td>{{truck.address}}<p>{{truck.city}}, {{truck.zipCode}}</p></td>
+                                    <!--TODO: Consider whether we keep "route me" or not.-->
+									<td>{{truck.address}}<p>{{truck.city}}, {{truck.zipCode}}</p><p><a href="https://www.google.com/maps/dir/?api=1&destination={{truck.lat}},{{truck.lon}}">Route Me!</a></p></td>
 									<td>({{truck.areaCode}}) {{truck.phoneNumber}}</td>
+                                    <!--TODO: Figure out how to center image [vertically] because it looks imbalanced. Center of image should align with center of table.-->
 									<td><img src="{{truck.imageUrl}}"></td>
 								</tr>
 							</tbody>

@@ -2279,14 +2279,37 @@
 			}
 
 /* Table */
+    table#truckTable {
+    }
     table#truckTable td {
         text-align: left;
         font-size: 0.90em;
+        color: #676767;
     }
     table#truckTable img {
         width: 150px;
         height: 150px;
         object-fit: contain;
+    }
+    table#truckTable a:link {
+        color: #04486c;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    table#truckTable a:visited {
+        color: #4b7c17;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    table#truckTable a:hover {
+        color: #1e88c6;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    table#truckTable a:active {
+        color: #c6ef9a;
+        background-color: transparent;
+        text-decoration: underline;
     }
 
 	.table-wrapper {
@@ -2311,7 +2334,8 @@
 				}*/
 
 			table.default tbody tr:nth-of-type(odd) {
-				background-color: rgba(78, 185, 128, 0.50);
+				/*background-color: rgba(78, 185, 128, 0.50);*/
+                background-color: #a9ddc1;
 			}
 
 			table.default td {
