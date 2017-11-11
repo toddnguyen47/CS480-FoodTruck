@@ -42,6 +42,7 @@ import edu.csupomona.cs480.data.GeoIP;
 import edu.csupomona.cs480.data.GetYelpData;
 import edu.csupomona.cs480.data.GoogleGeoCode;
 import edu.csupomona.cs480.data.repository.TruckRepository;
+import edu.csupomona.cs480.userInput.DemoUserInput;
 import edu.csupomona.cs480.userInput.UserInput;
 
 /**
@@ -325,83 +326,48 @@ public class WebController {
 		return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
 	}
 
-	//this is for demo-front-end-controller.js 
-	//@RequestMapping(value = "/cs480/foodtrucks/yelp/{search_input}", method = RequestMethod.POST)
-	@RequestMapping(value = "/cs480/foodtrucks/yelp", method = RequestMethod.POST)
-	List<TruckInfo> getYelpList(
-//			@PathVariable("search_input") String search,
-//			@RequestParam("opt") String opt,
-//			@RequestParam(value = "opt2", required = false) String temp,
-			@RequestBody Map<String, Object> selection) throws Exception {
-		selection.get("lon");
-		System.out.println(selection);
-		double lat=0, lon=0;
-		double defaultLat = 34.055103;
-		double defaultLon = -117.749992;
-		Map<String,String> map = new HashMap<String,String>();
-		for(Map.Entry<String, Object> alternateEntry : selection.entrySet()) {
-			System.out.println(alternateEntry.getKey() + ": " + 
-			       alternateEntry.getValue().toString());
-		}
-	
-		System.out.println("\nBEGIN RAE TESTS");
-		String typeOfFood = selection.get("typeOfFood").toString();
-		System.out.println(typeOfFood);
-		// maybe make a new class/new classes to hold these inputs
-		// A parse; TODO: consider separating into its own method or into class/classes
-		List<String> typeOfFoodNames = new ArrayList<String>();
-		while (typeOfFood.contains("name"))
-		{
-		   int nameIndex = typeOfFood.indexOf("name=");
-		   typeOfFood = typeOfFood.substring(nameIndex + 5);
-		   int commaIndex = typeOfFood.indexOf(",");
-		   typeOfFoodNames.add(typeOfFood.substring(0, commaIndex));
-		}
-	
-		for (String names : typeOfFoodNames)
-		{
-		   System.out.println(" User wants: " + names);
-		}
-		System.out.println("END RAE TESTS\n");
-	
-		//need to work on this part
-//		Map<String, Map<String, String>> list = 
-//			   new HashMap<String, Map<String, String>>(selection.get("typeOfFood").toString());
-//         
-//        int size;
-//        // Making sure list isn't empty
-//        if (list == null) {
-//        	size = 0;
-//        	System.out.println("List is empty!");
-//        } else {
-//        	size = list.size();
-//        }
-//        
-//        for(int i=0;i<size;i++) {
-//        	System.out.println(list.get("name"));
-//        }
-	
-		if(selection.get("lat")!=null)
-		{
-			lat = Double.parseDouble(selection.get("lat").toString());
-			lon = Double.parseDouble(selection.get("lon").toString());
-			System.out.println("lat: " + lat);
-			System.out.println("lon: " + lon);
-		}
-		if(selection.get("opt")!=null)
-		{
-			System.out.println(selection.get("opt").toString());
-		}
+   //this is for demo-front-end-controller.js 
+   //@RequestMapping(value = "/cs480/foodtrucks/yelp/{search_input}", method = RequestMethod.POST)
+   @RequestMapping(value = "/cs480/foodtrucks/yelp", method = RequestMethod.POST)
+   List<TruckInfo> getYelpList(
+//       @PathVariable("search_input") String search,
+//       @RequestParam("opt") String opt,
+//       @RequestParam(value = "opt2", required = false) String temp,
+         @RequestBody Map<String, Object> selection) throws Exception {
+      System.out.println(selection);
+      double lat=0, lon=0;
+      double defaultLat = 34.055103;
+      double defaultLon = -117.749992;
+      for(Map.Entry<String, Object> alternateEntry : selection.entrySet()) {
+         System.out.println(alternateEntry.getKey() + ": " + 
+                alternateEntry.getValue().toString());
+      }
+      DemoUserInput userIn = new DemoUserInput(selection);
+      System.out.println("INFO:\n" + userIn.toString());
+      
+      if(selection.get("lat")!=null)
+      {
+         lat = Double.parseDouble(selection.get("lat").toString());
+         lon = Double.parseDouble(selection.get("lon").toString());
+         System.out.println("lat: " + lat);
+         System.out.println("lon: " + lon);
+      }
+      if(selection.get("opt")!=null)
+      {
+         System.out.println(selection.get("opt").toString());
+      }
 
-//		
-//		if(!opt.equals("current location")){
-			return truckManager.searchYelp("Mexican", null,null,lat,lon);
-//		}else{
-//			System.out.println("debugging 2");
-//			return truckManager.searchYelp("Mexican", null,null, lat, lon);
-//		}
+      return truckManager.searchYelp("Mexican", null, null, userIn.getLatitude(), userIn.getLongitude());
+      
+//    
+//    if(!opt.equals("current location")){
+      // return truckManager.searchYelp("Mexican", null,null,lat,lon);
+//    }else{
+//       System.out.println("debugging 2");
+//       return truckManager.searchYelp("Mexican", null,null, lat, lon);
+//    }
 
-	}
+   }
 
 // for truckController2.js
    /* Not quite working as intended, please wait
