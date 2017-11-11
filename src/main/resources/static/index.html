@@ -85,8 +85,13 @@
 						<form name="formLocation" method="POST">
 							Search by: <br />
 							<select ng-model="form.selectedMode" required ng-options="elem.locationType for elem in locationArr"></select>
-							Enter your location<br>
-							<input type="text" ng-model="form.location1" value="91763" /><br>
+
+                            <div id="textInput" ng-hide="form.selectedMode.locationType=='Current Location'">
+                                Enter your location<br>
+                                <!--QUESTION: What is "value" field for?-->
+							    <!--<input type="text" ng-model="form.location1" value="91763" ng-required="form.selectedMode.locationType!='Current Location'"/><br>-->
+                                <input type="text" ng-model="form.location1" ng-required="form.selectedMode.locationType!='Current Location'"/><br>
+                            </div>
                             <button ng-model="getLocationBtn" ng-click="getLocation()">Where Am I?</button>
                             <div id="geoloc"></div>
 
@@ -101,7 +106,7 @@
 									>{{food.name}} &ensp;
 								</span>
 							</p>
-							<button style="text-align:center;"ng-click="postSearch()" type="submit" ng-model="searchBtn">Search</button>
+							<button style="text-align:center;"ng-click="postSearch()" type="submit" ng-model="searchBtn" ng-disabled="form.selectedMode.locationType!='Current Location' && !form.location1">Search</button>
 						</form>
 
 						<p>
