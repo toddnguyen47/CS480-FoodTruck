@@ -8,7 +8,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	$scope.typesOfFood = [
 		{name: "American",		selected: false},
 		{name: "Italian",		selected: false},
-		{name: "Japanese",		selected: false}, 
+		{name: "Japanese",		selected: false},
 		{name: "Korean",		selected: false},
 		{name: "Mexican",		selected: false},
 		{name: "Surprise Me!",  selected: false}
@@ -16,11 +16,12 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 
 	// Selected food
 	$scope.foodSelection = [];
-	
+
 	// Do I need to fix locationArr?
 	$scope.locationArr = [
 		{locationType: "Zip code"},
 		{locationType: "Address"},
+        {locationType: "City"},
 		{locationType: "Current Location"}
 	];
 
@@ -30,7 +31,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 			"korean",
 			"american"
 		]
-	}  */	
+	}  */
 
 	$scope.postSearch = function() {
 		//var concatString = "cs480/foodtrucks/yelp/" + $scope.form.location1 + "?opt=" + $scope.form.selectedMode.locationType;
@@ -97,11 +98,11 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 			x.innerHTML = "Geolocation is not supported by this browser.";
 		}
 	}
-	
+
 	$scope.showPosition = function (position) {
 		x.innerHTML = position.coords.latitude + "," + position.coords.longitude;
 	}
-	
+
 	$scope.showError = function(error) {
 		switch(error.code) {
 			case error.PERMISSION_DENIED:
