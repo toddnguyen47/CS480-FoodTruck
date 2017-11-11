@@ -118,22 +118,26 @@
 						</div>
 
 						<table class="default">
-							<tr>
-								<th>Name</th>
-								<th>Type of Food</th>
-								<th>Address</th>
-								<th>City, Zip Code</th>
-								<th>Phone Number</th>
-								<th>Image</th>
-							</tr>
-							<tr ng-repeat="truck in trucks">
-								<th>{{truck.name}}</th>
-								<th>{{truck.type}}</th>
-								<th>{{truck.address}}</th>
-								<th>{{truck.city}}, {{truck.zipCode}}</th>
-								<th>({{truck.areaCode}}) {{truck.phoneNumber}}</th>
-								<th><img src="{{truck.imageUrl}}" width="200"></th>
-							</tr>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Type of Food</th>
+									<th>Address</th>
+									<th>City, Zip Code</th>
+									<th>Phone Number</th>
+									<th>Image</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="truck in trucks">
+									<td>{{truck.name}}</td>
+									<td>{{truck.type}}</td>
+									<td>{{truck.address}}</td>
+									<td>{{truck.city}}, {{truck.zipCode}}</td>
+									<td>({{truck.areaCode}}) {{truck.phoneNumber}}</td>
+									<td><img src="{{truck.imageUrl}}" width="200"></td>
+								</tr>
+							</tbody>
 						</table>
 
 					</section>
@@ -146,7 +150,7 @@
 							<!-- <p>This is the subtitle for this particular heading</p> -->
 						<!-- </header> -->
 						<!-- <p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque -->
-						<!-- habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi -->
+						<!-- habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada emphasized ac turpis egestas. Morbi -->
 						<!-- leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit -->
 						<!-- amet risus elit.</p> -->
 					<!-- </section> -->
