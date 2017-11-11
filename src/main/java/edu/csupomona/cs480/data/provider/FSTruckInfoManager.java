@@ -349,28 +349,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		
 		String accessToken="";
 		OkHttpClient client = new OkHttpClient();
-        MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        RequestBody body = RequestBody.create(mediaType, "client_id=fTWOWAvp3YzK9u8mCsMeWw&"
-        		+ "client_secret=8cE7x0rZ0sm3nvgYpC5mXbmDz4qpBWxNGjFe04ZmYrQOYvk3Dx2UXaJsyFFl1cM8"
-        		+ "&grant_type=client_credentials");
-        Request request= new Request.Builder()
-                    .url("https://api.yelp.com/oauth2/token")
-                    .post(body)
-                    .addHeader("cache-control", "no-cache")
-                    .addHeader("postman-token", "8d9de8ad-800c-50e1-fb4a-46fcb5f2f209")
-                    .addHeader("content-type", "application/x-www-form-urlencoded")
-                    .build();
-        try {
-            Response response = client.newCall(request).execute();
-            JSONParser parser = new JSONParser();
-            Object obj = parser.parse(response.body().string().trim());
-            JSONObject jsonObjectToken = (JSONObject) obj;
-            accessToken = (String) jsonObjectToken.get("access_token");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        OkHttpClient client2 = new OkHttpClient();
+		accessToken = "NNW_d42viWMIZVJyu5Rjq2WmQr3gDt8CXRH5-wN7Z2UKQWuBv_ov-ojvyqAMxSUfvOktjv1UVXSfS0iNGYOVllV2uqPOVMaCI9J_Oe4dpbOnq7openFgqbS7puj3WXYx";
         String term = type; 
         String location="";
         Request request2;
@@ -407,7 +386,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
         }
 
         try {
-            Response response2 = client2.newCall(request2).execute();
+            Response response2 = client.newCall(request2).execute();
             JSONParser parser = new JSONParser();
             Object obj = parser.parse(response2.body().string());
             JSONObject jsonObject = (JSONObject) obj;       // parser
