@@ -14,18 +14,18 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		
+
 		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 
 		<!-- Use MIN AngularJS for production
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 		-->
-		
+
 		<!-- Use FULL AngularJS for development -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 
 		<!-- This script needs to go after all other sources!-->
-		<script src="./js/indexController.js"></script>		
+		<script src="./js/indexController.js"></script>
 	</head>
 	<body>
 
@@ -123,7 +123,6 @@
 									<th>Name</th>
 									<th>Type of Food</th>
 									<th>Address</th>
-									<th>City, Zip Code</th>
 									<th>Phone Number</th>
 									<th>Image</th>
 								</tr>
@@ -132,8 +131,7 @@
 								<tr ng-repeat="truck in trucks">
 									<td>{{truck.name}}</td>
 									<td>{{truck.type}}</td>
-									<td>{{truck.address}}</td>
-									<td>{{truck.city}}, {{truck.zipCode}}</td>
+									<td>{{truck.address}}<p>{{truck.city}}, {{truck.zipCode}}</p></td>
 									<td>({{truck.areaCode}}) {{truck.phoneNumber}}</td>
 									<td><img src="{{truck.imageUrl}}" width="200"></td>
 								</tr>
