@@ -15,14 +15,15 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 
-		<!-- Use MIN AngularJS for production
+		<!-- Use MIN AngularJS for production-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-		-->
 
 		<!-- Use FULL AngularJS for development -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script> -->
+
+		<!-- Extra sources, if needed -->
+		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 
 		<!-- This script needs to go after all other sources!-->
 		<script src="./js/indexController.js"></script>
@@ -51,31 +52,6 @@
 					etiam vivamus nunc nibh morbi.</p>
 					-->
 				</header>
-
-				<!-- <div class="box alt container"> -->
-					<!-- <section class="feature left"> -->
-						<!-- <a href="#" class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a> -->
-						<!-- <div class="content"> -->
-							<!-- <h3>The First Thing</h3> -->
-							<!-- <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p> -->
-						<!-- </div> -->
-					<!-- </section> -->
-					<!-- <section class="feature right"> -->
-						<!-- <a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a> -->
-						<!-- <div class="content"> -->
-							<!-- <h3>The Second Thing</h3> -->
-							<!-- <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p> -->
-						<!-- </div> -->
-					<!-- </section> -->
-					<!-- <section class="feature left"> -->
-						<!-- <a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a> -->
-						<!-- <div class="content"> -->
-							<!-- <h3>The Third Thing</h3> -->
-							<!-- <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p> -->
-						<!-- </div> -->
-					<!-- </section> -->
-				<!-- </div> -->
-
 
 				<div class="box container" style="text-align:center" ng-controller="inputForm" data-ng-init="init()">
 					<section>
@@ -148,6 +124,45 @@
 					</section>
 				</div>
 
+				<footer class="major container 75%">
+					<h3>Our Team Members</h3>
+					<p>Adrian Cuellar <br />
+					Allen Artoonian <br />
+					Chi-Wei (John) Wang <br />
+					Rachel Chiang <br />
+					Tho (Todd) Nguyen
+					</p>
+					<!-- <ul class="actions"> -->
+						<!-- <li><a href="#" class="button">Join our crew</a></li> -->
+					<!-- </ul> -->
+				</footer>
+
+				<!-- Extra code. Can be used for additional elements -->
+
+				<!-- <div class="box alt container"> -->
+					<!-- <section class="feature left"> -->
+						<!-- <a href="#" class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a> -->
+						<!-- <div class="content"> -->
+							<!-- <h3>The First Thing</h3> -->
+							<!-- <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p> -->
+						<!-- </div> -->
+					<!-- </section> -->
+					<!-- <section class="feature right"> -->
+						<!-- <a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a> -->
+						<!-- <div class="content"> -->
+							<!-- <h3>The Second Thing</h3> -->
+							<!-- <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p> -->
+						<!-- </div> -->
+					<!-- </section> -->
+					<!-- <section class="feature left"> -->
+						<!-- <a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a> -->
+						<!-- <div class="content"> -->
+							<!-- <h3>The Third Thing</h3> -->
+							<!-- <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p> -->
+						<!-- </div> -->
+					<!-- </section> -->
+				<!-- </div> -->
+				
 				<!-- <div class="box container"> -->
 					<!-- <section> -->
 						<!-- <header> -->
@@ -292,19 +307,6 @@
 					<!-- </section> -->
 				<!-- </div> -->
 
-				<footer class="major container 75%">
-					<h3>Our Team Members</h3>
-					<p>Adrian Cuellar <br />
-					Allen Artoonian <br />
-					Chi-Wei (John) Wang <br />
-					Rachel Chiang <br />
-					Tho (Todd) Nguyen
-					</p>
-					<!-- <ul class="actions"> -->
-						<!-- <li><a href="#" class="button">Join our crew</a></li> -->
-					<!-- </ul> -->
-				</footer>
-
 			</div>
 
 		<!-- Footer -->
@@ -316,6 +318,11 @@
 					</header>
 
 					<a href="https://github.com/Optimize-Prime-CS480-Cal-Poly-Fall17/demo-web-project">Optimize Prime Github</a>
+
+
+					<ul class="copyright">
+						<li>&copy; 2017 Directive. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
 
 					<!-- <form method="post" action="#"> -->
 						<!-- <div class="row"> -->
@@ -347,10 +354,6 @@
 						<!-- <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li> -->
 						<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
 					<!-- </ul> -->
-
-					<ul class="copyright">
-						<li>&copy; Directive. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
 
 				</div>
 			</div>

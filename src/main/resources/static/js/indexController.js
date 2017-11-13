@@ -17,7 +17,6 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	// Selected food
 	$scope.foodSelection = [];
 
-	// Do I need to fix locationArr?
 	$scope.locationArr = [
 		{locationType: "Zip code"},
 		{locationType: "Address"},
@@ -25,13 +24,6 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		{locationType: "Current Location"}
 	];
 
-	/* $scope.deleteMe = {
-		"locationType":"zip code",
-		"typesOfFood":[
-			"korean",
-			"american"
-		]
-	}  */
 
 	$scope.postSearch = function() {
 		//var concatString = "cs480/foodtrucks/yelp/" + $scope.form.location1 + "?opt=" + $scope.form.selectedMode.locationType;
@@ -70,9 +62,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		return inputTemp;
 	}
 
-	// Get latitude/longitude from address
-	// Get latitude/longitude from address
-	//var geocoder = new google.maps.Geocoder();
+	// Get latitude/longitude from current location
 	$scope.getLatLon = function getLatLon(address) {
 		temp = {};
 		geocoder.geocode({'address':address}, function(results, status){
@@ -133,4 +123,16 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 				break;
 		}
 	}
+
+	// Extra code
+	/* $scope.deleteMe = {
+		"locationType":"zip code",
+		"typesOfFood":[
+			"korean",
+			"american"
+		]
+	}  */
+
+	// Get latitude/longitude from address
+	//var geocoder = new google.maps.Geocoder();
 }]);
