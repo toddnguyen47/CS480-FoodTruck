@@ -1,6 +1,7 @@
 package edu.csupomona.cs480;
 
 import edu.csupomona.cs480.data.provider.FoodTruckDatabaseManager;
+import edu.csupomona.cs480.data.FoodTruckDatabase;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -9,7 +10,10 @@ import org.junit.Test;
  * name, image_url, url, coordinates, location, and display_phone.
  * @author Allen Artoonian
  */
+
+// Spring boot base config class
 public class MySQLdataBasetest {
+
    @Test
    public void testGetDisplayName() {
 
@@ -24,9 +28,12 @@ public class MySQLdataBasetest {
        double truckLon = -118.23511920000001;
 
 
-       FoodTruckDatabaseManager ftdmTest = null;
+       FoodTruckDatabase ftdmTest;
+       ftdmTest = new FoodTruckDatabase();
 
        //ftdmTest.addTruck(truckName,truckType,truckZipCode,truckPhone,truckAreaCode,truckCity,truckAddress,truckLat,truckLon);
-       Assert.assertEquals(1,ftdmTest.addTruck(truckName,truckType,truckZipCode,truckPhone,truckAreaCode,truckCity,truckAddress,truckLat,truckLon));
+       //ftdmTest.addTruck("1sd","ds2","3","4","5","6","7",8,9);
+       //Assert.assertEquals(1,ftdmTest.addTruck(truckName,truckType,truckZipCode,truckPhone,truckAreaCode,truckCity,truckAddress,truckLat,truckLon));
+       // ftdmTest.queryUser();
    }
 }

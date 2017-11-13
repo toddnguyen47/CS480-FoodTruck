@@ -3,32 +3,55 @@ package edu.csupomona.cs480.data;
 
 import edu.csupomona.cs480.App;
 import edu.csupomona.cs480.data.provider.FoodTruckDatabaseManager;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import edu.csupomona.cs480.data.repository.TruckRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import org.springframework.data.repository.CrudRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 
-public class FoodTruckDatabase extends FoodTruckDatabaseManager {
+public class FoodTruckDatabase implements FoodTruckDatabaseManager {
 
-    private static final Logger log = LoggerFactory.getLogger(App.class);
+
 
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    TruckRepository foodTrucks;
 
-    public void queryUser() {
-        //System.out.println("Query Trucks");
-        String sql = "SELECT * FROM truck_info";
-        List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
-        for (Map<String, Object> row : list) {
-            System.out.println(row.get("name"));
-            }
-        }
+    @Autowired
+    TruckInfo Truckinfo1;
+
+
+
+    public FoodTruckDatabase(){
+        String name = " ";
+        String type = " ";
+        String zipCode = " ";
+        String phoneNumber = " ";
+        String areaCode = " ";
+        String city = " ";
+        String address = " ";
+        double lat = 0;
+        double lon = 0;
+
+    }
+
+
+    public List<TruckInfo> listAllTrucks() {
+        System.out.println("Query All Trucks");
+        List<TruckInfo> list = (ArrayList<TruckInfo>) foodTrucks.findAll();
+
+        return list;
+    }
+
+    //public
+
+
+
 
     public void insertTruck(final User user){
          System.out.println("Insert truck " + user);
@@ -41,7 +64,7 @@ public class FoodTruckDatabase extends FoodTruckDatabaseManager {
     @Override
     public int addTruck(String name, String type, String zipCode, String phoneNumber, String areaCode, String city, String address, double lat, double lon){
         jdbcTemplate.update("INSERT INTO truck_info(name, type,zip_code,phone_number,area_code,city,address,lat,lon ) VALUES (?,?,?,?,?,?,?,?,?)",
-                name, type,zipCode, phoneNumber, areaCode,city, address,lat,lon);
+                name, type,zipCode, phoneNumber, areaCode, city, address,lat , lon);
         return 1;
     }
 

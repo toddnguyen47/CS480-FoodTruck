@@ -24,17 +24,20 @@ import static org.junit.Assert.assertEquals;
  */
 public class CHIWEIWANGA6test {
 	@Autowired
-	TruckRepository truckRepositry;
-	
+	public TruckRepository truckRepositry;
+
 	@Test
 	 public void testTruck() {
 		truckRepositry.deleteAll();	
 			TruckInfo t1 = new TruckInfo();
 			t1.setName("New Asian3");
+			t1.setType("Thai");
+			t1.setZipCode("91020");
+			t1.setPhoneNumber("2678988");
 			t1.setAreaCode(626);
 			t1.setAddress("new address");
-			t1.setPhoneNumber("2678988");
-			t1.setType("Thai");
+
+
 			t1.setCity("Alhambra");
 			t1.setImageUrl("Url");
 			t1.setLat(30);
@@ -43,6 +46,6 @@ public class CHIWEIWANGA6test {
 			List<TruckInfo> list = (ArrayList<TruckInfo>) truckRepositry.findAll();
 			assertEquals("Only one item in the list", 1, list.size());
 			assertEquals("Truck name is", "New Asian3", list.get(0).getName());
-			//truckRepositry.deleteAll();		
+			truckRepositry.deleteAll();
 	 }
 }

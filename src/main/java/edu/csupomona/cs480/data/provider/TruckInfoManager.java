@@ -9,6 +9,7 @@ import edu.csupomona.cs480.data.GoogleGeoCode;
 
 public interface TruckInfoManager {
 
+
 	public TruckInfo getTruckInfo(Integer truckId);
 	public void updateTruckInfo(TruckInfo truck);
 	public void deleteTruckInfo(Integer truckId);

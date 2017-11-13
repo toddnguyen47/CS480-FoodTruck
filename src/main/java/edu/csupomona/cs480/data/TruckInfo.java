@@ -1,5 +1,7 @@
 package edu.csupomona.cs480.data;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Date;
 import javax.persistence.*;
 
