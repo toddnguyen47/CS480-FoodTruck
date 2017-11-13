@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 import java.net.InetAddress;
 
+import edu.csupomona.cs480.data.provider.FoodTruckDatabaseManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -70,6 +71,8 @@ public class WebController {
 	private TruckInfoManager truckManager;
 	@Autowired
 	private TruckRepository truckRepository;
+
+
 	/**
 	 * This is a simple example of how the HTTP API works.
 	 * It returns a String "OK" in the HTTP response.
@@ -383,6 +386,24 @@ public class WebController {
 	  
 	  return truckManager.searchYelp("Mexican", null,null,34.018363,-118.492343);
    }*/
+	@RequestMapping(value = "/cs480/foodtrucks/addToDB", method = RequestMethod.GET)
+
+	public void addtoDB(){
+		String truckName = "testTruck";
+		String truckType = "Mexican";
+		String truckZipCode = "90210";
+		String truckPhone = "8590903";
+		String truckAreaCode = "818";
+		String truckCity = "Beverly Hills";
+		String truckAddress = "1442 S Euclid Ave";
+		double truckLat = 34.198064099999996;
+		double truckLon = -118.23511920000001;
+
+		FoodTruckDatabaseManager ftdmTest = null;
+		ftdmTest.addTruck(truckName,truckType,truckZipCode,truckPhone,truckAreaCode,truckCity,truckAddress,truckLat,truckLon);
+
+	}
+
 
 	/********* Primary Homepage Controller
 	 * @throws IOException Hmm, why does this throw an IOException?

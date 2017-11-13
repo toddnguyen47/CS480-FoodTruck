@@ -1,7 +1,7 @@
 package edu.csupomona.cs480;
 
 import org.junit.Test;
-import edu.csupomona.cs480.ThoNguyenA6;
+
 import org.junit.Assert;
 
 /**
