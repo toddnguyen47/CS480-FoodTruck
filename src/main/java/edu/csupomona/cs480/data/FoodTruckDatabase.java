@@ -39,7 +39,20 @@ public class FoodTruckDatabase implements FoodTruckDatabaseManager {
         double lon = 0;
 
     }
+    public void addTruckToDB(String truckName,String truckType,String truckZipCode,String truckPhone,int truckAreaCode,String truckCity,String truckAddress,String imageURL , double truckLat,double truckLon ){
+        TruckInfo foodTruck1 = new TruckInfo();
+        foodTruck1.setName(truckName);
+        foodTruck1.setAreaCode(truckAreaCode);
+        foodTruck1.setAddress(truckAddress);
+        foodTruck1.setPhoneNumber(truckPhone);
+        foodTruck1.setType(truckType);
+        foodTruck1.setCity(truckCity);
+        foodTruck1.setImageUrl(imageURL);
+        foodTruck1.setLat(truckLat);
+        foodTruck1.setLon(truckLon);
+        foodTrucks.save(foodTruck1);
 
+    }
 
     public List<TruckInfo> listAllTrucks() {
         System.out.println("Query All Trucks");
@@ -66,12 +79,7 @@ public class FoodTruckDatabase implements FoodTruckDatabaseManager {
                 user.getId(), user.getName()
                 );
     }
-    @Override
-    public int addTruck(String name, String type, String zipCode, String phoneNumber, String areaCode, String city, String address, double lat, double lon){
-        jdbcTemplate.update("INSERT INTO truck_info(name, type,zip_code,phone_number,area_code,city,address,lat,lon ) VALUES (?,?,?,?,?,?,?,?,?)",
-                name, type,zipCode, phoneNumber, areaCode, city, address,lat , lon);
-        return 1;
-    }
+
 
     @Override
     public ArrayList<String> getFoodTruckName(){

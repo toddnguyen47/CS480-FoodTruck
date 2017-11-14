@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface FoodTruckDatabaseManager {
 
-    public  int addTruck(String name, String type, String zipCode, String phoneNumber, String areaCode, String City, String address, double lat, double lon);
+    public void addTruckToDB(String truckName,String truckType,String truckZipCode,String truckPhone,int truckAreaCode,String truckCity,String truckAddress,String imageURL , double truckLat,double truckLon );
     public List<TruckInfo> listAllTrucks();
     public  ArrayList<String> getFoodTruckName();
     public  ArrayList<String> getFoodTruckAddress();
