@@ -66,6 +66,11 @@ public class FoodTruckDatabase implements FoodTruckDatabaseManager {
         List<TruckInfo> resultsList = foodTrucks.findByName(name);
         return resultsList;
     }
+    public List<TruckInfo> findTruckByType(String type) {
+        System.out.println("Finding truck by name");
+        List<TruckInfo> resultsList = foodTrucks.findByType(type);
+        return resultsList;
+    }
 
 
 

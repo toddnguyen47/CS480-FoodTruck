@@ -88,5 +88,35 @@ public class JpaMySQLdataBasetest {
         List<TruckInfo> trucks = (ArrayList<TruckInfo>) truckRepo.findAll();
         assertEquals("Did not get all trucks", 4, trucks.size());
     }
+    @Test
+    public void addTrucktoDB() {
+        String truckName = "123trrtg";
+        String truckType = "Mexican";
+        String truckZipCode = "90210";
+        String truckPhone = "8590903";
+        int truckAreaCode = 818;
+        String truckCity = "Beverly Hills";
+        String truckAddress = "1442 S Euclid Ave";
+        String imageURL = "URL";
+        double truckLat = 34.198064099999996;
+        double truckLon = -118.23511920000001;
+        addTruck(truckName,truckType,truckZipCode,truckPhone,truckAreaCode,truckCity,truckAddress,imageURL,truckLat,truckLon);
 
+    }
+
+    private void addTruck(String truckName, String truckType, String truckZipCode, String truckPhone, int truckAreaCode, String truckCity, String truckAddress, String imageURL, double truckLat, double truckLon) {
+        TruckInfo foodTruck1 = new TruckInfo();
+        foodTruck1.setName(truckName);
+        foodTruck1.setAreaCode(truckAreaCode);
+        foodTruck1.setAddress(truckAddress);
+        foodTruck1.setPhoneNumber(truckPhone);
+        foodTruck1.setType(truckType);
+        foodTruck1.setCity(truckCity);
+        foodTruck1.setZipCode(truckZipCode);
+        foodTruck1.setImageUrl(imageURL);
+        foodTruck1.setLat(truckLat);
+        foodTruck1.setLon(truckLon);
+        truckRepo.save(foodTruck1);
+
+    }
 }

@@ -8,6 +8,6 @@ import java.util.List;
 public interface TruckRepository extends CrudRepository<TruckInfo, Integer> {
 
     List<TruckInfo> findByName(String name);
-
+    List<TruckInfo> findByType(String type);
 	
 }
