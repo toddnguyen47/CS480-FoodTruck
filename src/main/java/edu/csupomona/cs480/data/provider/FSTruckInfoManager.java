@@ -491,15 +491,15 @@ public class FSTruckInfoManager implements TruckInfoManager{
             		JSONObject temp = (JSONObject) list.get(j);
             		TruckInfo truck = new TruckInfo();
             		truck.setId((String) temp.get("id"));
-            		System.out.println("id: " + j + " " + truck.getId());
-					truck.setName((String) temp.get("name"));
-					if(fTList.containsKey(truck.getName())) {
-						result.get(fTList.get(truck.getName())).setType(result.get(fTList.get(truck.getName())).getType()+" "+foodType);
+					if(fTList.containsKey(truck.getId())) {
+						result.get(fTList.get(truck.getId())).setType(result.get(fTList.get(truck.getId())).getType()+" "+foodType);
 						continue;
 					}
 					else {
-						fTList.put(truck.getName(), result.size());
+						fTList.put(truck.getId(), result.size());
 					}
+            		System.out.println("id: " + j + " " + truck.getId());
+					truck.setName((String) temp.get("name"));
 					System.out.println("name: " + j + " " + truck.getName());
 					truck.setImageUrl((String)temp.get("image_url")); 
 					JSONObject tempLoc = (JSONObject) temp.get("location");
@@ -519,7 +519,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
 					truck.setType(foodType);
 					result.add(truck);
 					//truckMap.put(truck.getId(), truck);
-            	
             	}
 			} 
 			catch (Exception e) {
