@@ -1,7 +1,7 @@
 Optimize Prime
 --------------
 Our homepage can be found here: <br />
-https://github.com/Optimize-Prime-CS480-Cal-Poly-Fall17/Optimize-Prime-CS480-Cal-Poly-Fall17.github.io
+https://18.216.235.183:8080
 
 Overview
 --------

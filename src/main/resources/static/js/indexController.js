@@ -55,9 +55,12 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		inputTemp["locationType"] = $scope.form.selectedMode.locationType;
 		inputTemp["locationValue"] = $scope.form.location1;
 		inputTemp["foodTypes"] = $scope.foodSelection;
-        // TODO: Consider changing this to prevent needing secure server
-        inputTemp["lat"] = $scope.position.coords.latitude;
-        inputTemp["lon"] = $scope.position.coords.longitude;
+		
+		// TODO: Consider changing this to prevent needing secure server
+		if ($scope.position !== undefined) {
+			inputTemp["lat"] = $scope.position.coords.latitude;
+			inputTemp["lon"] = $scope.position.coords.longitude;
+		}
 
 		return inputTemp;
 	}
