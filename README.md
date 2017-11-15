@@ -1,7 +1,7 @@
 Optimize Prime
 --------------
 Our homepage can be found here: <br />
-https://18.216.235.183:8080
+http://18.216.235.183:8080
 
 Overview
 --------
