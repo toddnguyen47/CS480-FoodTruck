@@ -1,222 +1,123 @@
 {
-  "Nora\u0027s Hot Dogs": [
-    "ID: noras-hot-dogs-santa-monica",
-    "Name: Nora\u0027s Hot Dogs",
+  "The Taco Cartel": [
+    "ID: the-taco-cartel-rosemead-5",
+    "Name: The Taco Cartel",
     "Type: Mexican",
-    "Address: 1355 Ocean Ave",
-    "Phone Number: +13236493339",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.0123280866004",
-    "Longitude: -118.496339097619"
+    "Address: 2617 Stingle Ave",
+    "Phone Number: +16264257748",
+    "City: Rosemead",
+    "Zipcode: 91770",
+    "Latitude: 34.05942",
+    "Longitude: -118.07558"
   ],
-  "La Oaxaqueña Taco Truck": [
-    "ID: la-oaxaqueña-taco-truck-venice-2",
-    "Name: La Oaxaqueña Taco Truck",
+  "Waffle-icious": [
+    "ID: waffle-icious-orange-county-2",
+    "Name: Waffle-icious",
     "Type: Mexican",
     "Address: ",
-    "Phone Number: +13109222675",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.99308",
-    "Longitude: -118.47148"
-  ],
-  "El Paladar Oaxaqueno Taco Truck": [
-    "ID: el-paladar-oaxaqueno-taco-truck-los-angeles",
-    "Name: El Paladar Oaxaqueno Taco Truck",
-    "Type: Mexican",
-    "Address: 11654 Santa Monica Blvd",
-    "Phone Number: +13106910138",
-    "City: Los Angeles",
-    "Zipcode: 90025",
-    "Latitude: 34.04443",
-    "Longitude: -118.454984"
-  ],
-  "Pyngle\u0027s": [
-    "ID: pyngles-santa-monica",
-    "Name: Pyngle\u0027s",
-    "Type: Mexican",
-    "Address: ",
-    "Phone Number: +16127475815",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.0121772204694",
-    "Longitude: -118.495902398178"
-  ],
-  "La Isla Bonita": [
-    "ID: la-isla-bonita-venice",
-    "Name: La Isla Bonita",
-    "Type: Mexican",
-    "Address: 400 Rose Ave",
-    "Phone Number: +13106998575",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.9975371017988",
-    "Longitude: -118.474995809711"
-  ],
-  "Silly Pappas": [
-    "ID: silly-pappas-venice",
-    "Name: Silly Pappas",
-    "Type: Mexican",
-    "Address: 121 Windward Ave",
-    "Phone Number: +12138425107",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.9880555898473",
-    "Longitude: -118.47184818238"
-  ],
-  "Gracias Señor!": [
-    "ID: gracias-señor-pacific-palisades",
-    "Name: Gracias Señor!",
-    "Type: Mexican",
-    "Address: 15120 W Sunset Blvd",
-    "Phone Number: +13233863424",
-    "City: Pacific Palisades",
-    "Zipcode: 90272",
-    "Latitude: 34.0454459503403",
-    "Longitude: -118.523584681406"
-  ],
-  "Cemitas Poblanas": [
-    "ID: cemitas-poblanas-los-angeles-2",
-    "Name: Cemitas Poblanas",
-    "Type: Mexican",
-    "Address: 11060 W Pico Blvd",
-    "Phone Number: +19092361797",
-    "City: Los Angeles",
-    "Zipcode: 90064",
-    "Latitude: 34.036758",
-    "Longitude: -118.434098"
-  ],
-  "Emily\u0027s Taco Truck": [
-    "ID: emilys-taco-truck-santa-monica",
-    "Name: Emily\u0027s Taco Truck",
-    "Type: Mexican",
-    "Address: 2700 Lincoln Blvd",
     "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90405",
-    "Latitude: 34.0055695",
-    "Longitude: -118.4746857"
+    "City: Orange County",
+    "Zipcode: 92856",
+    "Latitude: 33.7878303527832",
+    "Longitude: -117.855644226074"
   ],
-  "Tacos Tuzo": [
-    "ID: tacos-tuzo-santa-monica",
-    "Name: Tacos Tuzo",
-    "Type: Mexican",
-    "Address: 411 Wilshire Blvd",
-    "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.0193617",
-    "Longitude: -118.4980235"
-  ],
-  "Calbi Truck": [
-    "ID: calbi-truck-santa-monica-2",
-    "Name: Calbi Truck",
+  "The Lime Truck": [
+    "ID: the-lime-truck-irvine-3",
+    "Name: The Lime Truck",
     "Type: Mexican",
     "Address: ",
-    "Phone Number: +17144149222",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.0123511536385",
-    "Longitude: -118.49614597857"
+    "Phone Number: +19492320690",
+    "City: Irvine",
+    "Zipcode: 92606",
+    "Latitude: 33.6942710876465",
+    "Longitude: -117.832481384277"
   ],
-  "Tacos El Tuca": [
-    "ID: tacos-el-tuca-los-angeles-2",
-    "Name: Tacos El Tuca",
+  "Crepes Bonaparte": [
+    "ID: crepes-bonaparte-fullerton-2",
+    "Name: Crepes Bonaparte",
     "Type: Mexican",
-    "Address: 428 11th St",
-    "Phone Number: +16506694015",
-    "City: Los Angeles",
-    "Zipcode: 90044",
-    "Latitude: 33.9612846374512",
-    "Longitude: -118.289627075195"
+    "Address: 115 S Harbor Blvd",
+    "Phone Number: +17145959995",
+    "City: Fullerton",
+    "Zipcode: 92832",
+    "Latitude: 33.8696587",
+    "Longitude: -117.9245481"
   ],
-  "Kogi Truck": [
-    "ID: kogi-truck-santa-monica",
-    "Name: Kogi Truck",
+  "3941 Tamales": [
+    "ID: 3941-tamales-glendora",
+    "Name: 3941 Tamales",
     "Type: Mexican",
-    "Address: 1900 Pico Blvd",
-    "Phone Number: ",
-    "City: Santa Monica",
-    "Zipcode: 90405",
-    "Latitude: 34.0160486505577",
-    "Longitude: -118.469359596722"
+    "Address: 412 E Lemon Ave",
+    "Phone Number: +18884109010",
+    "City: Glendora",
+    "Zipcode: 91741",
+    "Latitude: 34.130217",
+    "Longitude: -117.860914"
   ],
-  "Alibi Room": [
-    "ID: alibi-room-los-angeles-2",
-    "Name: Alibi Room",
-    "Type: Mexican",
-    "Address: 12236 W Washington Blvd",
-    "Phone Number: +13103909300",
-    "City: Los Angeles",
-    "Zipcode: 90066",
-    "Latitude: 33.9969253540039",
-    "Longitude: -118.426567077637"
-  ],
-  "Tacos Del Valle": [
-    "ID: tacos-del-valle-venice",
-    "Name: Tacos Del Valle",
-    "Type: Mexican",
-    "Address: Venice Blvd And Inglewood",
-    "Phone Number: +13104334345",
-    "City: Venice",
-    "Zipcode: 90066",
-    "Latitude: 34.0061611809921",
-    "Longitude: -118.428872823715"
-  ],
-  "Thai Mex Cocina": [
-    "ID: thai-mex-cocina-santa-monica",
-    "Name: Thai Mex Cocina",
-    "Type: Mexican",
-    "Address: ",
-    "Phone Number: +13103827617",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.01158",
-    "Longitude: -118.49227"
-  ],
-  "El Torito Oaxaqueño": [
-    "ID: el-torito-oaxaqueño-los-angeles",
-    "Name: El Torito Oaxaqueño",
-    "Type: Mexican",
-    "Address: ",
-    "Phone Number: +13232828577",
-    "City: Los Angeles",
-    "Zipcode: 90025",
-    "Latitude: 34.0434203752073",
-    "Longitude: -118.456622958183"
-  ],
-  "Pier Tamales": [
-    "ID: pier-tamales-santa-monica-3",
-    "Name: Pier Tamales",
-    "Type: Mexican",
-    "Address: 200 Santa Monica Pier",
-    "Phone Number: +13104306243",
-    "City: Santa Monica",
-    "Zipcode: 90401",
-    "Latitude: 34.0102885",
-    "Longitude: -118.4960309"
-  ],
-  "Don Felix - Cemitas Poblanas": [
-    "ID: don-felix-cemitas-poblanas-venice",
-    "Name: Don Felix - Cemitas Poblanas",
-    "Type: Mexican",
-    "Address: 2222 Lincoln Blvd",
-    "Phone Number: +12132969172",
-    "City: Venice",
-    "Zipcode: 90291",
-    "Latitude: 33.9950409",
-    "Longitude: -118.454134"
-  ],
-  "Pinch of Flavor": [
-    "ID: pinch-of-flavor-santa-monica",
-    "Name: Pinch of Flavor",
+  "The Falafel Factory": [
+    "ID: the-falafel-factory-los-angeles",
+    "Name: The Falafel Factory",
     "Type: Mexican",
     "Address: null",
-    "Phone Number: +12138805513",
-    "City: Santa Monica",
-    "Zipcode: 90405",
-    "Latitude: 34.00535",
-    "Longitude: -118.47979"
+    "Phone Number: +13235702582",
+    "City: Los Angeles",
+    "Zipcode: 90002",
+    "Latitude: 33.948902130127",
+    "Longitude: -118.24308013916"
+  ],
+  "White Rabbit Truck": [
+    "ID: white-rabbit-truck-los-angeles-4",
+    "Name: White Rabbit Truck",
+    "Type: Mexican",
+    "Address: null",
+    "Phone Number: +18889072248",
+    "City: Los Angeles",
+    "Zipcode: 90012",
+    "Latitude: 34.0569114685059",
+    "Longitude: -118.243949890137"
+  ],
+  "The Big Easy Sandwich": [
+    "ID: the-big-easy-sandwich-upland",
+    "Name: The Big Easy Sandwich",
+    "Type: Mexican",
+    "Address: 2120 Porter Field Way",
+    "Phone Number: +17147460763",
+    "City: Upland,",
+    "Zipcode: 91786",
+    "Latitude: 34.1095741267233",
+    "Longitude: -117.69139660131"
+  ],
+  "Cifredo\u0027s Foodeffects": [
+    "ID: cifredos-foodeffects-los-angeles-7",
+    "Name: Cifredo\u0027s Foodeffects",
+    "Type: Mexican",
+    "Address: 3540 N Mission Rd",
+    "Phone Number: +13233332917",
+    "City: Los angeles",
+    "Zipcode: 90031",
+    "Latitude: 34.0678473969381",
+    "Longitude: -118.202242818275"
+  ],
+  "Antojitos El Buen Gusto": [
+    "ID: antojitos-el-buen-gusto-los-angeles",
+    "Name: Antojitos El Buen Gusto",
+    "Type: Mexican",
+    "Address: 22400 S Halldale Ave",
+    "Phone Number: +13233886844",
+    "City: Los Angeles",
+    "Zipcode: 90501",
+    "Latitude: 33.8224529102469",
+    "Longitude: -118.301476356315"
+  ],
+  "The Grilled Cheese Truck": [
+    "ID: the-grilled-cheese-truck-los-angeles",
+    "Name: The Grilled Cheese Truck",
+    "Type: Mexican",
+    "Address: ",
+    "Phone Number: +18183451875",
+    "City: Los Angeles",
+    "Zipcode: 90001",
+    "Latitude: 33.9788284301758",
+    "Longitude: -118.249931335449"
   ]
 }

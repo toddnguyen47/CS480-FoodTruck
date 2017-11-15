@@ -29,6 +29,7 @@ import com.google.gson.GsonBuilder;
 import edu.csupomona.cs480.data.GeoIP;
 import edu.csupomona.cs480.data.TruckInfo;
 import edu.csupomona.cs480.data.TruckMap;
+import edu.csupomona.cs480.userInput.UserInput;
 import edu.csupomona.cs480.util.ResourceResolver;
 import edu.csupomona.cs480.data.GoogleGeoLatLng;
 import edu.csupomona.cs480.data.GoogleGeoResult;
@@ -437,8 +438,83 @@ public class FSTruckInfoManager implements TruckInfoManager{
         catch (Exception e) {
             e.printStackTrace();
         }
-        return result;
-        
+        return result;     
+	}
+	
+	public List<TruckInfo> searchYelpV2(UserInput userInput) throws IOException{
+		List<TruckInfo> result = new ArrayList<TruckInfo>();
+		OkHttpClient client = new OkHttpClient();
+		String accessToken = "NNW_d42viWMIZVJyu5Rjq2WmQr3gDt8CXRH5-wN7Z2UKQWuBv_ov-ojvyqAMxSUfvOktjv1UVXSfS0iNGYOVllV2uqPOVMaCI9J_Oe4dpbOnq7openFgqbS7puj3WXYx";
+        String url="https://api.yelp.com/v3/businesses/search?term=food&";
+        if(userInput.getLocationType().equalsIgnoreCase("current location")) {
+        	url+="latitude=" + userInput.getLat()  
+    		+ "&longitude=" + userInput.getLon() ;
+        }
+        else {
+        	url+="location=" + userInput.getLocationValue();
+        }
+        url+= "&radius=16094"
+            	+ "&categories=foodtrucks";
+        Request request = new Builder()
+                .url(url)
+                .get()
+                .addHeader("authorization", "Bearer"+" "+accessToken)
+                .addHeader("cache-control", "no-cache")
+                .addHeader("postman-token", "b5fc33ce-3dad-86d7-6e2e-d67e14e8071b")
+                .build();
+        try {
+            Response response2 = client.newCall(request).execute();
+            JSONParser parser = new JSONParser();
+            Object obj = parser.parse(response2.body().string());
+            JSONObject jsonObject = (JSONObject) obj;       // parser
+            JSONArray list = (JSONArray) jsonObject.get("businesses");
+            int size;
+            // Making sure list isn't empty
+            if (list == null) {
+            	size = 0;
+            	System.out.println("List is empty!");
+            } else {
+            	size = list.size();
+            	if(size>=40)
+            		size=40;
+            }
+            List<String> foodTypes = userInput.getFoodTypes();
+            for(int i=0;i<size;i++) {
+            	
+            	for(int j=0;j<foodTypes.size();j++) {
+            		JSONObject temp = (JSONObject) list.get(j);
+            		TruckInfo truck = new TruckInfo();
+            		truck.setId((String) temp.get("id"));
+            		System.out.println("id: " + i + " " + truck.getId());
+    				truck.setName((String) temp.get("name"));
+    				System.out.println("name: " + i + " " + truck.getName());
+    				truck.setImageUrl((String)temp.get("image_url")); 
+    				truck.setType(foodTypes.get(j));
+    				JSONObject tempLoc = (JSONObject) temp.get("location");
+    				truck.setAddress((String) tempLoc.get("address1"));    			
+    				String pN = (String) temp.get("phone");
+    				if (pN != null && !pN.isEmpty()) {
+    					// Eliminate the "+" in front
+    					pN = pN.substring(1);
+    					truck.setPhoneNumber(pN.substring(pN.length()-7));
+    					truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
+    				}
+    				truck.setCity((String) tempLoc.get("city"));
+    				truck.setZipCode((String) tempLoc.get("zip_code"));
+    				JSONObject tempCoord = (JSONObject) temp.get("coordinates");
+    				truck.setLat(Double.parseDouble( tempCoord.get("latitude").toString() ));
+    				truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));
+    			
+    				result.add(truck);
+    				//truckMap.put(truck.getId(), truck);
+            	}
+            	
+            }
+        } 
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;     
 	}
 
 }
