@@ -2,6 +2,7 @@ var optPrimeApp = angular.module('optPrimeApp', []);
 
 optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	var x = document.getElementById("geoloc");
+	var curLocation = 'Current Location'.toLowerCase();
 	$scope.inputForm = {};
 
 	// Make sure "Random" is the LAST entry
@@ -25,13 +26,11 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	];
 
 
-	$scope.postSearch = function() {
-		//var concatString = "cs480/foodtrucks/yelp/" + $scope.form.location1 + "?opt=" + $scope.form.selectedMode.locationType;
-		
+	$scope.postSearch = function() {		
 		if ($scope.formLocation.$valid) {
-			var concatString = "cs480/foodtrucks/search2";
+			var postUrl = "cs480/foodtrucks/search2";
 			$http.post(
-				url = concatString,
+				url = postUrl,
 				data = $scope.searchConcat()
 			).success(function(dataResponse) {
 				$scope.trucks = dataResponse;
@@ -40,7 +39,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		}
 		else {
 			$scope.formLocation.submitError = true;
-			window.alert("Some required fields are empty");
+			window.alert("Some required fields are empty.");
 		}
 	}
 
@@ -59,8 +58,8 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	// Concat user searches
 	$scope.searchConcat = function searchConcat() {
 		inputTemp = {};
-		inputTemp["locationType"] = $scope.form.selectedMode.locationType;
-		inputTemp["locationValue"] = $scope.form.location1;
+		inputTemp["locationType"] = $scope.formLocation.selectedMode.locationType;
+		inputTemp["locationValue"] = $scope.formLocation.location1;
 		inputTemp["foodTypes"] = $scope.foodSelection;
 		
 		// TODO: Consider changing this to prevent needing secure server
@@ -88,6 +87,17 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		});
 
 		return temp;
+	}
+
+	$scope.hideTextInput = function hideTextInput() {
+		return ($scope.formLocation !== undefined && $scope.isCurrentLocation());
+	}
+
+	$scope.isCurrentLocation = function isCurrentLocation() {
+		if ($scope.formLocation.selectedMode !== undefined) {
+			var locationType = $scope.formLocation.selectedMode.locationType.toLowerCase();
+			return (locationType === curLocation);
+		}
 	}
 
 	/*******************************************/

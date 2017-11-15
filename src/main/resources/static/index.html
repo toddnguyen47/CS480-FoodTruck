@@ -33,7 +33,7 @@
 		<!-- Header -->
 			<div id="header">
 				<!-- <span class="logo icon fa-paper-plane-o"></span> -->
-				<img src="http://www.saskfoodtrucks.ca/wp-content/uploads/2016/03/Saskatoon-Food-Truck-Association_Truck-icon-Loading.png"></img>
+				<img src="./assets/truckImage.png"></img>
 				<h1>Optimize Prime.</h1>
 				<p>Never miss your food truck cravings again!</p>
 			</div>
@@ -58,30 +58,38 @@
 						<header>
 							<h2>Food Truck Search</h2>
 						</header>
+
 						<form name="formLocation" method="POST">
 							Search by: <br />
-							<select ng-class="{submitError: formLocation.submitError}" ng-model="form.selectedMode" ng-options="elem.locationType for elem in locationArr" required></select>
+							<select ng-class="{submitError: formLocation.submitError}"
+								ng-model="formLocation.selectedMode"
+								ng-options="elem.locationType for elem in locationArr" required>
+							</select>
 
-							<div id="textInput" ng-hide="form.selectedMode.locationType==='Current Location'">
-								Enter your location<br>
-								<input type="text" ng-model="form.location1" ng-required="form.selectedMode.locationType!='Current Location'"/><br>
+							<div id="textInput" ng-hide="hideTextInput()">
+								Enter your location <br/>
+								<input type="text" ng-model="formLocation.location1" ng-required="!isCurrentLocation()"/>
+								<br />
 							</div>
-							<button ng-model="getLocationBtn" ng-click="getLocation()">Where Am I?</button>
-							<div id="geoloc"></div>
 
+							<button ng-model="formLocation.getLocationBtn" ng-click="getLocation()">Where Am I?</button>
+							<div id="geoloc"></div>
+							
 							<p>
 							<h4>Types of Food</h4>
-								<span ng-model="checkboxListing" ng-repeat="food in typesOfFood">
+								<span ng-model="formLocation.checkboxListing" ng-repeat="food in typesOfFood">
 									<input
 									type = "checkbox"
-									name="selectedFood[]"
-									value="{{food.name}}"
-									ng-model="food.selected"
-									>{{food.name}} &ensp;
+									name = "selectedFood[]"
+									value = "{{food.name}}"
+									ng-model = "food.selected"
+									ng-required = "value.length == 0"
+									> {{food.name}} &ensp;
 								</span>
 							</p>
-							<button style="text-align:center" ng-click="postSearch()" type="submit" ng-model="searchBtn"
-								ng-disabled="form.selectedMode.locationType.toLowerCase() !=='Current Location'.toLowerCase() && !form.location1">
+
+							<button style="text-align:center" ng-click="postSearch()" type="submit" ng-model="formLocation.searchBtn"
+								ng-disabled="formLocation.$invalid">
 								Search
 							</button>
 						</form>
