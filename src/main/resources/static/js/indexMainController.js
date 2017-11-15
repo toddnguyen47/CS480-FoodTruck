@@ -20,21 +20,28 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	$scope.locationArr = [
 		{locationType: "Zip code"},
 		{locationType: "Address"},
-        {locationType: "City"},
+		{locationType: "City"},
 		{locationType: "Current Location"}
 	];
 
 
 	$scope.postSearch = function() {
 		//var concatString = "cs480/foodtrucks/yelp/" + $scope.form.location1 + "?opt=" + $scope.form.selectedMode.locationType;
-		var concatString = "cs480/foodtrucks/search2";
-		$http.post(
-			url = concatString,
-			data = $scope.searchConcat()
-		).success(function(dataResponse) {
-			$scope.trucks = dataResponse;
-			console.log($scope.trucks);
-		});
+		
+		if ($scope.formLocation.$valid) {
+			var concatString = "cs480/foodtrucks/search2";
+			$http.post(
+				url = concatString,
+				data = $scope.searchConcat()
+			).success(function(dataResponse) {
+				$scope.trucks = dataResponse;
+				console.log($scope.trucks);
+			});
+		}
+		else {
+			$scope.formLocation.submitError = true;
+			window.alert("Some required fields are empty");
+		}
 	}
 
 	// Get selected food
@@ -87,16 +94,16 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	/* Geolocation code
 	/*******************************************/
 
-    // TODO: Remove if we get a non-HTML5 geolocation to work
-    $scope.init = function() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                $scope.$apply(function() {
-                    $scope.position = position;
-                });
-            });
-        }
-    }
+	// TODO: Remove if we get a non-HTML5 geolocation to work
+	$scope.init = function() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				$scope.$apply(function() {
+					$scope.position = position;
+				});
+			});
+		}
+	}
 
 	$scope.getLocation = function() {
 		if (navigator.geolocation) {
