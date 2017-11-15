@@ -4,6 +4,7 @@ import java.util.List;
 import java.io.IOException;
 
 import edu.csupomona.cs480.data.TruckInfo;
+import edu.csupomona.cs480.userInput.UserInput;
 import edu.csupomona.cs480.data.GeoIP;
 import edu.csupomona.cs480.data.GoogleGeoCode;
 
@@ -27,6 +28,7 @@ public interface TruckInfoManager {
 	 * @throws IOException
 	 */
 	public List<TruckInfo> searchYelp(String type, String address,String city,double lat, double lon) throws IOException;
+	public List<TruckInfo> searchYelpV2(UserInput userInput) throws IOException;
 	
 	List<TruckInfo> getGoogleList() throws IOException;
 	GeoIP getGeoIP() throws IOException;

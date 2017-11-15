@@ -415,7 +415,7 @@ public class WebController {
                 System.out.println("Type of food: " + food);
             }
 
-            return getAllTruckInfo(typesOfFood);
+            return truckManager.searchYelpV2(userInput);
         }
         else {
             System.out.println("User did not check any food types!");            
