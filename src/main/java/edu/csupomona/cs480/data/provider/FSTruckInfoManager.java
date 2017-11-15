@@ -480,34 +480,38 @@ public class FSTruckInfoManager implements TruckInfoManager{
             }
             List<String> foodTypes = userInput.getFoodTypes();
             for(int i=0;i<size;i++) {
-            	
+            	String foodType="";
             	for(int j=0;j<foodTypes.size();j++) {
-            		JSONObject temp = (JSONObject) list.get(j);
-            		TruckInfo truck = new TruckInfo();
-            		truck.setId((String) temp.get("id"));
-            		System.out.println("id: " + i + " " + truck.getId());
-    				truck.setName((String) temp.get("name"));
-    				System.out.println("name: " + i + " " + truck.getName());
-    				truck.setImageUrl((String)temp.get("image_url")); 
-    				truck.setType(foodTypes.get(j));
-    				JSONObject tempLoc = (JSONObject) temp.get("location");
-    				truck.setAddress((String) tempLoc.get("address1"));    			
-    				String pN = (String) temp.get("phone");
-    				if (pN != null && !pN.isEmpty()) {
-    					// Eliminate the "+" in front
-    					pN = pN.substring(1);
-    					truck.setPhoneNumber(pN.substring(pN.length()-7));
-    					truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
-    				}
-    				truck.setCity((String) tempLoc.get("city"));
-    				truck.setZipCode((String) tempLoc.get("zip_code"));
-    				JSONObject tempCoord = (JSONObject) temp.get("coordinates");
-    				truck.setLat(Double.parseDouble( tempCoord.get("latitude").toString() ));
-    				truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));
-    			
-    				result.add(truck);
-    				//truckMap.put(truck.getId(), truck);
+        			//Somehow check if any of input food types match this trucks foodtypes. Categories? Wont be same as Yelps.
+            		// if(match)
+            		//    set food type to it and break inner loop.
+            		// else
+            		//    continue, move on to next i value.
             	}
+            	JSONObject temp = (JSONObject) list.get(i);
+        		TruckInfo truck = new TruckInfo();
+        		truck.setId((String) temp.get("id"));
+        		System.out.println("id: " + i + " " + truck.getId());
+				truck.setName((String) temp.get("name"));
+				System.out.println("name: " + i + " " + truck.getName());
+				truck.setImageUrl((String)temp.get("image_url")); 
+				JSONObject tempLoc = (JSONObject) temp.get("location");
+				truck.setAddress((String) tempLoc.get("address1"));    			
+				String pN = (String) temp.get("phone");
+				if (pN != null && !pN.isEmpty()) {
+					// Eliminate the "+" in front
+					pN = pN.substring(1);
+					truck.setPhoneNumber(pN.substring(pN.length()-7));
+					truck.setAreaCode(Integer.parseInt(pN.substring(pN.length()-10, pN.length()-7)));
+				}
+				truck.setCity((String) tempLoc.get("city"));
+				truck.setZipCode((String) tempLoc.get("zip_code"));
+				JSONObject tempCoord = (JSONObject) temp.get("coordinates");
+				truck.setLat(Double.parseDouble( tempCoord.get("latitude").toString() ));
+				truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));	
+				truck.setType(foodType);
+				result.add(truck);
+				//truckMap.put(truck.getId(), truck);
             	
             }
         } 
