@@ -527,7 +527,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 					truck.setLat(Double.parseDouble( tempCoord.get("latitude").toString() ));
 					truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));	
 					if(foodType.equals(""))
-						truck.setType("Surpise!");
+						truck.setType("Surprise!");
 					else
 						truck.setType(foodType);
 					result.add(truck);
