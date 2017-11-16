@@ -38,8 +38,11 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 				console.log($scope.trucks);
 				for (let index = 0; index < $scope.trucks.length; index++) {
 					var tempString = $scope.trucks[index]["phoneNumber"];
-					$scope.trucks[index]["phoneNumber"] = tempString.substring(0,3);
-					$scope.trucks[index]["phoneNumber2"] = tempString.substring(3);
+
+					if (tempString !== null) {
+						$scope.trucks[index]["phoneNumber"] = tempString.substring(0,3);
+						$scope.trucks[index]["phoneNumber2"] = tempString.substring(3);
+					}
 				}
 			});
 		}
@@ -63,7 +66,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 
 	// Concat user searches
 	$scope.searchConcat = function searchConcat() {
-		inputTemp = {};
+		var inputTemp = {};
 		inputTemp["locationType"] = $scope.formLocation.selectedMode.locationType;
 		inputTemp["locationValue"] = $scope.formLocation.location1;
 		inputTemp["foodTypes"] = $scope.foodSelection;
@@ -79,7 +82,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 
 	// Get latitude/longitude from current location
 	$scope.getLatLon = function getLatLon(address) {
-		temp = {};
+		var temp = {};
 		geocoder.geocode({'address':address}, function(results, status){
 			if (status == google.maps.GeocoderStatus.OK) {
 				var latitude = results[0].geometry.location.lat();
