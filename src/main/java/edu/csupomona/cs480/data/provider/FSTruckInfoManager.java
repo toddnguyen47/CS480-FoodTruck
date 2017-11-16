@@ -14,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.net.InetAddress;
@@ -452,9 +453,18 @@ public class FSTruckInfoManager implements TruckInfoManager{
     	HashMap<String,Integer> fTList= new HashMap<String,Integer>();
 		for(int i=0;i<foodTypes.size();i++) {
 			String foodType = foodTypes.get(i);
+			if(foodType.equalsIgnoreCase("Surprise Me!")){
+				foodType="";
+			}
 			OkHttpClient client = new OkHttpClient();
 			String accessToken = "NNW_d42viWMIZVJyu5Rjq2WmQr3gDt8CXRH5-wN7Z2UKQWuBv_ov-ojvyqAMxSUfvOktjv1UVXSfS0iNGYOVllV2uqPOVMaCI9J_Oe4dpbOnq7openFgqbS7puj3WXYx";
-			String url="https://api.yelp.com/v3/businesses/search?term="+foodType+"&";
+			String url="";
+			if(foodType.equals("")) {
+				url="https://api.yelp.com/v3/businesses/search?term="+foodType+"&";
+			}
+			else {
+				url="https://api.yelp.com/v3/businesses/search?";
+			}
 			if(userInput.getLocationType().equalsIgnoreCase("current location")) {
 				url+="latitude=" + userInput.getLat()  
 				+ "&longitude=" + userInput.getLon() ;
@@ -484,8 +494,8 @@ public class FSTruckInfoManager implements TruckInfoManager{
             		System.out.println("List is empty!");
             	} else {
             		size = list.size();
-            		if(size>=40)
-            			size=40;
+            		if(size>=(40/foodTypes.size()))
+            			size=(40/foodTypes.size());
             	}
             	for(int j=0;j<size;j++) {
             		JSONObject temp = (JSONObject) list.get(j);
@@ -516,7 +526,10 @@ public class FSTruckInfoManager implements TruckInfoManager{
 					JSONObject tempCoord = (JSONObject) temp.get("coordinates");
 					truck.setLat(Double.parseDouble( tempCoord.get("latitude").toString() ));
 					truck.setLon(Double.parseDouble( tempCoord.get("longitude").toString() ));	
-					truck.setType(foodType);
+					if(foodType.equals(""))
+						truck.setType("Surpise!");
+					else
+						truck.setType(foodType);
 					result.add(truck);
 					//truckMap.put(truck.getId(), truck);
             	}
@@ -524,6 +537,10 @@ public class FSTruckInfoManager implements TruckInfoManager{
 			catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		if(foodTypes.get(0).equalsIgnoreCase("Surprise Me!")) {
+			Collections.shuffle(result);
+			return result.subList(0,10);
 		}
         return result;     
 	}

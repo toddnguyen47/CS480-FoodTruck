@@ -418,10 +418,12 @@ public class WebController {
             return truckManager.searchYelpV2(userInput);
         }
         else {
-            System.out.println("User did not check any food types!");            
+            System.out.println("User did not check any food types!");    
+            List<String> temp= new ArrayList<String>();
+            temp.add("Mexican");
+            userInput.setFoodTypes(temp);
+            return truckManager.searchYelpV2(userInput);
         }
-        
-        return truckManager.searchYelp("Mexican", null,null,defaultLat,defaultLon);
     }
     
     private List<TruckInfo> getAllTruckInfo(List<String> userInput) throws IOException {
