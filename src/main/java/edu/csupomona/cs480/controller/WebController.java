@@ -407,7 +407,7 @@ public class WebController {
     
         System.out.println("User selected: " + locationType);
         System.out.println("User typed: " + locationValue);
-        System.out.println("Lat:" + userInput.getLat() + ", Lon:" + userInput.getLon());
+        System.out.println("Lat: " + userInput.getLat() + ", Lon: " + userInput.getLon());
     
         List<String> typesOfFood = userInput.getFoodTypes();
         if (typesOfFood != null && !typesOfFood.isEmpty()) {

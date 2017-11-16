@@ -25,6 +25,8 @@
 		<!-- Extra sources, if needed -->
 		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
 
+		<script src="./js/underscoreJs.js"></script>
+
 		<!-- This script needs to go after all other sources!-->
 		<script src="./js/indexMainController.js"></script>
 	</head>
@@ -83,7 +85,9 @@
 									name = "selectedFood[]"
 									value = "{{food.name}}"
 									ng-model = "food.selected"
-									ng-required = "value.length == 0"
+									id = "{{food.name}}"
+									ng-click = "updateCheckbox(food)"
+									ng-required = "checkboxCheck.length == 0"
 									> {{food.name}} &ensp;
 								</span>
 							</p>
@@ -94,48 +98,53 @@
 							</button>
 						</form>
 
-						<div ng-model="output" ng-hide="!trucks">
-							<p>
-								<strong>Selected Food:</strong> <br />
-									<span div ng-model="checkboxOutput" ng-repeat="food in foodSelection">
-										{{food}} &ensp;
-									</span>
-							</p>
 
-							<br />
-							<div ng-model="userOutput">
-								<!--TODO: Remove later? User doesn't need to see this.-->
-								<p>
-									<span ng-model="locationType"><strong>Location Type:</strong> {{form.selectedMode.locationType}}</span><br />
-									<span ng-model="locationValue" ng-hide="form.selectedMode.locationType.toLowerCase() === 'Current Location'.toLowerCase()">
-										<strong>Location:</strong> {{form.location1}}
-									</span>
-								</p>
-							</div>
+						<!-- OUTPUTS -->
+
+						<!-- Unsuccessful Search Output -->
+						<div class="unsuccessfulOutput" ng-model="unsuccessfulOutput" ng-hide="!trucks || trucks.length > 0">
+							Could not find any food trucks with that search!
 						</div>
 
-						<table class="default" id="truckTable" ng-hide="!trucks">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Type of Food</th>
-									<th>Address</th>
-									<th>Phone Number</th>
-									<th>Image</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr ng-repeat="truck in trucks">
-									<td>{{truck.name}}</td>
-									<td>{{truck.type}}</td>
-									<!--TODO: Consider whether we keep "route me" or not.-->
-									<td>{{truck.address}}<p>{{truck.city}}, {{truck.zipCode}}</p><p><a href="https://www.google.com/maps/dir/?api=1&destination={{truck.lat}},{{truck.lon}}">Route Me!</a></p></td>
-									<td>({{truck.areaCode}}) {{truck.phoneNumber}}</td>
-									<!--TODO: Figure out how to center image [vertically] because it looks imbalanced. Center of image should align with center of table.-->
-									<td><img src="{{truck.imageUrl}}"></td>
-								</tr>
-							</tbody>
-						</table>
+						<div ng-model="locationOutput" ng-hide = "!trucks">
+							<span ng-model="locationType"><strong>Location Type:</strong> {{formLocation.selectedMode.locationType}}</span><br />
+							<span ng-model="locationValue" ng-hide="form.selectedMode.locationType.toLowerCase() === 'Current Location'.toLowerCase()">
+								<strong>Location:</strong> {{formLocation.location1}}
+							</span>
+						</div>
+
+						<!-- Successful Search Output -->
+						<div ng-model="output" ng-hide="!trucks || trucks.length === 0">
+							<div ng-model="checkboxOutput">
+								<strong>Selected Food:</strong> <br />
+								<span div ng-model="checkboxOutput" ng-repeat="food in foodSelection">
+									{{food}} &ensp;
+								</span>
+							</div>
+
+							<table class="default" id="truckTable">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type of Food</th>
+										<th>Address</th>
+										<th>Phone Number</th>
+										<th>Image</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="truck in trucks">
+										<td>{{truck.name}}</td>
+										<td>{{truck.type}}</td>
+										<!--TODO: Consider whether we keep "route me" or not.-->
+										<td>{{truck.address}}<p>{{truck.city}}, {{truck.zipCode}}</p><p><a href="https://www.google.com/maps/dir/?api=1&destination={{truck.lat}},{{truck.lon}}">Route Me!</a></p></td>
+										<td>({{truck.areaCode}}) {{truck.phoneNumber}}-{{truck.phoneNumber2}}</td>
+										<!--TODO: Figure out how to center image [vertically] because it looks imbalanced. Center of image should align with center of table.-->
+										<td><img src="{{truck.imageUrl}}"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 
 					</section>
 				</div>

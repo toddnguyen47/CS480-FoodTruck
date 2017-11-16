@@ -4,6 +4,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	var x = document.getElementById("geoloc");
 	var curLocation = 'Current Location'.toLowerCase();
 	$scope.inputForm = {};
+	$scope.checkboxCheck = [];
 
 	// Make sure "Random" is the LAST entry
 	$scope.typesOfFood = [
@@ -26,7 +27,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	];
 
 
-	$scope.postSearch = function() {		
+	$scope.postSearch = function postSearch() {		
 		if ($scope.formLocation.$valid) {
 			var postUrl = "cs480/foodtrucks/search2";
 			$http.post(
@@ -35,6 +36,11 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 			).success(function(dataResponse) {
 				$scope.trucks = dataResponse;
 				console.log($scope.trucks);
+				for (let index = 0; index < $scope.trucks.length; index++) {
+					var tempString = $scope.trucks[index]["phoneNumber"];
+					$scope.trucks[index]["phoneNumber"] = tempString.substring(0,3);
+					$scope.trucks[index]["phoneNumber2"] = tempString.substring(3);
+				}
 			});
 		}
 		else {
@@ -98,6 +104,26 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 			var locationType = $scope.formLocation.selectedMode.locationType.toLowerCase();
 			return (locationType === curLocation);
 		}
+	}
+
+	$scope.updateCheckbox = function updateCheckbox(food) {
+		$scope.checkboxCheck = $scope.checkboxCheck || [];
+		if (food.selected) {
+			$scope.checkboxCheck.push (food.name);
+			// Removes all duplicates
+			$scope.checkboxCheck = $scope.checkboxCheck.filter(onlyUnique);
+		}
+		else {
+			// Without returns the array with the element removed
+			//$scope.checkboxCheck = _.without($scope.checkboxCheck, food.name);
+			$scope.checkboxCheck = $scope.checkboxCheck.filter(function(otherFoodName) {
+				return otherFoodName !== food.name;
+			});
+		}
+	}
+
+	function onlyUnique(value, index, self) {
+		return self.indexOf(value) === index;
 	}
 
 	/*******************************************/
