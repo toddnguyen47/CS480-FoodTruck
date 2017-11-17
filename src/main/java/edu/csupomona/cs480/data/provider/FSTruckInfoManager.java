@@ -539,8 +539,11 @@ public class FSTruckInfoManager implements TruckInfoManager{
 			}
 		}
 		if(foodTypes.get(0).equalsIgnoreCase("Surprise Me!")) {
-			Collections.shuffle(result);
-			return result.subList(0,10);
+			// If user entered a searchable/correct address/zip code/city
+			if (!result.isEmpty()) {
+				Collections.shuffle(result);
+				return result.subList(0,10);
+			}
 		}
         return result;     
 	}
