@@ -86,8 +86,9 @@
 									value = "{{food.name}}"
 									ng-model = "food.selected"
 									id = "{{food.name}}"
-									ng-click = "updateCheckbox(food)"
+									ng-click = "updateCheckbox(food, $index, typesOfFood)"
 									ng-required = "checkboxCheck.length === 0"
+									ng-disabled = "isSurpriseMe[$index]"
 									> {{food.name}} &ensp;
 								</span>
 							</p>

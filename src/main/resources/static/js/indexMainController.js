@@ -5,6 +5,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	var curLocation = 'Current Location'.toLowerCase();
 	$scope.inputForm = {};
 	$scope.checkboxCheck = [];
+	$scope.isSurpriseMe = [];
 
 	// Make sure "Random" is the LAST entry
 	$scope.typesOfFood = [
@@ -15,9 +16,6 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		{name: "Mexican",		selected: false},
 		{name: "Surprise Me!",  selected: false}
 	];
-
-	// Selected food
-	$scope.foodSelection = [];
 
 	$scope.locationArr = [
 		{locationType: "Zip code"},
@@ -52,14 +50,13 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		}
 	}
 
-	// Get selected food
-	$scope.selectedFood = function selectedFood() {
-		return filterFilter($scope.typesOfFood, {selected: true})
-	};
+	// Selected food
+	$scope.foodSelection = [];
 
 	// Watch fruits for change
 	$scope.$watch('typesOfFood | filter:{selected:true}', function(input) {
-		$scope.foodSelection = input.map(function (food){
+		// Return all food elements that are selected
+		$scope.foodSelection = input.map(function (food) {
 			return food.name;
 		});
 	}, true);
@@ -109,7 +106,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		}
 	}
 
-	$scope.updateCheckbox = function updateCheckbox(food) {
+	$scope.updateCheckbox = function updateCheckbox(food, indexFood, foodTypes) {
 		$scope.checkboxCheck = $scope.checkboxCheck || [];
 		if (food.selected) {
 			$scope.checkboxCheck.push (food.name);
@@ -123,10 +120,42 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 				return otherFoodName !== food.name;
 			});
 		}
+
+		if (food.name.toLowerCase() === 'Surprise Me!'.toLowerCase()) {
+			uncheckOtherBoxes(indexFood, foodTypes);
+		}
 	}
 
 	function onlyUnique(value, index, self) {
 		return self.indexOf(value) === index;
+	}
+
+	function uncheckOtherBoxes(indexFood, foodTypes) {
+		angular.forEach(foodTypes, function(otherFoods, curIndex) {
+			if (indexFood !== curIndex) {
+				otherFoods.selected = false;
+			}
+		});
+
+		// Disable other boxes
+		if (foodTypes[indexFood].selected) {
+			for (let i = 0; i < foodTypes.length;i++) {
+				// Disable all other checkboxes but surprise me
+				if (i !== indexFood) {
+					$scope.isSurpriseMe[i] = true;
+				}
+				else {
+					$scope.isSurpriseMe[i] = false;
+				}
+			}
+		}
+
+		// Enable all boxes
+		else {
+			for (let i = 0; i < foodTypes.length;i++) {
+				$scope.isSurpriseMe[i] = false;
+			}
+		}
 	}
 
 	/*******************************************/
@@ -174,6 +203,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	}
 
 	// Extra code
+
 	/* $scope.deleteMe = {
 		"locationType":"zip code",
 		"typesOfFood":[
@@ -184,4 +214,9 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 
 	// Get latitude/longitude from address
 	//var geocoder = new google.maps.Geocoder();
+
+	// Get selected food
+	/*$scope.selectedFood = function selectedFood() {
+		return filterFilter($scope.typesOfFood, {selected: true})
+	};*/
 }]);
