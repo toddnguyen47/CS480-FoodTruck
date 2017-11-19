@@ -459,7 +459,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 			OkHttpClient client = new OkHttpClient();
 			String accessToken = "NNW_d42viWMIZVJyu5Rjq2WmQr3gDt8CXRH5-wN7Z2UKQWuBv_ov-ojvyqAMxSUfvOktjv1UVXSfS0iNGYOVllV2uqPOVMaCI9J_Oe4dpbOnq7openFgqbS7puj3WXYx";
 			String url="";
-			if(foodType.equals("")) {
+			if(!foodType.equals("")) {
 				url="https://api.yelp.com/v3/businesses/search?term="+foodType+"&";
 			}
 			else {
