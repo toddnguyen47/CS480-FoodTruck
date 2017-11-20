@@ -17,10 +17,10 @@
 
 
 		<!-- Use MIN AngularJS for production-->
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
 
 		<!-- Use FULL AngularJS for development -->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script> -->
 
 		<!-- Extra sources, if needed -->
 		<!-- <script src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
@@ -81,14 +81,15 @@
 							<h4>Types of Food</h4>
 								<span ng-model="formLocation.checkboxListing" ng-repeat="food in typesOfFood">
 									<input
-									type = "checkbox"
-									name = "selectedFood[]"
-									value = "{{food.name}}"
-									ng-model = "food.selected"
-									id = "{{food.name}}"
-									ng-click = "updateCheckbox(food, $index, typesOfFood)"
-									ng-required = "checkboxCheck.length === 0"
-									ng-disabled = "isSurpriseMe[$index]"
+									type="checkbox"
+									name="selectedFood[]"
+									value="{{food.name}}"
+									ng-model="food.selected"
+									id="{{food.name}}"
+									ng-click="updateCheckbox(food, $index, typesOfFood)"
+									ng-required="checkboxCheck.length === 0"
+									ng-disabled="isSurpriseMe[$index]"
+									oninvalid="this.setCustomValidity('Please select at least one checkbox to proceed.')";
 									> {{food.name}} &ensp;
 								</span>
 							</p>
@@ -97,6 +98,8 @@
 								ng-disabled="formLocation.$invalid">
 								Search
 							</button>
+
+							<button ng-model="resetBtn" ng-click="reset(typesOfFood)">Reset</button>
 						</form>
 
 

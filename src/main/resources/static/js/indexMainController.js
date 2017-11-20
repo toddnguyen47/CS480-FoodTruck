@@ -1,11 +1,13 @@
 var optPrimeApp = angular.module('optPrimeApp', []);
 
-optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
+optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) {
 	var x = document.getElementById("geoloc");
 	var curLocation = 'Current Location'.toLowerCase();
+	var prevUserSelection = [];
 	$scope.inputForm = {};
 	$scope.checkboxCheck = [];
 	$scope.isSurpriseMe = [];
+	$scope.emptyList = {};
 
 	// Make sure "Random" is the LAST entry
 	$scope.typesOfFood = [
@@ -77,24 +79,6 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 		return inputTemp;
 	}
 
-	// Get latitude/longitude from current location
-	$scope.getLatLon = function getLatLon(address) {
-		var temp = {};
-		geocoder.geocode({'address':address}, function(results, status){
-			if (status == google.maps.GeocoderStatus.OK) {
-				var latitude = results[0].geometry.location.lat();
-				var longitude = results[0].geometry.location.lng();
-
-				console("latitude: " + latitude + ", longitude: " + longitude);
-
-				temp["latitude"] = latitude;
-				temp["longitude"] = longitude;
-			}
-		});
-
-		return temp;
-	}
-
 	$scope.hideTextInput = function hideTextInput() {
 		return ($scope.formLocation !== undefined && $scope.isCurrentLocation());
 	}
@@ -131,8 +115,14 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	}
 
 	function uncheckOtherBoxes(indexFood, foodTypes) {
-		angular.forEach(foodTypes, function(otherFoods, curIndex) {
-			if (indexFood !== curIndex) {
+		prevUserSelection = JSON.parse(localStorage.getItem('prevUserSelection')) || [];
+		
+		angular.forEach(foodTypes, function(otherFoods, curIndex) {			
+			// Only store previous user input if Surprise Me! is selected
+			if (foodTypes[indexFood].selected)
+				prevUserSelection[curIndex] = otherFoods.selected;
+
+			if (indexFood !== curIndex) {				
 				otherFoods.selected = false;
 			}
 		});
@@ -152,10 +142,23 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 
 		// Enable all boxes
 		else {
-			for (let i = 0; i < foodTypes.length;i++) {
-				$scope.isSurpriseMe[i] = false;
-			}
+			angular.forEach(foodTypes, function(foodType, key) {
+				$scope.isSurpriseMe[key] = false;
+				foodType.selected = prevUserSelection[key];
+			});
+			// Make sure Surprise Me! is unchecked
+			foodTypes[indexFood].selected = false;
 		}
+
+		localStorage.setItem('prevUserSelection', JSON.stringify(prevUserSelection));
+	}
+
+	$scope.reset = function reset(foodTypes) {
+		$scope.checkboxCheck = [];
+		angular.forEach(foodTypes, function(foodType, key) {
+			foodType.selected = false;
+			$scope.isSurpriseMe[key] = false;
+		});
 	}
 
 	/*******************************************/
@@ -219,4 +222,23 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http){
 	/*$scope.selectedFood = function selectedFood() {
 		return filterFilter($scope.typesOfFood, {selected: true})
 	};*/
+
+	/*
+	// Get latitude/longitude from current location
+	$scope.getLatLon = function getLatLon(address) {
+		var temp = {};
+		geocoder.geocode({'address':address}, function(results, status){
+			if (status == google.maps.GeocoderStatus.OK) {
+				var latitude = results[0].geometry.location.lat();
+				var longitude = results[0].geometry.location.lng();
+
+				console.log("latitude: " + latitude + ", longitude: " + longitude);
+
+				temp["latitude"] = latitude;
+				temp["longitude"] = longitude;
+			}
+		});
+
+		return temp;
+	}*/
 }]);
