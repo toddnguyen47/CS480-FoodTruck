@@ -1,1 +1,1 @@
-mvn clean && mvn package && java -jar ./target/cs480-1.0.jar
+mvn package && java -jar ./target/cs480-1.0.jar

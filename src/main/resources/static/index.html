@@ -43,7 +43,7 @@
 		<!-- Main -->
 			<div id="main">
 
-				<header class="major container 75%">
+				<header class="major container 125%">
 					<h2>Got some hot dog cravings?<br />
 					Korean fusion? <br />
 					Ice cream in plant pots? <br />
@@ -55,7 +55,7 @@
 					-->
 				</header>
 
-				<div class="box container" style="text-align:center" ng-controller="inputForm" data-ng-init="init()">
+				<div class="box container 125%" style="text-align:center" ng-controller="inputForm" data-ng-init="init()">
 					<section>
 						<header>
 							<h2>Food Truck Search</h2>
@@ -65,16 +65,17 @@
 							Search by: <br />
 							<select ng-class="{submitError: formLocation.submitError}"
 								ng-model="formLocation.selectedMode"
-								ng-options="elem.locationType for elem in locationArr" required>
+								ng-options="elem.locationType for elem in locationArr"
+								required>
 							</select>
 
 							<div id="textInput" ng-hide="hideTextInput()">
 								Enter your location <br/>
-								<input type="text" ng-model="formLocation.location1" ng-required="!isCurrentLocation()"/>
+								<input id="textInput" type="text" ng-model="formLocation.location1" ng-required="!isCurrentLocation()"/>
 								<br />
 							</div>
 
-							<button ng-model="formLocation.getLocationBtn" ng-click="getLocation()">Where Am I?</button>
+							<button class="purelyCssBtn" ng-model="formLocation.getLocationBtn" ng-click="getLocation()">Where Am I?</button>
 							<div id="geoloc"></div>
 							
 							<p>
@@ -89,17 +90,20 @@
 									ng-click="updateCheckbox(food, $index, typesOfFood)"
 									ng-required="checkboxCheck.length === 0"
 									ng-disabled="isSurpriseMe[$index]"
-									oninvalid="this.setCustomValidity('Please select at least one checkbox to proceed.')";
+									oninvalid="setCustomValidity('')" 
+									oninput="setCustomValidity('')"
 									> {{food.name}} &ensp;
 								</span>
 							</p>
 
-							<button style="text-align:center" ng-click="postSearch()" type="submit" ng-model="formLocation.searchBtn"
+							<button type="submit" class="purelyCssBtn btn-blue" ng-click="postSearch()" ng-model="formLocation.searchBtn"
 								ng-disabled="formLocation.$invalid">
 								Search
 							</button>
-
-							<button ng-model="resetBtn" ng-click="reset(typesOfFood)">Reset</button>
+							&emsp;&emsp;
+							<button type="button" class="purelyCssBtn btn-red" ng-model="resetBtn" ng-click="reset(typesOfFood)">
+								Reset
+							</button>
 						</form>
 
 
@@ -112,7 +116,7 @@
 
 						<div ng-model="locationOutput" ng-hide = "!trucks">
 							<span ng-model="locationType"><strong>Location Type:</strong> {{formLocation.selectedMode.locationType}}</span><br />
-							<span ng-model="locationValue" ng-hide="form.selectedMode.locationType.toLowerCase() === 'Current Location'.toLowerCase()">
+							<span ng-model="locationValue" ng-hide="isCurrentLocation()">
 								<strong>Location:</strong> {{formLocation.location1}}
 							</span>
 						</div>
@@ -144,7 +148,10 @@
 										<td>{{truck.name}}</td>
 										<td>{{truck.type}}</td>
 										<!--TODO: Consider whether we keep "route me" or not.-->
-										<td>{{truck.address}}<p>{{truck.city}}, {{truck.zipCode}}</p><p><a href="https://www.google.com/maps/dir/?api=1&destination={{truck.lat}},{{truck.lon}}">Route Me!</a></p></td>
+										<td width="30%">{{truck.address}}
+											<p>{{truck.city}}, {{truck.zipCode}}</p>
+											<p><a href="https://www.google.com/maps/dir/?api=1&destination={{truck.lat}},{{truck.lon}}" target="_blank">Route Me!</a></p>
+										</td>
 										<td>({{truck.areaCode}}) {{truck.phoneNumber}}-{{truck.phoneNumber2}}</td>
 										<!--TODO: Figure out how to center image [vertically] because it looks imbalanced. Center of image should align with center of table.-->
 										<td><img src="{{truck.imageUrl}}"></td>
