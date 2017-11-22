@@ -17,7 +17,7 @@ Authors
 * [John Wang](https://github.com/johnHaloWang)
 * [Rachel Chiang](https://github.com/raechiang)
 * [Todd Nguyen](https://github.com/toddnguyen11)
-* [Allen Sartoonian](https://github.com/asartoonian)
+* [Allen Artoonian](https://github.com/asartoonian)
 
 
 Environment Setup
@@ -63,7 +63,7 @@ Employing on a Live Server
 
 `sudo yum remove java-1.7.0-openjdk`
 
-3. [Install MySQL on your server.](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
+3. [Install MySQL](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html) on your server.
 
 
 ***Run the Server***
