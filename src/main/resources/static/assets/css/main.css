@@ -2294,7 +2294,7 @@
 		font-family: inherit;
 		display: inline-block;
 	}
-	
+
 	button.purelyCssBtn {
 		display: inline-block;
 		color: #666;
@@ -2308,12 +2308,12 @@
 		border: 1px solid rgba(0,0,0,0.3);
 		border-bottom-width: 3px;
 	}
-	
+
 		button.purelyCssBtn:hover {
 			background-color: #e3e3e3;
 			border-color: rgba(0,0,0,0.5);
 		}
-		
+
 		button.purelyCssBtn.btn:active {
 			background-color: #CCC;
 			border-color: rgba(0,0,0,0.9);
@@ -2333,7 +2333,7 @@
 			background-color: #4F87A2;
 			border-color: rgba(0,0,0,0.5);
 		}
-		
+
 		button.purelyCssBtn.btn-blue:active {
 			background-color: #3C677B;
 			border-color: rgba(0,0,0,0.9);
@@ -2359,11 +2359,18 @@
 			background-color: #DA4F49;
 			border-color: rgba(0,0,0,0.5);
 		}
-		
+
 		button.purelyCssBtn.btn-red:active {
 			background-color: #B32C24;
 			border-color: rgba(0,0,0,0.9);
 		}
+
+/* Checkboxes */
+    .foodBoxes {
+        display: inline-block;
+        width: 25%;
+        text-align: left;
+    }
 
 /* Table */
 	table#truckTable {
@@ -2382,31 +2389,31 @@
 		border: 1px solid rgba(107, 107, 107, 0.80);
 		background-color: rgba(79, 136, 162, 0.50);
 	}
-	
+
 	table#truckTable img {
 		width: 150px;
 		height: 150px;
 		object-fit: contain;
 	}
-	
+
 	table#truckTable a:link {
 		color: #04486c;
 		background-color: transparent;
 		text-decoration: none;
 	}
-	
+
 	table#truckTable a:visited {
 		color: #4b7c17;
 		background-color: transparent;
 		text-decoration: none;
 	}
-	
+
 	table#truckTable a:hover {
 		color: #1e88c6;
 		background-color: transparent;
 		text-decoration: underline;
 	}
-	
+
 	table#truckTable a:active {
 		color: #c6ef9a;
 		background-color: transparent;
@@ -2465,7 +2472,7 @@
 	select.submitError.ng-invalid {
 		border: 2px solid red;
 	}
-			
+
 /* Button */
 
 	input[type="submit"],

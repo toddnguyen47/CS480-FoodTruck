@@ -11,12 +11,26 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) 
 
 	// Make sure "Random" is the LAST entry
 	$scope.typesOfFood = [
-		{name: "American",		selected: false},
-		{name: "Italian",		selected: false},
-		{name: "Japanese",		selected: false},
-		{name: "Korean",		selected: false},
-		{name: "Mexican",		selected: false},
-		{name: "Surprise Me!",  selected: false}
+        {name: "Argentine",      selected: false},
+        {name: "American",		 selected: false},
+        {name: "British",        selected: false},
+        {name: "Chinese",        selected: false},
+        {name: "Dessert",        selected: false},
+        {name: "Filipino",       selected: false},
+        {name: "Halal",          selected: false},
+        {name: "Hawaiian",       selected: false},
+        {name: "Indian",         selected: false},
+		{name: "Italian",		 selected: false},
+		{name: "Japanese",		 selected: false},
+		{name: "Korean",	 	 selected: false},
+        {name: "Latin American", selected: false},
+        {name: "Lebanese",       selected: false},
+        {name: "Mediterranean",  selected: false},
+		{name: "Mexican",		 selected: false},
+        {name: "Middle Eastern", selected: false},
+        {name: "Thai",           selected: false},
+        {name: "Vietnamese",     selected: false},
+		{name: "Surprise Me!",   selected: false}
 	];
 
 	$scope.locationArr = [
@@ -27,7 +41,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) 
 	];
 
 
-	$scope.postSearch = function postSearch() {		
+	$scope.postSearch = function postSearch() {
 		if ($scope.formLocation.$valid) {
 			var postUrl = "cs480/foodtrucks/search2";
 			$http.post(
@@ -69,7 +83,7 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) 
 		inputTemp["locationType"] = $scope.formLocation.selectedMode.locationType;
 		inputTemp["locationValue"] = $scope.formLocation.location1;
 		inputTemp["foodTypes"] = $scope.foodSelection;
-		
+
 		// TODO: Consider changing this to prevent needing secure server
 		if ($scope.position !== undefined) {
 			inputTemp["lat"] = $scope.position.coords.latitude;
@@ -116,13 +130,13 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) 
 
 	function uncheckOtherBoxes(indexFood, foodTypes) {
 		prevUserSelection = JSON.parse(localStorage.getItem('prevUserSelection')) || [];
-		
-		angular.forEach(foodTypes, function(otherFoods, curIndex) {			
+
+		angular.forEach(foodTypes, function(otherFoods, curIndex) {
 			// Only store previous user input if Surprise Me! is selected
 			if (foodTypes[indexFood].selected)
 				prevUserSelection[curIndex] = otherFoods.selected;
 
-			if (indexFood !== curIndex) {				
+			if (indexFood !== curIndex) {
 				otherFoods.selected = false;
 			}
 		});

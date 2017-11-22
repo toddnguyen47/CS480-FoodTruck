@@ -29,7 +29,7 @@
 		<!-- This script needs to go after all other sources!-->
 		<script src="./js/indexMainController.js"></script>
 	</head>
-	
+
 	<body>
 		<!-- Header -->
 			<div id="header">
@@ -57,7 +57,7 @@
 						</header>
 
 						<form name="formLocation" method="POST">
-							Search by: <br />
+							Search by <br />
 							<select ng-class="{submitError: formLocation.submitError}"
 								ng-model="formLocation.selectedMode"
 								ng-options="elem.locationType for elem in locationArr"
@@ -70,12 +70,12 @@
 								<br />
 							</div>
 
-							<button class="purelyCssBtn" ng-model="formLocation.getLocationBtn" ng-click="getLocation()">Where Am I?</button>
-							<div id="geoloc"></div>
-							
+							<!--<button class="purelyCssBtn" ng-model="formLocation.getLocationBtn" ng-click="getLocation()">Where Am I?</button>
+							<div id="geoloc"></div> -->
+
 							<p>
 							<h4>Types of Food</h4>
-								<span ng-model="formLocation.checkboxListing" ng-repeat="food in typesOfFood">
+								<div class="foodBoxes" span ng-model="formLocation.checkboxListing" ng-repeat="food in typesOfFood">
 									<input
 									type="checkbox"
 									name="selectedFood[]"
@@ -85,10 +85,11 @@
 									ng-click="updateCheckbox(food, $index, typesOfFood)"
 									ng-required="checkboxCheck.length === 0"
 									ng-disabled="isSurpriseMe[$index]"
-									oninvalid="setCustomValidity('')" 
+									oninvalid="setCustomValidity('')"
 									oninput="setCustomValidity('')"
 									> {{food.name}} &ensp;
 								</span>
+                            </div>
 							</p>
 
 							<button type="submit" class="purelyCssBtn btn-blue" ng-click="postSearch()" ng-model="formLocation.searchBtn"
