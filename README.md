@@ -22,7 +22,7 @@ Authors
 
 Environment Setup
 -----------------
-1. Install the latests [Maven](http://maven.apache.org/download.cgi).
+1. Install the latest [Maven](http://maven.apache.org/download.cgi).
 2. Install the latest [Eclipse](http://www.eclipse.org/).
 3. Make sure your Eclipse has Maven installed (It should have been included in the latest version of the Eclipse)
 4. Install a MySQL Server. We recommend installing [XAMPP](https://www.apachefriends.org/index.html) for easy MySQL setup and execution.
@@ -44,7 +44,7 @@ Running the Project Locally
 ----------------------------------------
 1. Make sure your MySQL server is running. ![XAMPPImage1](./src/main/resources/static/images/xampp1.jpg)
 2. In Eclipse, locate App.java in src/main/java source folder and right-click on it &rightarrow; Run As &rightarrow; Java Application
-3. Verify the running process in your web browser by the following URLs:
+3. Verify the running process in your web browser with the following URLs:
 
 - http://localhost:8080/
 - http://localhost:8080/cs480/ping
@@ -54,7 +54,41 @@ Running the Project Locally
 
 Employing on a Live Server
 --------------------------
-TODO
+
+####Environment Setup
+1. Obtain a server, either from Amazon, Google, or any company of your choice.
+2. On your server, update your Java to Java 8. The commands will differ depending on your distribution. If you are using Amazon's distribution, Amazon Linux, here are the commands
+
+`sudo yum install java-1.8.0`
+
+`sudo yum remove java-1.7.0-openjdk`
+
+3. Install MySQL on your server. [INSERT HOW TO INSTALL MYSQL SERVER HERE]
+
+####Run the Server
+1. Secure copy via either the command `scp` or [WinSCP](https://winscp.net/eng/download.php) the cs480-1.0.jar file, or whatever name you have for your compiled file.
+2. **IMPORTANT STEP!** In your server, make a folder named "src." In this newly created src folder, secure copy the file "keystore.p12." In other words, you want the path `src/keystore.p12` to exist in the same folder as your jar file in your server.
+3. Start your MySQL server. If you install MySQL in the default directory, this is the command to start the server
+
+`sudo /etc/init.d/mysqld start`
+
+Similarly, if you need to restart your server, use the following command:
+
+`sudo /etc/init.d/mysqld restart`
+
+4. Start your java server. We will use nohup to ensure that the server keeps running even when we exit our terminal.
+
+`killall -9 java || true`
+
+`nohup java -jar /home/ec2-user/cs480-1.0.jar >/dev/null 2>&1 &`
+
+If you do not want to redirect your Java output:
+
+`nohup java -jar /home/ec2-user/cs480-1.0.jar &`
+
+If you want to redirect your Java output to a text file:
+
+`nohup java -jar /home/ec2-user/cs480-1.0.jar >logfile.txt 2>&1 &`
 
 Optional
 --------
