@@ -49,12 +49,11 @@ Running the Project Locally
 - http://localhost:8080/
 - http://localhost:8080/cs480/ping
 
-**NOTE:** Our project employs the use of a self-signed SSL certificate in order to enable HTTPS. Your browser (Chrome/Firefox/Safari/Internet Explorer) might warn you about an unsafe site. Do NOT worry! Our site is perfectly safe. We only use HTTPS to get your current location using geolocation, nothing else. 
+**NOTE:** Our project employs the use of a self-signed SSL certificate in order to enable HTTPS. Your browser (Chrome/Firefox/Safari/Internet Explorer) might warn you about an unsafe site. Do NOT worry! Our site is perfectly safe. We only use HTTPS to get your current location using geolocation. You are welcome to decline our site's request for geolocation and our site will still work. You can still search via Zip Code, Address, or City.
 
 
 Employing on a Live Server
 --------------------------
-
 
 ***Environment Setup***
 1. Obtain a server, either from Amazon, Google, or any company of your choice.
