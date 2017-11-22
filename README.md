@@ -63,7 +63,7 @@ Employing on a Live Server
 
 `sudo yum remove java-1.7.0-openjdk`
 
-3. Install MySQL on your server. [INSERT HOW TO INSTALL MYSQL SERVER HERE]
+3. [Install MySQL on your server.](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html)
 
 
 ***Run the Server***
