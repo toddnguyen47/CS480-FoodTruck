@@ -56,7 +56,7 @@ Employing on a Live Server
 --------------------------
 
 
-*Environment Setup*
+***Environment Setup***
 1. Obtain a server, either from Amazon, Google, or any company of your choice.
 2. On your server, update your Java to Java 8. The commands will differ depending on your distribution. If you are using Amazon's distribution, Amazon Linux, here are the commands
 
@@ -67,7 +67,7 @@ Employing on a Live Server
 3. Install MySQL on your server. [INSERT HOW TO INSTALL MYSQL SERVER HERE]
 
 
-*Run the Server*
+***Run the Server***
 1. Secure copy via either the command `scp` or [WinSCP](https://winscp.net/eng/download.php) the cs480-1.0.jar file, or whatever name you have for your compiled file.
 2. **IMPORTANT STEP!** In your server, make a folder named "src." In this newly created src folder, secure copy the file "keystore.p12." In other words, you want the path `src/keystore.p12` to exist in the same folder as your jar file in your server.
 3. Start your MySQL server. If you install MySQL in the default directory, this is the command to start the server
