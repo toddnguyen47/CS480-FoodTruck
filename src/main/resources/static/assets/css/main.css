@@ -2380,7 +2380,7 @@
 
 	table#truckTable th {
 		border: 1px solid rgba(107, 107, 107, 0.80);
-		background-color: #dda9b7;
+		background-color: rgba(79, 136, 162, 0.50);
 	}
 	
 	table#truckTable img {
