@@ -55,19 +55,15 @@ public class FoodTruckDatabase implements FoodTruckDatabaseManager {
     }
 
     public List<TruckInfo> listAllTrucks() {
-        System.out.println("Query All Trucks");
         List<TruckInfo> list = (ArrayList<TruckInfo>) foodTrucks.findAll();
-
         return list;
     }
 
     public List<TruckInfo> findTruckByName(String name) {
-        System.out.println("Finding truck by name");
         List<TruckInfo> resultsList = foodTrucks.findByName(name);
         return resultsList;
     }
     public List<TruckInfo> findTruckByType(String type) {
-        System.out.println("Finding truck by name");
         List<TruckInfo> resultsList = foodTrucks.findByType(type);
         return resultsList;
     }
@@ -77,7 +73,6 @@ public class FoodTruckDatabase implements FoodTruckDatabaseManager {
 
 
     public void insertTruck(final User user){
-         System.out.println("Insert truck " + user);
          String sql = "INSERT into EMPLOYEE(ID, NAME) VALUES (?, ?)";
          jdbcTemplate.update(
                 sql,

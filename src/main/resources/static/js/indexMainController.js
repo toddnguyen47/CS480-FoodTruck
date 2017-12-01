@@ -49,7 +49,6 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) 
 				data = $scope.searchConcat()
 			).success(function(dataResponse) {
 				$scope.trucks = dataResponse;
-				console.log($scope.trucks);
 				for (let index = 0; index < $scope.trucks.length; index++) {
 					var tempString = $scope.trucks[index]["phoneNumber"];
 
@@ -245,8 +244,6 @@ optPrimeApp.controller('inputForm', ['$scope', '$http', function($scope, $http) 
 			if (status == google.maps.GeocoderStatus.OK) {
 				var latitude = results[0].geometry.location.lat();
 				var longitude = results[0].geometry.location.lng();
-
-				console.log("latitude: " + latitude + ", longitude: " + longitude);
 
 				temp["latitude"] = latitude;
 				temp["longitude"] = longitude;

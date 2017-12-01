@@ -278,8 +278,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
 		
 		GeoIP g = getLocation("128.101.101.101");
 		//GeoIP g = getLocation(address);
-		System.out.println(g);
-		System.out.println("testing GeoIP: " + g.getIpAddress() + ", longitude: " + g.getLongitude() + ", latitude: " + g.getLatitude());
 		return g;
     }
    
@@ -340,16 +338,8 @@ public class FSTruckInfoManager implements TruckInfoManager{
 	 * {@inheritDoc}
 	 */
 	@Override
-	public List<TruckInfo> searchYelp(String type, String address,String city,double lat, double lon) throws IOException{
-		System.out.println("debuging...");
-		System.out.println(type);
-		System.out.println(address);
-		System.out.println(city);
-		System.out.println(lat);
-		System.out.println(lon);
-		
+	public List<TruckInfo> searchYelp(String type, String address,String city,double lat, double lon) throws IOException{	
 		List<TruckInfo> result = new ArrayList<TruckInfo>();
-		
 		String accessToken="";
 		OkHttpClient client = new OkHttpClient();
 		accessToken = "NNW_d42viWMIZVJyu5Rjq2WmQr3gDt8CXRH5-wN7Z2UKQWuBv_ov-ojvyqAMxSUfvOktjv1UVXSfS0iNGYOVllV2uqPOVMaCI9J_Oe4dpbOnq7openFgqbS7puj3WXYx";
@@ -399,7 +389,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
             // Making sure list isn't empty
             if (list == null) {
             	size = 0;
-            	System.out.println("List is empty!");
             } else {
             	size = list.size();
             	if(size>=40)
@@ -410,9 +399,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
             	JSONObject temp = (JSONObject) list.get(i);
             	TruckInfo truck = new TruckInfo();
     			truck.setId((String) temp.get("id"));
-    			System.out.println("id: " + i + " " + truck.getId());
             	truck.setName((String) temp.get("name"));
-            	System.out.println("name: " + i + " " + truck.getName());
             	truck.setImageUrl((String)temp.get("image_url")); 
     			truck.setType(type);
  		
@@ -491,7 +478,6 @@ public class FSTruckInfoManager implements TruckInfoManager{
             	// Making sure list isn't empty
             	if (list == null) {
             		size = 0;
-            		System.out.println("List is empty!");
             	} else {
             		size = list.size();
             		if(size>=(40/foodTypes.size()))
@@ -508,9 +494,7 @@ public class FSTruckInfoManager implements TruckInfoManager{
 					else {
 						fTList.put(truck.getId(), result.size());
 					}
-            		System.out.println("id: " + j + " " + truck.getId());
 					truck.setName((String) temp.get("name"));
-					System.out.println("name: " + j + " " + truck.getName());
 					truck.setImageUrl((String)temp.get("image_url")); 
 					JSONObject tempLoc = (JSONObject) temp.get("location");
 					truck.setAddress((String) tempLoc.get("address1"));    			

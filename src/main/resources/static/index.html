@@ -35,7 +35,7 @@
 			<div id="header">
 				<!-- <span class="logo icon fa-paper-plane-o"></span> -->
 				<img src="./assets/truckImage.png"></img>
-				<h1>Optimize Prime.</h1>
+				<h1>Optimize Prime</h1>
 				<p>Never miss your food truck cravings again!</p>
 			</div>
 
@@ -43,11 +43,14 @@
 			<div id="main">
 
 				<header class="major container 125%">
-					<h2>Got some hot dog cravings?<br />
-					Korean fusion? <br />
-					Ice cream in plant pots? <br />
-					Look no further!
-					</h2>
+					<ul>
+						<h2>
+							<li>Got some hot dog cravings?</li>
+							<li>Korean fusion?</li>
+							<li>Ice cream in plant pots?</li>
+							<li>Look no further!</li>
+						</h2>
+					</ul>
 				</header>
 
 				<div class="box container 125%" style="text-align:center" ng-controller="inputForm" data-ng-init="init()">
@@ -85,8 +88,6 @@
 									ng-click="updateCheckbox(food, $index, typesOfFood)"
 									ng-required="checkboxCheck.length === 0"
 									ng-disabled="isSurpriseMe[$index]"
-									oninvalid="setCustomValidity('')"
-									oninput="setCustomValidity('')"
 									> {{food.name}} &ensp;
 								</span>
                             </div>
@@ -179,7 +180,6 @@
 					</header>
 
 					<a href="https://github.com/Optimize-Prime-CS480-Cal-Poly-Fall17/demo-web-project">Optimize Prime Github</a>
-
 
 					<ul class="copyright">
 						<li>&copy; 2017 <a href="https://html5up.net/directive" target="_blank">Directive</a>. All rights reserved.</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>

@@ -337,29 +337,17 @@ public class WebController {
 //       @RequestParam("opt") String opt,
 //       @RequestParam(value = "opt2", required = false) String temp,
          @RequestBody Map<String, Object> selection) throws Exception {
-      System.out.println(selection);
       double lat=0, lon=0;
       double defaultLat = 34.055103;
       double defaultLon = -117.749992;
-      for(Map.Entry<String, Object> alternateEntry : selection.entrySet()) {
-         System.out.println(alternateEntry.getKey() + ": " + 
-                alternateEntry.getValue().toString());
-      }
       DemoUserInput userIn = new DemoUserInput(selection);
-      System.out.println("INFO:\n" + userIn.toString());
       
       if(selection.get("lat")!=null)
       {
          lat = Double.parseDouble(selection.get("lat").toString());
          lon = Double.parseDouble(selection.get("lon").toString());
-         System.out.println("lat: " + lat);
-         System.out.println("lon: " + lon);
       }
-      if(selection.get("opt")!=null)
-      {
-         System.out.println(selection.get("opt").toString());
-      }
-
+      
       return truckManager.searchYelp("Mexican", null, null, userIn.getLatitude(), userIn.getLongitude());
       
 //    
@@ -403,22 +391,13 @@ public class WebController {
         double defaultLat = 34.055103;
         double defaultLon = -117.749992;
         String locationType = userInput.getLocationType();
-        String locationValue = userInput.getLocationValue();
-    
-        System.out.println("User selected: " + locationType);
-        System.out.println("User typed: " + locationValue);
-        System.out.println("Lat: " + userInput.getLat() + ", Lon: " + userInput.getLon());
+        String locationValue = userInput.getLocationValue();       
     
         List<String> typesOfFood = userInput.getFoodTypes();
         if (typesOfFood != null && !typesOfFood.isEmpty()) {
-            for (String food : typesOfFood) {
-                System.out.println("Type of food: " + food);
-            }
-
             return truckManager.searchYelpV2(userInput);
         }
-        else {
-            System.out.println("User did not check any food types!");    
+        else {    
             List<String> temp= new ArrayList<String>();
             temp.add("Mexican");
             userInput.setFoodTypes(temp);
