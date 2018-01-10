@@ -16,7 +16,7 @@ Authors
 * [Adrian Cuellar](https://github.com/AACuellar96)
 * [John Wang](https://github.com/johnHaloWang)
 * [Rachel Chiang](https://github.com/raechiang)
-* [Todd Nguyen](https://github.com/toddnguyen11)
+* [Todd Nguyen](https://github.com/toddnguyen47)
 * [Allen Artoonian](https://github.com/asartoonian)
 
 
