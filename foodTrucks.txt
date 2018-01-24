@@ -1,1 +1,0 @@
-{"Lucy and Leo's Cupcakery":["ID: lucy-and-leos-cupcakery-tallahassee","Name: Lucy and Leo's Cupcakery","Type: Bakeries","Address: 1000 Thomasville Rd","Phone Number: +18507650374","City: Tallahassee","Zipcode: 32303","Latitude: 30.4550627","Longitude: -84.2775752"]}
