@@ -35,7 +35,7 @@ Environment Setup
 Importing the Project into Eclipse
 ----------------------------------
 1. File &rightarrow; Import &rightarrow; Maven &rightarrow; Existing Maven Projects
-2. Select the directory containing the pom.xml file
+2. Select the directory containing the `pom.xml` file
 3. You're all set!
 
 
