@@ -1,7 +1,4 @@
-Optimize Prime
---------------
-Our homepage can be found here: <br />
-<a href="http://foodtruckop.com" target="_blank">http://foodtruckop.com</a>
+# Optimize Prime - Food Truck Locator
 
 
 Overview
