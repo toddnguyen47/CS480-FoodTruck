@@ -26,6 +26,10 @@ Environment Setup
 2. Install the latest [Eclipse](http://www.eclipse.org/).
 3. Make sure your Eclipse has Maven installed (It should have been included in the latest version of the Eclipse)
 4. Install a MySQL Server. We recommend installing [XAMPP](https://www.apachefriends.org/index.html) for easy MySQL setup and execution.
+5. After installing MySQL and phpMyAdmin, start a MySQL and Apache server. ![XAMPPImage1](./src/main/resources/static/images/xampp1.jpg)
+  * Create a database named `foodtrucks`
+  * In the database `foodtrucks`, import the file `foodtrucks.sql` found in `./db-schema`
+  * You're finished setting up the required database!
 
 
 Importing the Project into Eclipse
