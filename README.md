@@ -44,7 +44,7 @@ Building the Project for the First Time
 Running the Project Locally
 ----------------------------------------
 1. Make sure your MySQL server is running. ![XAMPPImage1](./src/main/resources/static/images/xampp1.jpg)
-2. In Eclipse, locate App.java in src/main/java source folder and right-click on it &rightarrow; Run As &rightarrow; Java Application
+2. In Eclipse, locate `App.java` in `src/main/java` source folder and right-click on it &rightarrow; Run As &rightarrow; Java Application
 3. Verify the running process in your web browser with the following URLs:
 
 - http://localhost:8080/
